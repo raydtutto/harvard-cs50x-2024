@@ -2,6 +2,7 @@
 <br/>
 CS50x 2024 projects repository</h1>
 This repository is dedicated to storing my projects and files related to Harvard University's CS50x course. Here, you'll find my solutions to problem sets and notes.
+
 ## What You'll Find Here
 
 - **Problem Set Solutions**: Explore my solutions to the problem sets assigned in CS50x, including programs written in C, Python, and other languages.
