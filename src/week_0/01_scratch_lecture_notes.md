@@ -113,9 +113,84 @@ U+200D - Zero Width Joiner (ZWJ) for connecting elements
 Computer scientists faced a challenge when wanting to assign various skin tones to each emoji to allow the communication to be further personalized. In this case, the creators and contributors of emoji decided that the initial bits would be the structure of the emoji itself, followed by skin tone.
 
 ---
-## RGB
+### RGB
 How computer represent colors:
 Red + Green + Blue = from 0 to 255
-Every pixel has a three numbers (1 byte = 8 bits) associated with it.
+Every pixel has three numbers (1 byte = 8 bits) associated with it.
 
-72 73 33 = some kind of yellow
+72 73 33 = some kind of yellow.
+
+Each pixel is storing 24 bits or 3 bytes.
+
+---
+## Algorithm
+Let's look again at this: input -> ▢ <- output  
+input -> [ algorithm ] <- output
+
+Algorithm - step-by-step instructions (code) for solving some problems.
+
+**big-O notation**
+
+<img src="img/cs50Week0Slide141.png" alt="cs50Week0Slide141" height="395">
+
+- n - the slowest
+- n/2 - twice as fast
+- log2n is the - doubling the problem would only result in one more step to solve the problem
+
+If you have a lot of data you need to think about architecture and design of your code - the key word is **efficiency**.
+
+---
+## Pseudocode
+Has no formal meaning, but you wrote your thoughts down tersely, succinct, but precisely.
+
+Example:
+1. **Pick up** phone book
+2. **Open to** middle of phone code
+3. **Look at** page
+4. If person is on page 
+   5. **Call** person
+6. Else if person is earlier in book
+   7. **Open to** the middle of left half of book
+   8. Go back to line 3
+9. Else if person is later in book
+   10. **Open to** the middle of right half of book
+   11. Go back to line 3
+12. Else
+    13. **Quit**
+
+- The bold words = functions (actions or verbs that tell what to do);
+- If and Else if - conditionals (forks in the road);
+- person is on page, person is earlier in book, person is later in book - boolean expressions (true or false answers).
+- Go back to line 3 - loop (a cycle for doing things again and again)
+- and many more...
+
+---
+## Artificial intelligence
+Needs more building blocks than just functions, loops and conditionals.
+
+If we were implementing our own chatbot:
+
+    If student says hello
+        Say hello back
+    Else if the student says goodbye
+        Say goodbye back
+    Else if the student asks how you are
+        Say you're well
+    Else if the student asks why 111 in binary is 7 in decimal
+        ...
+
+This code may become huge if we will describe every possible question.
+
+***Large language models (LLM)*** - an implementation, in software, of code that actually takes, as input, lots and lots of language
+and infers, from the pattern of any human language, what a typical human might actually say when asked a question.
+
+LLM makes a lot of mistakes, because their inputs are imperfect with a sparkle of randomness.
+
+CS50's own AI-based software: [CS50 Duck](https://cs50.ai) has a personality of a CS50 teaching fellow (TF) or teaching
+assistant (TA) and think of itself as a duck.
+
+Visual Studio Code for CS50: [cs50.dev](https://cs50.dev)
+
+---
+## Scratch
+A visual programming language developed by MIT.
