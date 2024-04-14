@@ -4,8 +4,10 @@ input -> ▢ <- output
 
 ---
 ## Numeral systems
+
 ### Unary system
 The simplest numeral system to represent natural numbers.
+
 ### Binary system
 Computers speak only 0's and 1's in binary system.
 Single bit = 0 or 1 (binary digit).
@@ -115,7 +117,7 @@ Computer scientists faced a challenge when wanting to assign various skin tones 
 ---
 ### RGB
 How computer represent colors:
-Red + Green + Blue = from 0 to 255
+Red + Green + Blue = from 0 to 255  
 Every pixel has three numbers (1 byte = 8 bits) associated with it.
 
 72 73 33 = some kind of yellow.
@@ -131,7 +133,7 @@ Algorithm - step-by-step instructions (code) for solving some problems.
 
 **big-O notation**
 
-<img src="img/cs50Week0Slide141.png" alt="cs50Week0Slide141" height="395">
+<img src="img/cs50Week0Slide141.png" alt="big-O notation" height="395">
 
 - n - the slowest
 - n/2 - twice as fast
@@ -193,4 +195,68 @@ Visual Studio Code for CS50: [cs50.dev](https://cs50.dev)
 
 ---
 ## Scratch
-A visual programming language developed by MIT.
+A visual programming language developed by [MIT](https://scratch.mit.edu)
+Scratch using coding blocks in a visual manner.
+
+**Scratch IDE** (integrated development environment):
+
+<img src="img/cs50Week0Slide162.png" alt="Scratch IDE" height="395">
+
+- Left: building blocks
+- Center: drag blocks here
+- Right bottom: objects
+- Right top: preview
+
+Scratch operates on a coordinate system:
+
+<img src="img/cs50Week0Slide167.png" alt="Scratch coordinate system" height="395">
+
+### Hello world
+
+Building blocks in Scratch IDE:
+
+<img src="img/cs50Week0Slide168.png" alt="Scratch IDE, blocks for Hello" height="395">
+
+- **Green flag** means "go"
+- **Red Stop sign** means "stop"
+- **Event**: When **Green flag** clicked
+- **Looks**: I want to say "Hello fellas!"
+
+say "Hello fellas!" = function "parameter or argument"
+
+<img src="img/cs50Week0Slide172.png" alt="input->algorithm->output" height="395">
+
+***input -> [ algorithm ] <- output***
+
+### Hello, you
+
+Text output with inserted name:
+
+<img src="img/cs50Week0Slide173.png" alt="Text output">
+
+Same output but with custom voice:
+
+<img src="img/cs50Week0Slide174.png" alt="Sound output">
+
+### Meow
+
+Assume that you want a cat to meow three times.
+
+Poor design example:
+
+<img src="img/cs50Week0Slide175.png" alt="Poor design">
+
+Loop design example:
+
+<img src="img/cs50Week0Slide176.png" alt="Using loop">
+
+Better design example:
+
+<img src="img/cs50Week0Slide177.png" alt="Using function">
+
+Best approach:
+
+<img src="img/cs50Week0Slide178.png" alt="Best approach">
+
+
+
