@@ -1,6 +1,6 @@
 <h1 align="center"><img src="harvard_university_logo.svg" alt="Harvard University Logo" height="100">
 <br/>
-CS50x 2024 projects repository</h1>
+CS50x projects repository</h1>
 This repository is dedicated to storing my projects and files related to Harvard University's CS50x course. WIP
 
 ## What You'll Find Here
