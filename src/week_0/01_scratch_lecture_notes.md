@@ -258,5 +258,38 @@ Best approach:
 
 <img src="img/cs50Week0Slide178.png" alt="Best approach">
 
+### Conditionals
 
+Forever conditional:
+
+<img src="img/cs50Week0Slide179.png" alt="Best approach">
+
+Video sensing:
+
+<img src="img/cs50Week0Slide180.png" alt="Best approach">
+
+### "Oscartime" project by David J. Malan
+
+Building ["Oscartime"](https://scratch.mit.edu/projects/277537196/)
+
+Oscar changes costume:
+
+<img src="img/oscartime_1.png" alt="Step 1">
+
+Trash settings:
+- Top: function for falling from the sky
+- Bottom: for disappearing
+
+<img src="img/oscartime_2.png" alt="Step 2">
+
+And so on...
+
+### "Ivy's hardest game" project
+
+[Scratch link](https://scratch.mit.edu/projects/577647301/)  
+Harvard logo abstraction:
+- Keyboard listening
+- Stop near the wall
+
+<img src="img/ivy_1.png" alt="Step 2">
 
