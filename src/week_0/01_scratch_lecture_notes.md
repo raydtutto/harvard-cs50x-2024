@@ -274,22 +274,58 @@ Building ["Oscartime"](https://scratch.mit.edu/projects/277537196/)
 
 Oscar changes costume:
 
-<img src="img/oscartime_1.png" alt="Step 1">
+<img src="img/oscartime_1.png" alt="Oscartime, step 1">
 
 Trash settings:
 - Top: function for falling from the sky
 - Bottom: for disappearing
 
-<img src="img/oscartime_2.png" alt="Step 2">
+<img src="img/oscartime_2.png" alt="Oscartime, step 2">
 
 And so on...
 
 ### "Ivy's hardest game" project
 
 [Scratch link](https://scratch.mit.edu/projects/577647301/)  
+A simple maze game:
+
+<img src="img/ivy_0.png" alt="Ivy">
+
 Harvard logo abstraction:
-- Keyboard listening
-- Stop near the wall
+- Function for keyboard listening;
+- Function for stopping near the wall.
 
-<img src="img/ivy_1.png" alt="Step 2">
+<img src="img/ivy_1.png" alt="Ivy, step 1">
 
+Keyboard binding:
+- Function 'listen for keyboard' doesn't need a loop condition because there's a forever loop in the main program.
+
+<img src="img/ivy_2.png" alt="Ivy, step 2">
+
+Walls settings:
+
+<img src="img/ivy_3.png" alt="Ivy, step 3">
+
+#### Let's make it harder and add Yale logo as an obstacle:
+[Scratch link](https://scratch.mit.edu/projects/577647503/)
+
+<img src="img/ivy_4.png" alt="Ivy, harder 1">
+
+Yale logo motion:
+- If there were 100 steps instead of 1 here on the bottom of the function, the logo never actually "touch" the wall
+and stuck in the middle of nowhere.
+
+<img src="img/ivy_5.png" alt="Ivy, step 4">
+
+#### Make it harder once more:
+
+[Scratch link](https://scratch.mit.edu/projects/577647729/)  
+Let's add MIT logo that follows Harvard logo:
+
+<img src="img/ivy_6.png" alt="Ivy, harder 2">
+
+MIT logo settings:
+
+<img src="img/ivy_7.png" alt="Ivy, harder 2">
+
+#### The final version of [Ivy's hardest game](https://scratch.mit.edu/projects/326129433/).
