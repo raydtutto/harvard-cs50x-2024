@@ -72,7 +72,7 @@ American Standard Code for Information Interchange - ASCII / [Wiki](https://en.w
 
 8 bytes = 255 symbols
 
-<img src="img/cs50Week0Slide93.png" alt="cs50Week0Slide93" height="395">
+<img src="img/cs50Week0Slide93.png" alt="cs50Week0Slide93">
 
 |         | 01001000 | 01001001 | 00100001 |
 |---------|----------|----------|----------|
@@ -133,11 +133,11 @@ Algorithm - step-by-step instructions (code) for solving some problems.
 
 **big-O notation**
 
-<img src="img/cs50Week0Slide141.png" alt="big-O notation" height="395">
+<img src="img/cs50Week0Slide141.png" alt="big-O notation">
 
 - n - the slowest
 - n/2 - twice as fast
-- log2n is the - doubling the problem would only result in one more step to solve the problem
+- log2n - doubling the problem would only result in one more step to solve the problem
 
 If you have a lot of data you need to think about architecture and design of your code - the key word is **efficiency**.
 
@@ -200,7 +200,7 @@ Scratch using coding blocks in a visual manner.
 
 **Scratch IDE** (integrated development environment):
 
-<img src="img/cs50Week0Slide162.png" alt="Scratch IDE" height="395">
+<img src="img/cs50Week0Slide162.png" alt="Scratch IDE">
 
 - Left: building blocks
 - Center: drag blocks here
@@ -209,13 +209,13 @@ Scratch using coding blocks in a visual manner.
 
 Scratch operates on a coordinate system:
 
-<img src="img/cs50Week0Slide167.png" alt="Scratch coordinate system" height="395">
+<img src="img/cs50Week0Slide167.png" alt="Scratch coordinate system">
 
 ### Hello world
 
 Building blocks in Scratch IDE:
 
-<img src="img/cs50Week0Slide168.png" alt="Scratch IDE, blocks for Hello" height="395">
+<img src="img/cs50Week0Slide168.png" alt="Scratch IDE, blocks for Hello">
 
 - **Green flag** means "go"
 - **Red Stop sign** means "stop"
@@ -224,7 +224,7 @@ Building blocks in Scratch IDE:
 
 say "Hello fellas!" = function "parameter or argument"
 
-<img src="img/cs50Week0Slide172.png" alt="input->algorithm->output" height="395">
+<img src="img/cs50Week0Slide172.png" alt="input->algorithm->output">
 
 ***input -> [ algorithm ] <- output***
 
@@ -262,11 +262,11 @@ Best approach:
 
 Forever conditional:
 
-<img src="img/cs50Week0Slide179.png" alt="Best approach">
+<img src="img/cs50Week0Slide179.png" alt="Forever conditional">
 
 Video sensing:
 
-<img src="img/cs50Week0Slide180.png" alt="Best approach">
+<img src="img/cs50Week0Slide180.png" alt="Video sensing">
 
 ### "Oscartime" project by David J. Malan
 
