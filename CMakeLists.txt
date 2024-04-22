@@ -3,14 +3,14 @@ project(harvard_cs50x_2024 C)
 
 set(CMAKE_C_STANDARD 11)
 
-# Include cs50.h
-include_directories($ENV{C_INCLUDE_PATH})
+add_subdirectory(thirdparty/cs50)
 
 # Adding target hello
 add_executable(hello
         src/week_1/hello.c)
+# Link cs50.h
+target_link_libraries(hello PUBLIC cs50x)
+
 add_executable(hello_with_name
         src/week_1/hello_with_name.c)
-
-# Link cs50.h
-target_link_libraries(hello_with_name cs50)
+target_link_libraries(hello_with_name PUBLIC cs50x)
