@@ -1,4 +1,5 @@
-#include <stdio.h> // standard input/output library
+#include <stdio.h> // standard input/output library or header file (.h)
+//#include <cs50.h>
 
 int main(void)
 {
