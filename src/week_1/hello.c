@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    printf("Hello, world\n"); // 'ptinf' is a function that can output a line of text.
+    printf("Hello, world\n"); // 'printf' is a function that can output a line of text.
     // '\n' creates a new line after the words.
 }
