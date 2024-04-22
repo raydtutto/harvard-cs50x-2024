@@ -1,6 +1,6 @@
 # Week 0: Scratch
 Computer programming is about taking some input and creating some output, thus solving problem.  
-input -> ▢ <- output
+input -> ▢ -> output
 
 ---
 ## Numeral systems
@@ -126,8 +126,8 @@ Each pixel is storing 24 bits or 3 bytes.
 
 ---
 ## Algorithm
-Let's look again at this: input -> ▢ <- output  
-input -> [ algorithm ] <- output
+Let's look again at this: input -> ▢ -> output  
+input -> [ algorithm ] -> output
 
 Algorithm - step-by-step instructions (code) for solving some problems.
 
