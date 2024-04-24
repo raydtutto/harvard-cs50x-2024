@@ -305,7 +305,7 @@ int main(void)
 **Flowchart for Version #4**  
 One requests with three conditions. Process will be stopped after after suitable condition.
 
-<img src="img/05.png" alt="Flowchart 3">
+<img src="img/05.png" alt="Flowchart 4">
 
 **Version #5**  
 One request with two conditions. The best way to solve this problem.
@@ -336,7 +336,7 @@ int main(void)
 
 **Flowchart for Version #5**  
 
-<img src="img/06.png" alt="Flowchart 3">
+<img src="img/06.png" alt="Flowchart 5">
 
 Run target `compare` to run example `compare.c`.
 
@@ -397,3 +397,139 @@ int main(void)
 
 Run target `agree` to run example `agree.c`.
 
+---
+
+## Loops
+
+How to "meow" three times.
+
+**Version #1**
+
+Loop **'while'** - keep going through the loop again and again until condition is true.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int counter = 3; // define variable
+
+    while (counter > 0)
+    {
+//      int counter = 3; // you can't define variable from the loop condition inside the loop, 
+//      because it won't exist when the loop starts.
+        printf("Meow!\n");
+        counter = counter - 1;
+    }
+}
+```
+
+**Version #2**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 3;
+
+    while (i > 0)
+    {
+        printf("Meow!\n");
+        i--;
+    }
+}
+```
+---
+
+### meow.c
+
+**Version #1**  
+Duplication of commands.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("meow\n");
+    printf("meow\n");
+    printf("meow\n");
+}
+```
+
+**Version #2**  
+Better way.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 3;
+
+    while(i > 0)
+    {
+        printf("meow\n");
+        i--;
+    }
+}
+```
+
+**Version #3**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 1;
+
+    while(i <= 3)
+    {
+        printf("meow\n");
+        i++;
+    }
+}
+```
+
+**Version #4**  
+The best conventional way for 'while' loop.
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 0; // pattern of bits
+
+    while(i < 3)
+    {
+        printf("meow\n");
+        i++;
+    }
+}
+```
+
+### Loop 'for'
+
+**Version #5**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    // define, initialize and change variable inside condition
+    for (int i = 0; i < 3; i++)
+    {
+        printf("meow\n");
+    }
+}
+```
+
+**Flowchart for Version #5**
+
+<img src="img/07.png" alt="Flowchart 5">
+
+---

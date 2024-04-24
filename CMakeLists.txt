@@ -22,3 +22,4 @@ target_link_libraries(compare PUBLIC cs50x)
 add_executable(agree
         src/week_1/agree.c)
 target_link_libraries(agree PUBLIC cs50x)
+add_executable(meow src/week_1/meow.c)
