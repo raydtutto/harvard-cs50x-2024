@@ -1,10 +1,13 @@
 # Week 1: C
-    #include <stdio.h>
-    
-    int main(void)
-    {
-        printf("Hello, world\n"); // function
-    }
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello, world\n"); // function
+}
+```
 
 ## Source code
 Computer understands only machine code.
@@ -20,6 +23,7 @@ Compiler - is a program that translates one language to another.
 send commands to the computer in the cloud
 
 Three commands in terminal to write, compile, and run our first program:
+(works in VS Code)
 
     $ code hello.c
     // Creates a file and allows us to type instructions for this program.
@@ -39,12 +43,15 @@ Rules:
 
 Source file: *src/week_1/hello.c*
 
-    #include <stdio.h>
+```c
+#include <stdio.h>
 
-    int main(void)
-    {
-        printf("hello, world\n");
-    }
+int main(void)
+{
+    printf("hello, world\n");
+}
+```
+Run target `hello` to run example `hello.c`.
 
 **'printf'** is a function that can output a line of text.  
 **'\n'** creates a new line after the words.
@@ -65,8 +72,9 @@ Task: Get a name and greet the user.
 
 Let's use the function from cs50 library:
 
-    string name = get_string("What's your name? ");
-
+```c
+string name = get_string("What's your name? ");
+```
 
 - *get_print* - prompt a user for a string;
 - *string* - data type of variable;
@@ -75,6 +83,7 @@ Let's use the function from cs50 library:
 *Variable* is a special holding place.  
 *%s* is a placeholder called a format code that tells the 'printf' function to prepare to receive a string.
 
+```c
     #include <stdio.h>
     #include <cs50.h>
 
@@ -83,6 +92,9 @@ Let's use the function from cs50 library:
         string answer = get_string("What's your name? ");
         printf("Hello, %s\n", answer);
     }
+```
+
+Run target `hello_with_name` to run example `hello_with_name.c`.
 
 Type *'clear'* in the terminal to clear all commands, just for the comfort. Or hit 'ctrl + l' on your keyboard.
 
@@ -107,8 +119,208 @@ Type *'clear'* in the terminal to clear all commands, just for the comfort. Or h
 > Here is a non-comprehensive list of ones you may utilize in this course:
 > - %c - for char variables
 > - %f - for double and float variables
+> - %.0f - for double and float variables, will remove zeros after dot.
+> - %.2f - for double and float variables, will show 2 numbers after dot.
 > - %i - for int or integer variables
+> - %d - for digital numbers variables (int, float, double)
 > - %li - for long variables
 > - %s - for string variables
+> - and many more...
 
 ## Conditionals
+
+***If*** conditional:
+
+```c
+if (x < y)
+{
+    printf("x is less than y\n");
+}
+```
+
+***If else*** conditional:
+
+```c
+if (x < y)
+{
+    printf("x is less than y\n");
+}
+else
+{
+    printf("x is not less than y\n");
+}
+```
+
+***If else*** with several conditions:
+
+```c
+if (x < y)
+{
+    printf("x is less than y\n");
+}
+else (x > y)
+{
+    printf("x is greater than y\n");
+}
+else
+// '(x == y)' is a redundant condition, just type 'else'
+{
+    printf("x is equal to y\n");
+}
+```
+## Variables
+Declaring a variable 'counter':
+
+```c
+int counter = 0;
+
+// All three lines below are equal to each other.
+// They are incrementing the value of a variable by 1.
+counter = counter + 1;
+counter += 1;
+counter++;
+```
+## Compare.c
+
+**Version #1**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("What's x? ");
+    int y = get_int("What's y? ");
+
+    if (x < y)
+    {
+        printf("x is less than y\n");
+    }
+}
+```
+
+**Flowchart for Version #1**
+
+<img src="img/02.png" alt="Flowchart 1">
+
+**Version #2**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("What's x? ");
+    int y = get_int("What's y? ");
+
+    if (x < y)
+    {
+        printf("x is less than y\n");
+    }
+    else
+    {
+        printf("x is not less than y\n");
+    }
+}
+```
+
+**Flowchart for Version #2**
+
+<img src="img/03.png" alt="Flowchart 2">
+
+**Version #3**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("What's x? ");
+    int y = get_int("What's y? ");
+
+    if (x < y)
+    {
+        printf("x is less than y\n");
+    }
+    if (x > y)
+    {
+        printf("x is greater than y\n");
+    }
+    if (x == y)
+    {
+        printf("x is equal to y\n");
+    }
+}
+```
+
+**Flowchart for Version #3**  
+Three requests will be processed separately one by one.
+
+<img src="img/04.png" alt="Flowchart 3">
+
+**Version #4**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("What's x? ");
+    int y = get_int("What's y? ");
+
+    if (x < y)
+    {
+        printf("x is less than y\n");
+    }
+    else if (x > y)
+    {
+        printf("x is greater than y\n");
+    }
+    else if (x == y)
+    {
+        printf("x is equal to y\n");
+    }
+}
+```
+
+**Flowchart for Version #4**  
+One requests with three conditions. Process will be stopped after after suitable condition.
+
+<img src="img/05.png" alt="Flowchart 3">
+
+**Version #5**  
+One request with two conditions. The best way to solve this problem.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("What's x? ");
+    int y = get_int("What's y? ");
+
+    if (x < y)
+    {
+        printf("x is less than y\n");
+    }
+    else if (x > y)
+    {
+        printf("x is greater than y\n");
+    }
+    else
+    {
+        printf("x is equal to y\n");
+    }
+}
+```
+
+**Flowchart for Version #5**  
+
+<img src="img/06.png" alt="Flowchart 3">
+
+Run target `compare` to run example `compare.c`.
