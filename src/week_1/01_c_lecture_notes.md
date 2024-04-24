@@ -8,6 +8,7 @@ int main(void)
     printf("Hello, world\n"); // function
 }
 ```
+---
 
 ## Source code
 Computer understands only machine code.
@@ -15,6 +16,8 @@ Computer understands only machine code.
 *source code* -> [ **compiler** ] -> *machine code*
 
 Compiler - is a program that translates one language to another.
+
+---
 
 ## Hello, world
 **Visual Studio Code** - the integrated development environment (IDE)
@@ -58,12 +61,16 @@ Run target `hello` to run example `hello.c`.
 
 *arguments* -> [ **function** ] -> *side effects*
 
+---
+
 ## Libraries
 Collections of pre-written functions that others have written in the past that we can utilize in our code.
 
 CS50 has its own library called cs50.h
 
 Manual pages - [manual.cs50.io](https://manual.cs50.io/)
+
+---
 
 ## Hello, world + name
 *arguments* -> [ **function** ] -> *return value*
@@ -104,6 +111,8 @@ Type *'clear'* in the terminal to clear all commands, just for the comfort. Or h
 >
 > hello_with_name.c:6:5 = file name : line6 : character5
 
+---
+
 ## Types of data
 - bool
 - char
@@ -126,6 +135,8 @@ Type *'clear'* in the terminal to clear all commands, just for the comfort. Or h
 > - %li - for long variables
 > - %s - for string variables
 > - and many more...
+
+---
 
 ## Conditionals
 
@@ -168,6 +179,8 @@ else
     printf("x is equal to y\n");
 }
 ```
+---
+
 ## Variables
 Declaring a variable 'counter':
 
@@ -180,6 +193,8 @@ counter = counter + 1;
 counter += 1;
 counter++;
 ```
+---
+
 ## Compare.c
 
 **Version #1**
@@ -324,3 +339,61 @@ int main(void)
 <img src="img/06.png" alt="Flowchart 3">
 
 Run target `compare` to run example `compare.c`.
+
+---
+
+## Agree.c
+
+***char*** = always 1 character
+
+**Version #1**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    char c = get_char("Do you agree? ");
+
+    if (c == 'y') // 'char' uses single quotes ' instead of double quotes ".
+    {
+        printf("Agreed.\n");
+    }
+    else if (c == 'Y')
+    {
+        printf("Agreed.\n");
+    }
+    else if (c == 'n');
+    {
+        printf("Not agreed.\n");
+    }
+    else if (c == 'N')
+    {
+        printf("Not agreed.\n");
+    }
+}
+```
+**Better version #2**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    char c = get_char("Do you agree? ");
+
+    if (c == 'y' || c == 'Y') // || - or, && - and
+    {
+        printf("Agreed.\n");
+    }
+    else if (c == 'n' || c = 'N');
+    {
+        printf("Not agreed.\n");
+    }
+}
+```
+
+Run target `agree` to run example `agree.c`.
+
