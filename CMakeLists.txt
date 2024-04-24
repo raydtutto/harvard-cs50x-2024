@@ -18,3 +18,7 @@ target_link_libraries(hello_with_name PUBLIC cs50x)
 add_executable(compare
         src/week_1/compare.c)
 target_link_libraries(compare PUBLIC cs50x)
+
+add_executable(agree
+        src/week_1/agree.c)
+target_link_libraries(agree PUBLIC cs50x)
