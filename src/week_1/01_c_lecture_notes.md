@@ -718,3 +718,201 @@ int add(int a, int b) // return integer, takes two integers as input, use differ
 ---
 
 ## Linux
+
+Linux is an operating system that is accessible via the command line in the terminal window in VS Code.
+
+GUI - graphical user interface
+
+Some common command-line arguments:
+
+- ***cd***, for changing our current directory (folder): *$ cd FolderName*
+- ***cp***, for copying files and directories
+- ***ls***, for listing files in a directory: *$ ls*
+- ***mkdir***, for making a directory
+- ***mv***, for moving (renaming) files and directories: *$ mv meow.c woof.c*
+- ***rm***, for removing (deleting) files: *$rm meow.c*
+- ***rmdir***, for removing (deleting) directories
+
+---
+
+## Mario
+
+**Version #1.1**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("????\n");
+}
+```
+
+**Version #1.2**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        printf("?");
+    }
+}
+```
+
+**Version #1.3**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        printf("?");
+    }
+    printf("\n");
+}
+```
+
+**Version #2.1**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("###\n");
+    printf("###\n");
+    printf("###\n");
+}
+```
+
+**Version #2.2**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        printf("###\n");
+    }
+}
+```
+
+**Version #2.3**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 3; i++) // 3 - "magic number" - a raw number without clear definition
+    {
+        for (int j = 0; j < 3; j++) // 3 - "magic number" again
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+```
+
+**Version #2.4**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int n = 3; // define variable with value 3
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+```
+
+**Version #2.5**  
+What if we wanted to ensure that the number of blocks to be unchangeable?  
+Use "constant".
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    const int n = 3; // define variable with value 3
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+```
+
+**Version #2.6**  
+What if want to change 'n' dynamically?
+
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int n = get_int("Size: ");
+
+    while(n < 1)
+    {
+        n = get_int("Size: ");
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+```
+
+**Version #2.7**  
+Let's improve this code with ***'do ... while'*** loop.
+
+```c
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int n; // Declaring variable 'n' outside the loop scope.
+
+    do // Loop works at least once.
+    {
+        n = get_int("Size: ");
+    }
+    while (n < 1);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+```
