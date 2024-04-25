@@ -533,3 +533,188 @@ int main(void)
 <img src="img/07.png" alt="Flowchart 5">
 
 ---
+
+## Forever loop
+
+**Version #6**
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    while (true) // always true
+    {
+        printf("meow\n");
+    }
+}
+```
+
+---
+
+## Functions
+
+**Version #7**
+
+```c
+// Define the function, void has no return value
+void meow(void) // 'meow' is the name of the function, '(void)' takes no inputs
+{
+    printf("meow\n");
+
+}
+
+int main(void)
+{
+    for (int i = 0; i < 0; i++)
+    {
+        meow(); // calling the function 'meow'
+    }
+}
+```
+
+**Version #8**
+
+```c
+#include <stdio.h>
+
+//-------------------------------------------------
+// Declare the function before the main program
+//-------------------------------------------------
+
+void meow(void);
+
+//-------------------------------------------------
+// Main program
+//-------------------------------------------------
+
+int main(void)
+{
+    for (int i = 0; i < 0; i++)
+    {
+        meow(); // calling the function 'meow'
+    }
+}
+
+//-------------------------------------------------
+// Define the function
+//-------------------------------------------------
+
+void meow(void)
+{
+    printf("meow\n");
+}
+```
+
+**Final version of MEOW**
+
+```c
+#include <stdio.h>
+
+void meow(int n);
+
+int main(void)
+{
+    meow(3);
+}
+
+void meow(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        printf("meow\n");
+    }
+}
+```
+---
+
+## calculator.c
+
+**Version #1**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform addition
+    printf("%i\n", x + y);
+}
+```
+
+Operators refer to the mathematical operations:
+
+- \+ for addition
+- \- for subtraction
+- \* for multiplication
+- / for division
+- % for remainder
+
+**Abstraction** is the art of simplifying our code such that it deals with smaller and smaller problems.
+
+**Version #2**
+
+**Scope** refers to the context in which variables exist.  
+e.g. 'x' and 'y' exist only in the 'main' program, when 'a' and 'b' only in the 'add' function.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int add(int a, int b);
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform addition
+    int z = add(x, y); // passing 'x' and 'y' as 'a' and 'b' from the 'add' function
+    printf("%i\n", z);
+}
+
+int add(int a, int b) // return integer, takes two integers as input, use different names for variables
+{
+    return a + b;
+}
+```
+
+**Version #3**
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int add(int a, int b);
+
+int main(void) // always returns zero if everything is ok in compilation
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform addition
+    // You can give a function as an argument (less readable though)
+    printf("%i\n", add(x, y)); // passing 'x' and 'y' as 'a' and 'b' from the 'add' function
+}
+
+int add(int a, int b) // return integer, takes two integers as input, use different names for variables
+{
+    return a + b;
+}
+```
+---
+
+## Linux
