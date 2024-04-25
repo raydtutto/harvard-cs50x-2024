@@ -1,5 +1,9 @@
 # Conditional statements
 
+Instructor: **[Doug Lloyd](https://github.com/dlloyd09)**
+
+---
+
 Conditional expressions allow your programs to make decisions and take different forks in the road, depending on the
 values of variables or user input.
 

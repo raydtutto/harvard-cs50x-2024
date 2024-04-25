@@ -1,5 +1,9 @@
 # Arithmetic Operators
 
+Instructor: **[Doug Lloyd](https://github.com/dlloyd09)**
+
+---
+
 In order to manipulate and work with variables and values in C, we are have a number of operators at our disposal.
 
 - In C we can add ( + ), subtract ( - ), multiply ( * ) and divide ( / ) numbers, as expected.

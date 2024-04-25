@@ -2,6 +2,8 @@
 
 Instructor: **[Doug Lloyd](https://github.com/dlloyd09)**
 
+---
+
 ## int
 
 > - The 'int' data type is used for variables that will store integers.
