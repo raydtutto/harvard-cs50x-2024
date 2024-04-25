@@ -916,3 +916,147 @@ int main(void)
     }
 }
 ```
+
+---
+
+## Integer overflow
+
+***RAM*** - Random-access Memory with physical limitations, where data is stored.
+
+***Integer overflow*** occurs when an arithmetic operation attempts to create a numeric value that is outside
+the range that can be represented with a given number of digits.
+
+x32 --> 00000000000000000000000000000000 = 0 --> 11111111111111111111111111111111 = 4294967295
+
+If you use negative and positive values --> from -2147483648 to 2147483647
+
+Data types:
+
+- ***bool***, a Boolean expression of either true or false
+- ***char***, a single character like a or 2
+- ***double***, uses 64 bits, a floating-point value with more digits than a float
+- ***float***, uses 32 bits, a floating-point value, or real number with a decimal value
+- ***int***, integers up to a certain size, or number of bits
+- ***long***, integers with more bits, so they can count higher than an int
+- ***string***, a string of characters
+
+Let's return to the `calculator` and change it:
+
+***Version with integer***
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform dividing
+    printf("%i\n", add(x / y));
+}
+```
+> Output will be '0' and not '0.333333'
+
+***Version with float***
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform dividing
+    float z = x / y;
+    printf("%f\n", z);
+}
+```
+
+> Output will be '0.000000' and again not '0.333333'
+
+===> The wrong output is because of ***'truncation'***.  
+It refers to a process or operation that shortens or cuts off a piece of data, such as a string or a file, by removing
+characters, digits, or bytes from the end.
+
+***Version without truncation***  
+Uses type casting - converting one type to another.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform dividing
+    float z = (float) x / (float) y;
+    printf("%f\n", z);
+}
+```
+
+> Output will be '0.333333'! Hooray!
+
+***Another version #1***  
+Uses type casting - converting one type to another.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform dividing
+    float z = (float) x / (float) y;
+    printf("%.2f\n", z); // show me 2 decimal places specifically
+}
+```
+
+> Output will be '0.33'
+
+***Another version 1.1***  
+Uses type casting - converting one type to another.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt user for x
+    int x = get_int("x: ");
+
+    // Prompt user for y
+    int y = get_int("y: ");
+
+    // Perform dividing
+    double z = (double) x / (double) y;
+    printf("%.20f\n", z); // show me 20 decimal places specifically
+}
+```
+
+> Output with float data type will be '0.33333334326744079590'
+> Output with double data type will be '0.33333333333333331483'
+> 
+> ***Floating point imprecision*** stems from the problem of trying to store numbers like 1/10 or (. 10) in a computer with
+> a binary number system with a finite amount of numbers.
