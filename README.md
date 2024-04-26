@@ -30,6 +30,7 @@ this course on **April 19, 2024**.
 > | [Problem set 1](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1/problem_set_1) | [hello](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/me/hello.c)              | ![](https://geps.dev/progress/100) |
 > |                                                                                                     | [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-less/mario.c) | ![](https://geps.dev/progress/100) |
 > |                                                                                                     | [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-more/mario.c) | ![](https://geps.dev/progress/100) |
+> |                                                                                                     | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/cash/cash.c)              | ![](https://geps.dev/progress/100) |
 
 Week 2: Arrays  
 Week 3: Algorithms  
