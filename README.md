@@ -14,23 +14,28 @@ this course on **April 19, 2024**.
 
 [CS50x](https://cs50.harvard.edu/x/2024/) is an introductory course to computer science offered by Harvard University. It covers a wide range of topics, including programming in C, Python, web development, and more. The course is designed to be challenging yet accessible to beginners, making it an excellent choice for those looking to dive into the world of computer science.
 
-## Grade
+## Gradebook
 
-> [Week 0: Scratch](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0) 
->
-> | Assignment                                                                                          | Task                                                                                                            | Score                              |
-> |-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------|
-> | [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0/problem_set_0/pset0_solution.md) | ![](https://geps.dev/progress/100) |
->
+---
 
-> [Week 1: C](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1)
->
-> | Assignment                                                                                          | Task                                                                                                                | Score                              |
-> |-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------------------------------|
-> | [Problem set 1](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1/problem_set_1) | [hello](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/me/hello.c)              | ![](https://geps.dev/progress/100) |
-> |                                                                                                     | [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-less/mario.c) | ![](https://geps.dev/progress/100) |
-> |                                                                                                     | [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-more/mario.c) | ![](https://geps.dev/progress/100) |
-> |                                                                                                     | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/cash/cash.c)              | ![](https://geps.dev/progress/100) |
+[Week 0: Scratch](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0) 
+
+| Assignment                                                                                          | Task                                                                                                            | Score                              |
+|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------|
+| [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0/problem_set_0/pset0_solution.md) | ![](https://geps.dev/progress/100) |
+
+---
+
+[Week 1: C](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1)
+
+| Assignment                                                                                          | Task                                                                                                                | Score                              |
+|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| [Problem set 1](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1/problem_set_1) | [hello](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/me/hello.c)              | ![](https://geps.dev/progress/100) |
+|                                                                                                     | [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-less/mario.c) | ![](https://geps.dev/progress/100) |
+|                                                                                                     | [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-more/mario.c) | ![](https://geps.dev/progress/100) |
+|                                                                                                     | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/cash/cash.c)              | ![](https://geps.dev/progress/100) |
+
+---
 
 Week 2: Arrays  
 Week 3: Algorithms  
