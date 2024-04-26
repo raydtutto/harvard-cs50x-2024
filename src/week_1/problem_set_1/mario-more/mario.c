@@ -1,4 +1,4 @@
-// Prints a right-aligned pyramid with a height prompt by a user.
+// Prints an adjacent pyramid with a height prompt by a user.
 
 #include <cs50.h>
 #include <stdio.h>
@@ -17,14 +17,18 @@ int main(int argc, char *argv[])
         // Prompt the user for the pyramid's height
         height = get_int("Height: ");
     }
-        // Keep to re-prompt the user if the input not greater than 0 or of another data type
-    while (height <= 0);
+        // Keep to re-prompt the user if the input not between 1 and 8
+    while (height < 1 || height > 8);
 
     // Print a pyramid of that height
     for (int i = 0; i < height; i++)
     {
         // Print spaces
         print_row_space(height - i - 1);
+        // Print hashes "#"
+        print_row_hash(i + 1);
+        // Print 2 spaces
+        printf("  ");
         // Print hashes "#"
         print_row_hash(i + 1);
         // New line
@@ -51,11 +55,3 @@ void print_row_space(int length)
         printf(" ");
     }
 }
-
-// 1. Prompt for height with 'get_int'
-//      a. Re-prompt the user if the input not greater than 0 or of another data type.
-// 2. For each row:
-//      Depends on height of pyramid and row number:
-//          a. Print spaces
-//          b. Print hashes
-//          c. Print a new line
