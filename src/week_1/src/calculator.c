@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 
 int add(int a, int b);
@@ -13,6 +13,8 @@ int main(void)
 
     // Perform addition
     printf("%i\n", add(x, y)); // passing 'x' and 'y' as 'a' and 'b' from the 'add' function
+
+    return 0;
 }
 
 int add(int a, int b) // return integer, takes two integers as input, use different names for variables

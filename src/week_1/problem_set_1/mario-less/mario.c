@@ -12,12 +12,12 @@ int main(int argc, char *argv[])
 {
     int height;
 
+    // Prompt the user for the pyramid's height at least once
     do
     {
-        // Prompt the user for the pyramid's height
         height = get_int("Height: ");
     }
-        // Keep to re-prompt the user if the input not greater than 0 or of another data type
+    // Keep to re-prompt the user if the input not greater than 0 or of another data type
     while (height <= 0);
 
     // Print a pyramid of that height
@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
         // New line
         printf("\n");
     }
+
+    return 0;
 }
 
 // Function definitions

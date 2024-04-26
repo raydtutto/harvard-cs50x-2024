@@ -34,6 +34,8 @@ int main(int argc, char *argv[])
         // New line
         printf("\n");
     }
+
+    return 0;
 }
 
 // Function definitions

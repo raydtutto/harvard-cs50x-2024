@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 
 int main(void)
@@ -13,4 +13,6 @@ int main(void)
     {
         printf("Not agreed.\n");
     }
+
+    return 0;
 }

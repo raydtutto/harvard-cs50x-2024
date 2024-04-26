@@ -12,26 +12,26 @@ add_executable(hello
 target_link_libraries(hello PUBLIC cs50x)
 
 add_executable(hello_with_name
-        src/week_1/hello_with_name.c)
+        src/week_1/src/hello_with_name.c)
 target_link_libraries(hello_with_name PUBLIC cs50x)
 
 add_executable(compare
-        src/week_1/compare.c)
+        src/week_1/src/compare.c)
 target_link_libraries(compare PUBLIC cs50x)
 
 add_executable(agree
-        src/week_1/agree.c)
+        src/week_1/src/agree.c)
 target_link_libraries(agree PUBLIC cs50x)
 
 add_executable(meow
-        src/week_1/meow.c)
+        src/week_1/src/meow.c)
 
 add_executable(calculator
-        src/week_1/calculator.c)
+        src/week_1/src/calculator.c)
 target_link_libraries(calculator PUBLIC cs50x)
 
 add_executable(mario
-        src/week_1/mario.c)
+        src/week_1/src/mario.c)
 target_link_libraries(mario PUBLIC cs50x)
 
 add_executable(mario-less
