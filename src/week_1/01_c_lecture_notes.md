@@ -304,7 +304,7 @@ int main(void)
 ```
 
 **Flowchart for Version #4**  
-One requests with three conditions. Process will be stopped after after suitable condition.
+One requests with three conditions. Process will be stopped after suitable condition.
 
 <img src="img/05.png" alt="Flowchart 4">
 
@@ -864,7 +864,7 @@ int main(void)
 ```
 
 **Version #2.6**  
-What if want to change 'n' dynamically?
+What if we want to change 'n' dynamically?
 
 ```c
 #include <stdio.h>
