@@ -47,11 +47,12 @@ Rules:
 Source file: *src/week_1/hello.c*
 
 ```c
-#include <stdio.h>
+#include <stdio.h> // standard input/output library or header file (.h)
 
 int main(void)
 {
-    printf("hello, world\n");
+    printf("Hello, world\n"); // 'printf' is a function that can output a line of text.
+    // '\n' creates a new line after the words.
 }
 ```
 Run target `hello` to run example `hello.c`.
