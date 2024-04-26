@@ -7,7 +7,7 @@ add_subdirectory(thirdparty/cs50)
 
 # Adding target hello
 add_executable(hello
-        src/week_1/problem_set_set1/hello.c)
+        src/week_1/problem_set_1/hello.c)
 # Link cs50.h
 target_link_libraries(hello PUBLIC cs50x)
 
@@ -30,5 +30,10 @@ add_executable(calculator
         src/week_1/calculator.c)
 target_link_libraries(calculator PUBLIC cs50x)
 
-add_executable(mario src/week_1/mario.c)
+add_executable(mario
+        src/week_1/mario.c)
 target_link_libraries(mario PUBLIC cs50x)
+
+add_executable(mario-less
+        src/week_1/problem_set_1/mario-less/mario.c)
+target_link_libraries(mario-less PUBLIC cs50x)
