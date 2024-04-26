@@ -27,6 +27,9 @@ This repository is dedicated to storing my projects and files related to Harvard
 - Week 9: Flask
 - Week 10: Cybersecurity
 
-## Instructor
+## Instructors
 
-[David J. Malan](https://cs.harvard.edu/malan/) - Gordon McKay Professor of the Practice of Computer Science at Harvard University
+[David J. Malan](https://github.com/dmalan)
+[Doug LLoyd](https://github.com/dlloyd09)
+[Brian Yu](https://github.com/brianyu28)
+[Carter Zenke](https://github.com/carterzenke)
