@@ -16,8 +16,6 @@ this course on **April 19, 2024**.
 
 ## Gradebook
 
----
-
 [Week 0: Scratch](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0) 
 
 | Assignment                                                                                          | Task                                                                                                            | Score                              |
