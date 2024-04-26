@@ -45,3 +45,7 @@ target_link_libraries(mario-more PUBLIC cs50x)
 add_executable(debug
         src/week_1/additional_practice/debug.c)
 target_link_libraries(debug PUBLIC cs50x)
+
+add_executable(cash
+        src/week_1/problem_set_1/cash/cash.c)
+target_link_libraries(cash PUBLIC cs50x)
