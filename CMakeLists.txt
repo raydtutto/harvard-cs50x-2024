@@ -7,7 +7,7 @@ add_subdirectory(thirdparty/cs50)
 
 # Adding target hello
 add_executable(hello
-        src/week_1/problem_set_1/hello.c)
+        src/week_1/problem_set_1/me/hello.c)
 # Link cs50.h
 target_link_libraries(hello PUBLIC cs50x)
 
