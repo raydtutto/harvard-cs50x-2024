@@ -41,3 +41,7 @@ target_link_libraries(mario-less PUBLIC cs50x)
 add_executable(mario-more
         src/week_1/problem_set_1/mario-more/mario.c)
 target_link_libraries(mario-more PUBLIC cs50x)
+
+add_executable(debug
+        src/week_1/additional_practice/debug.c)
+target_link_libraries(debug PUBLIC cs50x)
