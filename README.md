@@ -4,7 +4,7 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects and files related to **Harvard University's CS50x** course.
 
-I started this course on **April 19, 2024**.
+I started this course on **April 11, 2024**.
 
 ## What You'll Find Here
 
