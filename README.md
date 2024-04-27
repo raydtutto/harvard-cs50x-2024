@@ -41,7 +41,8 @@ I started this course on **April 11, 2024**.
 |                                                                                                                 | [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/mario-more/mario.c) | **10 / 10** | 1.0     |
 |                                                                                                                 | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/cash/cash.c)              | **10 / 10** | 1.0     |
 |                                                                                                                 | [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/problem_set_1/credit/credit.c)        | **17 / 17** | 1.0     |
-| [Additional practice](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1/additional_practice) | [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/additional_practice/debug.c)           | **4 / 4**   | 1.0     |
+| [Additional practice](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1/additional_practice) | [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/additional_practice/debug/debug.c)     | **4 / 4**   | 1.0     |
+|                                                                                                                 | [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/additional_practice/half/half.c)        | **6 / 6**   | 1.0     |
 
 ---
 
