@@ -1,4 +1,4 @@
-(<h1 align="center"><img src="harvard_university_logo.svg" alt="Harvard University Logo" height="100">
+<h1 align="center"><img src="harvard_university_logo.svg" alt="Harvard University Logo" height="100">
 <br/>
 CS50x projects repository</h1>
 
