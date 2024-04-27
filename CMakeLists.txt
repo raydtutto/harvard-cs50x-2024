@@ -43,7 +43,7 @@ add_executable(mario-more
 target_link_libraries(mario-more PUBLIC cs50x)
 
 add_executable(debug
-        src/week_1/additional_practice/debug.c)
+        src/week_1/additional_practice/debug/debug.c)
 target_link_libraries(debug PUBLIC cs50x)
 
 add_executable(cash
@@ -53,3 +53,7 @@ target_link_libraries(cash PUBLIC cs50x)
 add_executable(credit
         src/week_1/problem_set_1/credit/credit.c)
 target_link_libraries(credit PUBLIC cs50x)
+
+add_executable(half
+        src/week_1/additional_practice/half/half.c)
+target_link_libraries(half PUBLIC cs50x)

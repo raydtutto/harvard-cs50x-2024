@@ -1,7 +1,7 @@
 // Become familiar wih C syntax
 // Learn to debug buggy code
 
-#include <cs50.h>
+#include "cs50.h"
 #include <stdio.h>
 
 int main(void)
