@@ -1,4 +1,4 @@
-<h1 align="center"><img src="harvard_university_logo.svg" alt="Harvard University Logo" height="100">
+(<h1 align="center"><img src="harvard_university_logo.svg" alt="Harvard University Logo" height="100">
 <br/>
 CS50x projects repository</h1>
 
@@ -16,13 +16,13 @@ this course on **April 19, 2024**.
 
 ## Gradebook
 
-#### [Week 0: Scratch](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0) 
+#### Week 0: Scratch
 
 | Assignment                                                                                          | Task                                                                                                            | Score                              |
 |-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------|
 | [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0/problem_set_0/pset0_solution.md) | ![](https://geps.dev/progress/100) |
 
-#### [Week 1: C](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1)
+#### Week 1: C
 
 | Assignment                                                                                          | Task                                                                                                                | Score                              |
 |-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|------------------------------------|
@@ -44,6 +44,7 @@ this course on **April 19, 2024**.
 #### Week 9: Flask  
 #### Week 10: Cybersecurity
 
+---
 
 ## Instructors
 
