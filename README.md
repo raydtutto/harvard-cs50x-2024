@@ -8,7 +8,7 @@ I started this course on **April 19, 2024**.
 
 ## What You'll Find Here
 
-- **Lecture Notes: I keep detailed notes of lectures and supplementary materials.
+- **Lecture Notes**: I keep detailed notes of lectures and supplementary materials.
 - **Problem Set Solutions**: Explore my solutions to the problem sets assigned in CS50x, including programs written in C, Python, and other languages.
 - **Work in Progress**: This repository is a work in progress and will be continually updated as I progress through the course.
 
