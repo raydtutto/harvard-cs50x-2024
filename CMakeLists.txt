@@ -59,5 +59,5 @@ add_executable(half
 target_link_libraries(half PUBLIC cs50x)
 
 add_executable(prime
-        src/week_1/prime/prime.c)
+        src/week_1/additional_practice/prime/prime.c)
 target_link_libraries(prime PUBLIC cs50x)
