@@ -49,3 +49,7 @@ target_link_libraries(debug PUBLIC cs50x)
 add_executable(cash
         src/week_1/problem_set_1/cash/cash.c)
 target_link_libraries(cash PUBLIC cs50x)
+
+add_executable(credit
+        src/week_1/problem_set_1/credit/credit.c)
+target_link_libraries(credit PUBLIC cs50x)
