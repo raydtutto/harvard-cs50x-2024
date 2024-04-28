@@ -12,26 +12,26 @@ add_executable(hello
 target_link_libraries(hello PUBLIC cs50x)
 
 add_executable(hello_with_name
-        src/week_1/src/hello_with_name.c)
+        src/week_1/notes/src/hello_with_name.c)
 target_link_libraries(hello_with_name PUBLIC cs50x)
 
 add_executable(compare
-        src/week_1/src/compare.c)
+        src/week_1/notes/src/compare.c)
 target_link_libraries(compare PUBLIC cs50x)
 
 add_executable(agree
-        src/week_1/src/agree.c)
+        src/week_1/notes/src/agree.c)
 target_link_libraries(agree PUBLIC cs50x)
 
 add_executable(meow
-        src/week_1/src/meow.c)
+        src/week_1/notes/src/meow.c)
 
 add_executable(calculator
-        src/week_1/src/calculator.c)
+        src/week_1/notes/src/calculator.c)
 target_link_libraries(calculator PUBLIC cs50x)
 
 add_executable(mario
-        src/week_1/src/mario.c)
+        src/week_1/notes/src/mario.c)
 target_link_libraries(mario PUBLIC cs50x)
 
 add_executable(mario-less
@@ -61,3 +61,70 @@ target_link_libraries(half PUBLIC cs50x)
 add_executable(prime
         src/week_1/additional_practice/prime/prime.c)
 target_link_libraries(prime PUBLIC cs50x)
+
+add_executable(scores1
+        src/week_2/notes/src/scores/scores1.c)
+target_link_libraries(scores1 PUBLIC cs50x)
+
+add_executable(scores2
+        src/week_2/notes/src/scores/scores2.c)
+target_link_libraries(scores2 PUBLIC cs50x)
+
+add_executable(scores3
+        src/week_2/notes/src/scores/scores3.c)
+target_link_libraries(scores3 PUBLIC cs50x)
+
+add_executable(hi1
+        src/week_2/notes/src/hi/hi1.c)
+
+add_executable(hi2
+        src/week_2/notes/src/hi/hi2.c)
+target_link_libraries(hi2 PUBLIC cs50x)
+
+add_executable(hi3
+        src/week_2/notes/src/hi/hi3.c)
+target_link_libraries(hi3 PUBLIC cs50x)
+
+add_executable(length1
+        src/week_2/notes/src/length/length1.c)
+target_link_libraries(length1 PUBLIC cs50x)
+
+add_executable(length2
+        src/week_2/notes/src/length/length2.c)
+target_link_libraries(length2 PUBLIC cs50x)
+
+add_executable(string1
+        src/week_2/notes/src/string/string1.c)
+target_link_libraries(string1 PUBLIC cs50x)
+
+add_executable(string2
+        src/week_2/notes/src/string/string2.c)
+target_link_libraries(string2 PUBLIC cs50x)
+
+add_executable(string3
+        src/week_2/notes/src/string/string3.c)
+target_link_libraries(string3 PUBLIC cs50x)
+
+add_executable(uppercase1
+        src/week_2/notes/src/uppercase/uppercase1.c)
+target_link_libraries(uppercase1 PUBLIC cs50x)
+
+add_executable(uppercase2
+        src/week_2/notes/src/uppercase/uppercase2.c)
+target_link_libraries(uppercase2 PUBLIC cs50x)
+
+add_executable(uppercase3
+        src/week_2/notes/src/uppercase/uppercase3.c)
+target_link_libraries(uppercase3 PUBLIC cs50x)
+
+add_executable(greet1
+        src/week_2/notes/src/greet/greet1.c)
+target_link_libraries(greet1 PUBLIC cs50x)
+
+add_executable(greet2
+        src/week_2/notes/src/greet/greet2.c)
+target_link_libraries(greet2 PUBLIC cs50x)
+
+add_executable(greet3
+        src/week_2/notes/src/greet/greet3.c)
+target_link_libraries(greet3 PUBLIC cs50x)
