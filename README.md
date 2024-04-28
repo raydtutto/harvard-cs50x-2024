@@ -24,13 +24,13 @@ I started this course on **April 11, 2024**.
 
 ---
 
-### ✅ Week 0: Scratch
+#### ✅ Week 0: Scratch
 
 | *Assignment*                                                                                        | *Task*                                                                                                          | *Test*    |
 |-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------|
 | [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0/problem_set_0/pset0_solution.md) | **8 / 8** |
 
-### ✅ Week 1: C
+#### ✅ Week 1: C
 
 | *Assignment*                                                                                                    | *Task*                                                                                                              | *Test*      | *Style* |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------|---------|
@@ -45,16 +45,16 @@ I started this course on **April 11, 2024**.
 
 ---
 
-### Week 2: Arrays
-### Week 3: Algorithms
-### Week 4: Memory
-### Week 5: Data Structures
-### Week 6: Python
-### Week 6.5: Artificial Intelligence
-### Week 7: SQL
-### Week 8: HTML, CSS, JavaScript
-### Week 9: Flask
-### Week 10: Cybersecurity
+#### Week 2: Arrays
+#### Week 3: Algorithms
+#### Week 4: Memory
+#### Week 5: Data Structures
+#### Week 6: Python
+#### Week 6.5: Artificial Intelligence
+#### Week 7: SQL
+#### Week 8: HTML, CSS, JavaScript
+#### Week 9: Flask
+#### Week 10: Cybersecurity
 
 ---
 
