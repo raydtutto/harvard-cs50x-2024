@@ -2,7 +2,7 @@
 <br/>
 CS50x projects repository</h1>
 
-This repository is dedicated to storing my projects and files related to **Harvard University's CS50x** course.
+This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
 I started this course on **April 11, 2024**.
 
@@ -24,13 +24,13 @@ I started this course on **April 11, 2024**.
 
 ---
 
-### Week 0: Scratch
+### ✅ Week 0: Scratch
 
 | *Assignment*                                                                                        | *Task*                                                                                                          | *Test*    |
 |-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|-----------|
 | [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0/problem_set_0/pset0_solution.md) | **8 / 8** |
 
-### Week 1: C
+### ✅ Week 1: C
 
 | *Assignment*                                                                                                    | *Task*                                                                                                              | *Test*      | *Style* |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-------------|---------|
