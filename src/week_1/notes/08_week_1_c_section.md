@@ -1,4 +1,4 @@
-# Week 1: C / Sections
+# Week 1: C / Section
 
 Preceptor: **Carter Zenke**
 
