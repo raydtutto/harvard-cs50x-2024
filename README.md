@@ -45,9 +45,10 @@ I started this course on **April 11, 2024**.
 
 #### ✍️ Week 2: Arrays
 
-| *Assignment*                                                                                        | *Task*                                                                                                    | *Test*      | *Style* |
-|-----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|-------------|---------|
-| [Problem set 2](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_2/problem_set_2) | [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2/problem_set_2/scrabble.c) | **11 / 11** | 1.0     |
+| *Assignment*                                                                                        | *Task*                                                                                                            | *Test*      | *Style* |
+|-----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-------------|---------|
+| [Problem set 2](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_2/problem_set_2) | [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2/problem_set_2/scrabble.c)         | **11 / 11** | 1.0     |
+|                                                                                                     | [readability](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2/problem_set_2/readability.c)   | **11 / 11** | 1.0     |
 
 ---
 
