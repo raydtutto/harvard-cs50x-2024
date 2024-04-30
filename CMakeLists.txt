@@ -128,3 +128,15 @@ target_link_libraries(greet2 PUBLIC cs50x)
 add_executable(greet3
         src/week_2/notes/src/greet/greet3.c)
 target_link_libraries(greet3 PUBLIC cs50x)
+
+add_executable(double
+        src/week_2/notes/src/section/double.c)
+target_link_libraries(double PUBLIC cs50x)
+
+add_executable(alphabetical
+        src/week_2/notes/src/section/alphabetical.c)
+target_link_libraries(alphabetical PUBLIC cs50x)
+
+add_executable(argv
+        src/week_2/notes/src/section/argv.c)
+target_link_libraries(argv PUBLIC cs50x)
