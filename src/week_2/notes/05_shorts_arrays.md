@@ -13,13 +13,13 @@ contiguous memory locations.
 > space called elements each of which can store a certain
 > amount of data all of the same data type such as
 >  int or char and which can be accessed directly
-> by an index.
+> by an grade.
 
 - In C, the elements of an array are indexed starting
 from 0.
 - If an array consists of ```n``` elements, the first element
-is located at index 0. The last element is located at
-index (```n```-1).
+is located at grade 0. The last element is located at
+grade (```n```-1).
 - C is very lenient. It will not prevent you from going
 “out of bounds” of your array.
 

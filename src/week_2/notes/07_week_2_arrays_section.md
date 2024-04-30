@@ -89,9 +89,9 @@ into a new space.
 
 An array can contain another array inside itself.
 
-### - What about negative index?
+### - What about negative grade?
 
-> There is no such thing as a negative "one" index ```[-1]```  
+> There is no such thing as a negative "one" grade ```[-1]```  
 > It may work in Python, but not in C.
 > 
 > **In C language indexes must be positive**.
