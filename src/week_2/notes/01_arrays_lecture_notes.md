@@ -244,7 +244,7 @@ Each data type requires a certain amount of system resources:
 
 <img src="img/04.png" alt="Memory chip">
 
-### score.c
+### calc_score.c
 
 ```c
 #include <stdio.h>
