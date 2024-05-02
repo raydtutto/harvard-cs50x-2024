@@ -144,6 +144,11 @@ target_link_libraries(argv PUBLIC cs50x)
 add_executable(scrabble
         src/week_2/problem_set_2/scrabble.c)
 target_link_libraries(scrabble PUBLIC cs50x)
+
 add_executable(readability
         src/week_2/problem_set_2/readability.c)
 target_link_libraries(readability PUBLIC cs50x)
+
+add_executable(caesar
+        src/week_2/problem_set_2/caesar.c)
+target_link_libraries(caesar PUBLIC cs50x)
