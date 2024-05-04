@@ -159,3 +159,11 @@ target_link_libraries(substitution PUBLIC cs50x)
 add_executable(hours
         src/week_2/additional_practice/hours.c)
 target_link_libraries(hours PUBLIC cs50x)
+
+add_executable(no-vowels
+        src/week_2/additional_practice/no-vowels.c)
+target_link_libraries(no-vowels PUBLIC cs50x)
+
+add_executable(no-vowels_2
+        src/week_2/additional_practice/no-vowels_2.c)
+target_link_libraries(no-vowels_2 PUBLIC cs50x)
