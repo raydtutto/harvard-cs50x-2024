@@ -1,5 +1,9 @@
 # Week 2: Arrays
 
+Instructor: **[David J. Malan](https://github.com/dmalan)**
+
+---
+
 Cryptography has been used to code messages for thousands of years and continues to be used in bank cards,
 computer passwords, and ecommerce.
 

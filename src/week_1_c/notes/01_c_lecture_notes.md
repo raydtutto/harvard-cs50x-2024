@@ -1,5 +1,9 @@
 # Week 1: C
 
+Instructor: **[David J. Malan](https://github.com/dmalan)**
+
+---
+
 ```c
 #include <stdio.h>
 

@@ -1,4 +1,9 @@
 # Week 0: Scratch
+
+Instructor: **[David J. Malan](https://github.com/dmalan)**
+
+---
+
 Computer programming is about taking some input and creating some output, thus solving problem.  
 input -> ▢ -> output
 
