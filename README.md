@@ -43,7 +43,7 @@ I started this course on **April 11, 2024**.
 |                                                                                                                 | [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/additional_practice/half/half.c)        | **6 / 6**   | 1.0     |
 |                                                                                                                 | [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1/additional_practice/prime/prime.c)     | **5 / 5**   | 1.0     |
 
-#### ✍️ Week 2: Arrays
+#### ✅ Week 2: Arrays
 
 | *Assignment*                                                                                                    | *Task*                                                                                                            | *Test*      | *Style* |
 |-----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-------------|---------|
@@ -57,7 +57,7 @@ I started this course on **April 11, 2024**.
 
 ---
 
-#### Week 3: Algorithms
+#### ✍️ Week 3: Algorithms
 #### Week 4: Memory
 #### Week 5: Data Structures
 #### Week 6: Python
