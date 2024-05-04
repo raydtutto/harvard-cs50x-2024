@@ -152,3 +152,7 @@ target_link_libraries(readability PUBLIC cs50x)
 add_executable(caesar
         src/week_2/problem_set_2/caesar.c)
 target_link_libraries(caesar PUBLIC cs50x)
+
+add_executable(substitution
+        src/week_2/problem_set_2/substitution.c)
+target_link_libraries(substitution PUBLIC cs50x)
