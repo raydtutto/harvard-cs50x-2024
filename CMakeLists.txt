@@ -156,3 +156,6 @@ target_link_libraries(caesar PUBLIC cs50x)
 add_executable(substitution
         src/week_2/problem_set_2/substitution.c)
 target_link_libraries(substitution PUBLIC cs50x)
+add_executable(hours
+        src/week_2/additional_practice/hours.c)
+target_link_libraries(hours PUBLIC cs50x)
