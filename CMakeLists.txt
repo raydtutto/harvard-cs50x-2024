@@ -167,3 +167,7 @@ target_link_libraries(no-vowels PUBLIC cs50x)
 add_executable(no-vowels_2
         src/week_2/additional_practice/no-vowels_2.c)
 target_link_libraries(no-vowels_2 PUBLIC cs50x)
+
+add_executable(password
+        src/week_2/additional_practice/password.c)
+target_link_libraries(password PUBLIC cs50x)
