@@ -90,5 +90,179 @@ Running time involves an analysis using **big O notation**:
 
 - O(n) - very slow: one page at a time;
 - O(n) - twice faster but still slow: two page at a time;
-- O(log2n) - the best approach: you take 'n' and divide it in two by two again and again till the required result.
+- O(log n) - the best approach: you take 'n' and divide it in two by two again and again till the required result.
 
+Some common running times we may see are:
+
+- `O(n2)` - _quadratic_
+- `O(n log n)` - _linearithmic_
+- `O(n)` - _linear_
+- `O(log n)` - _logarithmic_
+- `O(1)` - _constant_
+
+Of the running times above, ```O(n2)``` is considered the worst running time, ```O(1)``` is the fastest.
+
+> **Linear search** was of order ```O(n)``` because it could take n steps in the worst case to run.
+> **Binary search** was of order ```O(log n)``` because it would take fewer and fewer steps to run even in the worst case.
+
+Programmers are interested in both the worst case, or _**upper bound**_, and the best case, or _**lower bound**_.
+
+> The symbol ```Ω``` (Omega) is used to denote the best case of an algorithm, such as ```Ω(log n)```.
+>
+> - `Ω(n2)`, `Ω(n log n)`, `Ω(n)`, `Ω(log n)`, `Ω(1)`
+
+> The symbol ```Θ``` (Theta) is used to denote where the upper bound and lower bound are the same, where the best case
+> and the worst case running times are the same.
+>
+> - `Θ(n2)`, `Θ(n log n)`, `Θ(n)`, `Θ(log n)`, `Θ(1)`
+
+---
+
+## search.c
+
+Implementing a linear search:
+
+### Variant 1
+In this case program will tell us "Not found." every time when the number is not the required one - bad design.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+
+    int n = get_int("Number: ");
+
+    for (int i = 0; i < 7; ++i)
+    {
+        if (numbers[i] == n)
+        {
+            printf("Found.\n");
+        }
+        else
+        {
+            printf("Not found.\n"); // bad design
+        }
+    }
+
+    return 0;
+}
+```
+
+### Variant 2
+Here is the new bug: it will print "Not found." after the search loop on each run of the program - bad design too.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+
+    int n = get_int("Number: ");
+
+    for (int i = 0; i < 7; ++i)
+    {
+        if (numbers[i] == n)
+        {
+            printf("Found.\n");
+        }
+    }
+    printf("Not found.\n"); // bad design
+
+    return 0;
+}
+```
+
+### Variant 3
+Now it will exit the program after finding the number.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+
+    int n = get_int("Number: ");
+
+    for (int i = 0; i < 7; ++i)
+    {
+        if (numbers[i] == n)
+        {
+            printf("Found.\n");
+            return 0; // exit with success result
+        }
+    }
+    printf("Not found.\n");
+    return 1; // exit with error
+}
+```
+
+### String compare #1
+```if (strings[i] == s)``` will not work correctly, because equal will compare the first character of the string
+and not the whole word. So the required word will never be found.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    string strings[] = {"battleship", "boot", "cannon", "iron", "thimble", "top hat"};
+
+    string s = get_string("String: ");
+
+    for (int i = 0, length = strlen(strings); i < length; ++i)
+    {
+        if (strings[i] == s)
+        {
+            printf("Found.\n");
+            return 0;
+        }
+    }
+    printf("Not found.\n");
+    return 1;
+}
+```
+
+### String compare #2
+```strcmp(strings[i], s) == 0)``` will compare two strings correctly.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h> // for strcmp()
+
+int main(void)
+{
+    string strings[] = {"battleship", "boot", "cannon", "iron", "thimble", "top hat"};
+
+    string s = get_string("String: ");
+
+    for (int i = 0, length = strlen(strings); i < length; ++i)
+    {
+        if (strcmp(strings[i], s) == 0) // strcmp() - compares two strings
+        {
+            printf("Found.\n");
+            return 0;
+        }
+    }
+    printf("Not found.\n");
+    return 1;
+}
+```
+
+---
+
+## phonebook.c
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+```
