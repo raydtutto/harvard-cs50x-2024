@@ -180,6 +180,10 @@ add_executable(search_string
         src/week_3_algorithms/notes/src/search_string.c)
 target_link_libraries(search_string PUBLIC cs50x)
 
-add_executable(phonebook
-        src/week_3_algorithms/notes/src/phonebook.c)
-target_link_libraries(phonebook PUBLIC cs50x)
+add_executable(phonebook_1
+        src/week_3_algorithms/notes/src/phonebook_1.c)
+target_link_libraries(phonebook_1 PUBLIC cs50x)
+
+add_executable(phonebook_2
+        src/week_3_algorithms/notes/src/phonebook_2.c)
+target_link_libraries(phonebook_2 PUBLIC cs50x)
