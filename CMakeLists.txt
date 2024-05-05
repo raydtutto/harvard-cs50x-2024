@@ -171,3 +171,15 @@ target_link_libraries(no-vowels_2 PUBLIC cs50x)
 add_executable(password
         src/week_2_arrays/additional_practice/password.c)
 target_link_libraries(password PUBLIC cs50x)
+
+add_executable(search
+        src/week_3_algorithms/notes/src/search.c)
+target_link_libraries(search PUBLIC cs50x)
+
+add_executable(search_string
+        src/week_3_algorithms/notes/src/search_string.c)
+target_link_libraries(search_string PUBLIC cs50x)
+
+add_executable(phonebook
+        src/week_3_algorithms/notes/src/phonebook.c)
+target_link_libraries(phonebook PUBLIC cs50x)
