@@ -86,6 +86,8 @@ Else if 50 > doors[middle]
 
 Running time involves an analysis using **big O notation**:
 
+**Asymptotic notation**
+
 <img src="img/03.png" alt="Array as lockers">
 
 - O(n) - very slow: one page at a time;
@@ -259,10 +261,153 @@ int main(void)
 
 ---
 
-## phonebook.c
+## Structs
+
+### phonebook.c #1
+Implementing the idea of a proper phonebook without data structures:
 
 ```c
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+
+int main(void)
+{
+    string names[] = {"Carter", "David", "John"};
+    string numbers[] = {"+1-617-495-1000", "+1-617-495-1000", "+1-949-468-2750"};
+
+    string name = get_string("Name: ");
+
+    for (int i = 0; i < sizeof(names)/sizeof(names[0]); ++i)
+    {
+        if (strcmp(names[i], name) == 0)
+        {
+            printf("Found %s\n", numbers[i]);
+            return 0;
+        }
+    }
+
+    printf("Not found\n");
+    return 1;
+}
 ```
+
+Let's try to create our own data structure and our own type of variable:
+
+```c
+typedef struct
+{
+    // All the types of variables you want to associate to this data type
+    string name;
+    string number;
+} person; // creates a name of the struct
+```
+
+### phonebook.c #2
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    string name;
+    string number;
+} person;
+
+int main(void)
+{
+    person people[3];
+
+    people[0].name = "Carter";
+    people[0].number = "+1-617-495-1000";
+
+    people[1].name = "David";
+    people[1].number = "+1-617-495-1000";
+
+    people[2].name = "John";
+    people[2].number = "+1-949-468-2750";
+
+    string name = get_string("Name: ");
+
+    for (int i = 0; i < sizeof(people)/sizeof(people[0]); ++i)
+    {
+        if (strcmp(people[i].name, name) == 0)
+        {
+            printf("Found %s\n", people[i].number);
+            return 0;
+        }
+    }
+
+    printf("Not found\n");
+    return 1;
+}
+```
+
+---
+
+## Sorting
+
+### - Selection sort
+
+Search algorithm that selects the smallest number again and again.
+
+> _unsorted --> [ **algorithm** ] --> sorted_
+
+Imagine that we have unsorted numbers:
+
+>  7, 2, 5, 4, 1, 6, 0, 3
+
+1. Find the smallest number in the array
+2. Place the smallest number to the first position in the array
+3. Exclude filled position from our search area
+4. Repeat
+
+Pseudocode:
+
+```c
+For i from 0 to n–1
+    Find smallest number between numbers[i] and numbers[n-1]
+    Swap smallest number with numbers[i]
+```
+
+Summarizing those steps, the first time iterating through the list took n - 1 steps. The second time,
+it took n - 2 steps. Carrying this logic forward, the steps required could be represented as follows:
+
+> (n - 1) + (n - 2) + (n - 3) + ... + 1
+
+This could be simplified to n(n-1)/2 or, more simply, `O(n2)` or `Θ(n2)`.
+
+### - Bubble sort
+
+Another sorting algorithm that works by repeatedly swapping elements to “bubble” larger elements
+to the end.
+
+1. Compare two elements in the array
+2. Swap from smallest to largest number
+3. Repeat steps 1 and 2 until the end of the array
+4. Exclude the last position from the search area
+5. Repeat
+
+The pseudocode for bubble sort is:
+
+```c
+Repeat n-1 times
+    For i from 0 to n–2
+        If numbers[i] and numbers[i+1] out of order
+            Swap them
+    If no swaps
+        Quit
+```
+
+
+Analyzing selection sort, we made only seven comparisons. Representing this mathematically, where n represents
+the number of cases, it could be said that selection sort can be analyzed as `n/2`:
+
+> (n - 1) + (n - 2) + (n - 3) + ... + 1
+
+---
+
+## Recursion
+
