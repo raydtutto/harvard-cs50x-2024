@@ -187,3 +187,11 @@ target_link_libraries(phonebook_1 PUBLIC cs50x)
 add_executable(phonebook_2
         src/week_3_algorithms/notes/src/phonebook_2.c)
 target_link_libraries(phonebook_2 PUBLIC cs50x)
+
+add_executable(iteration
+        src/week_3_algorithms/notes/src/iteration.c)
+target_link_libraries(iteration PUBLIC cs50x)
+
+add_executable(recursion
+        src/week_3_algorithms/notes/src/recursion.c)
+target_link_libraries(recursion PUBLIC cs50x)
