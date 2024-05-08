@@ -403,7 +403,7 @@ Repeat n-1 times
 
 
 Analyzing selection sort, we made only seven comparisons. Representing this mathematically, where n represents
-the number of cases, it could be said that selection sort can be analyzed as `n/2`:
+the number of cases, it could be said that selection sort can be analyzed as `n/2` or `Ω(n)`:
 
 > (n - 1) + (n - 2) + (n - 3) + ... + 1
 
@@ -411,3 +411,328 @@ the number of cases, it could be said that selection sort can be analyzed as `n/
 
 ## Recursion
 
+**Recursion** - a concept within programming where a function calls itself:
+
+```c
+if no doors left
+    Return false
+if number behind middle door
+    Return true
+else if number < middle door
+    Search left half
+else if number > middle door
+    Search right half
+```
+
+
+Similarly, in our pseudocode for Week 0, you can see where recursion was implemented:
+
+```c
+Pick up phone book
+Open to middle of phone book
+Look at page
+If person is on page
+    Call person
+Else if person is earlier in book
+    Open to middle of left half of book
+    Go back to line 3
+Else if person is later in book
+    Open to middle of right half of book
+    Go back to line 3
+Else
+    Quit
+```
+
+-->
+
+This code could have been simplified, to highlight its recursive properties as follows:
+
+```c
+Pick up phone book
+Open to middle of phone book
+Look at page
+If person is on page
+    Call person
+Else if person is earlier in book
+    Search left half of book
+Else if person is later in book
+    Search right half of book
+Else
+    Quit
+```
+
+### - iteration.c #1
+In iteration manner.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+void draw(int n);
+
+int main(void)
+{
+    int height = get_int("Height: ");
+    draw(height);
+    return 0;
+}
+
+void draw(int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        for(int j = 0; j < i + 1; ++j)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+
+// Output:
+// Height: 3
+
+// #
+// ##
+// ###
+```
+
+### - recursion.c
+The same but in recursion manner.
+
+```c
+#include <cs50.h>
+#include <stdio.h>
+
+void draw(int n);
+
+int main(void)
+{
+    int height = get_int("Height: ");
+    draw(height);
+}
+
+void draw(int n)
+{
+    // If nothing to draw
+    if (n <= 0)
+    {
+        return;
+    }
+
+    // Print pyramid of height n - 1
+    draw(n - 1);
+
+    // Print one more row
+    for (int i = 0; i < n; ++i)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+
+// Output:
+// Height: 3
+
+// #
+// ##
+// ###
+```
+
+---
+
+## Merge sort
+
+Better than selection and bubble sort.
+
+> Merge sort is a very efficient sort algorithm with a worst case of `O(n log n)`. The best case is still `Ω(n log n)`
+> because the algorithm still must visit each place in the list. Therefore, merge sort is also `Θ(n log n)`
+> since the best case and worst case are the same.
+
+Pseudocode:
+
+```commandline
+If only one number
+    Quit
+Else
+    Sort left half of number
+    Sort right half of number
+    Merge sorted halves
+```
+
+Imagine you have to sort this numbers:
+
+| 6 | 3 | 4 | 1 | 5 | 2 | 7 | 0 |
+|---|---|---|---|---|---|---|---|
+
+1. Let's sort the left half by allocating some memory 
+
+|   |   |   |   | 5 | 2 | 7 | 0 |
+|---|---|---|---|---|---|---|---|
+
+| 6 | 3 | 4 | 1 |
+|---|---|---|---|
+
+1. Let's sort the left half by allocating some memory
+
+|   |   | 4 | 1 |
+|---|---|---|---|
+
+| 6 | 3 |
+|---|---|
+
+1. Let's sort the left half by allocating some memory
+
+|   | 3 |
+|---|---|
+
+| 6 |
+|---|
+
+2. Let's sort the right half by allocating some memory
+
+|   |   |
+|---|---|
+
+| 6 |
+|---|
+
+| 3 |
+|---|
+
+3. Merge sorted halves
+
+| 3 | 6 |
+|---|---|
+
+--> Finished sorting the left half of the left half
+
+4. Let's sort the right half by allocating some memory
+
+|   |   |   |   |
+|---|---|---|---|
+
+| 4 | 1 |
+|---|---|
+
+5. Let's sort the right half by allocating some memory
+
+| 4 |   |
+|---|---|
+
+| 1 |
+|---|
+
+4. Let's sort the right half by allocating some memory
+
+|   |   |   |   |
+|---|---|---|---|
+
+| 1 | 4 |
+|---|---|
+
+--> Left and right halves of the left half are sorted!
+
+Let's merge them starting with right side than left and so on:
+
+| 3 | 6 |
+|---|---|
+
+| 1 | 4 |
+|---|---|
+
+| 1 |   |   |   |
+|---|---|---|---|
+
+| 1 | 3 |   |   |
+|---|---|---|---|
+
+| 1 | 3 | 4 |   |
+|---|---|---|---|
+
+| 1 | 3 | 4 | 6 |
+|---|---|---|---|
+
+Let's do the same for the right half of the array and get this result:
+
+| 0 | 2 | 5 | 7 |
+|---|---|---|---|
+
+And now we have two sorted halves of the array:
+
+| 1 | 3 | 4 | 6 |
+|---|---|---|---|
+
+| 0 | 2 | 5 | 7 |
+|---|---|---|---|
+
+Let's merge starting from right and then left:
+
+<img src="img/04.png" alt="Merge sort">
+
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+
+---
+
+## Miscellaneous
+
+[Sorting algorithms speed comparison](https://youtu.be/ZZuD6iUe3Pc)
+
+- [**Quick sort**](https://www.geeksforgeeks.org/quick-sort-in-c/)
+  - Recursive algorithm that follows the _divide-and-conquer_ rule like Merge Sort but unlike Merge Sort,
+  this algorithm does not use any extra space for sorting (though it uses an auxiliary stack space). The basic idea
+  behind **QuickSort** is to select a “pivot” element from the array and partition the other elements into two
+  sub-arrays according to whether they are less than or greater than the pivot.
+  - Worst case: `O(n2)`
+  - Average case: `O(n log n)`
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20231219164812/Quick-Sort-Algorithm.png" alt="Quick sort">
+
+- [**Shell sort**](https://www.geeksforgeeks.org/shellsort)
+  - Mainly a variation of Insertion Sort. In insertion sort, we move elements only one position ahead.
+  When an element has to be moved far ahead, many movements are involved. The idea of ShellSort is to allow
+  the exchange of far items. In Shell sort, we make the array h-sorted for a large value of h. We keep reducing
+  the value of h until it becomes 1. An array is said to be h-sorted if all sublists of every h’th element are sorted.
+  - Worst case: `O(n2)`
+  - Average case: `O(n*log n)~O(n1.25)`
+  - Step 1 − Start  
+    Step 2 − Initialize the value of gap size, say h.  
+    Step 3 − Divide the list into smaller sub-part. Each must have equal intervals to h.  
+    Step 4 − Sort these sub-lists using insertion sort.  
+    Step 5 – Repeat this step 2 until the list is sorted.  
+    Step 6 – Print a sorted list.  
+    Step 7 – Stop.
+
+- [**Merge sort**](https://www.geeksforgeeks.org/merge-sort)
+  - The process of merge sort is to divide the array into two halves, sort each half, and then merge the sorted
+  halves back together. This process is repeated until the entire array is sorted.
+
+- [**Comb sort**](https://www.geeksforgeeks.org/comb-sort)
+  - Mainly an improvement over Bubble Sort. Bubble sort always compares adjacent values. So all inversions
+  are removed one by one. Comb Sort improves on Bubble Sort by using a gap of the size of more than 1. The gap starts
+  with a large value and shrinks by a factor of 1.3 in every iteration until it reaches the value 1. Thus Comb Sort
+  removes more than one inversion count with one swap and performs better than Bubble Sort.
+
+- [**Heap sort**](https://www.geeksforgeeks.org/heap-sort/)
+  - A comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort
+  where we first find the minimum element and place the minimum element at the beginning. Repeat the same process
+  for the remaining elements.
+
+- [**Insertion sort**](https://www.geeksforgeeks.org/insertion-sort/)
+  - A simple sorting algorithm that works by building a sorted array one element at a time. It is considered
+  an “in-place” sorting algorithm, meaning it doesn’t require any additional memory space beyond the original array.
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240408140301/Insertion-Sort.webp" alt="Insertion sort">
+
+- [**Selection sort**](https://www.geeksforgeeks.org/selection-sort/)
+  - A simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element
+  from the unsorted portion of the list and moving it to the sorted portion of the list.
+
+- [**Cocktail sort**](https://www.geeksforgeeks.org/cocktail-sort/)
+  - A variation of Bubble sort. But Cocktail Sort traverses through a given array in both directions alternatively.
+  Cocktail sort does not go through the unnecessary iteration making it efficient for large arrays.
+
+- [**Bubble sort**](https://www.geeksforgeeks.org/bubble-sort/)
+  - The simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong
+  order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
