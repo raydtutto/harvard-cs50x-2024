@@ -19,11 +19,11 @@ Repeat, starting at the first element:
 
 Imagine we are looking for the number '9':
 
-<img src="img/05.png" alt="Insertion sort">
+<img src="img/05.png" alt="1">
 
 We started with the first element from the left side and repeat to search till the required number.
 
-<img src="img/06.png" alt="Insertion sort">
+<img src="img/06.png" alt="2">
 
 If we are looking for an element that is not in the array, we will search for each individual element and only
 then stop at the end of the array.
