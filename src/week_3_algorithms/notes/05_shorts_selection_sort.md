@@ -1,4 +1,4 @@
-# Selection search
+# Selection sort
 
 Instructor: **[Doug Lloyd](https://github.com/dlloyd09)**
 
