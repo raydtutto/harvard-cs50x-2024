@@ -61,7 +61,7 @@ Assume that we already did all the steps with dividing and now almost done with 
 
 `17` is greater our target so position 7 must become the `end point`:
 
-<img src="img/14.png" alt="7">
+<img src="img/14.png" alt="8">
 
 But now we have start greater than end point --> (sub)array is size `0`
 
