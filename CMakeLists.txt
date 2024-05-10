@@ -189,9 +189,18 @@ add_executable(phonebook_2
 target_link_libraries(phonebook_2 PUBLIC cs50x)
 
 add_executable(iteration
-        src/week_3_algorithms/notes/src/iteration.c)
+        src/week_3_algorithms/notes/src/iteration.c
+        src/week_3_algorithms/notes/src/search_candidate.c)
 target_link_libraries(iteration PUBLIC cs50x)
 
 add_executable(recursion
         src/week_3_algorithms/notes/src/recursion.c)
 target_link_libraries(recursion PUBLIC cs50x)
+
+add_executable(search_candidate
+        src/week_3_algorithms/notes/src/search_candidate.c)
+target_link_libraries(search_candidate PUBLIC cs50x)
+
+add_executable(factorial
+        src/week_3_algorithms/notes/src/factorial.c)
+target_link_libraries(factorial PUBLIC cs50x)
