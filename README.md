@@ -28,38 +28,51 @@ I started this course on **April 11, 2024**.
 
 #### ✅ Week 0: Scratch
 
-| *Assignment*                                                                                                | *Task*                                                                                                                   | *Test*    |
-|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|-----------|
-| [Problem set 0](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_0_scratch/problem_set_0) | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md)  | **8 / 8** |
+| Problem set 0                                                                                                           | *Task*                | *Test*    |
+|-------------------------------------------------------------------------------------------------------------------------|-----------------------|-----------|
+| [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in  `Scratch` | **8** / 8 |
 
 #### ✅ Week 1: C
 
-| *Assignment*                                                                                                      | *Task*                                                                                                                | *Test*      | *Style* |
-|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|-------------|---------|
-| [Problem set 1](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1_c/problem_set_1)             | [hello](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/me/hello.c)              | **5 / 5**   | 1.0     |
-|                                                                                                                   | [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-less/mario.c) | **10 / 10** | 1.0     |
-|                                                                                                                   | [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-more/mario.c) | **10 / 10** | 1.0     |
-|                                                                                                                   | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | **10 / 10** | 1.0     |
-|                                                                                                                   | [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | **17 / 17** | 1.0     |
-| [Additional practice](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_1_c/additional_practice) | [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c)     | **4 / 4**   | 1.0     |
-|                                                                                                                   | [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)        | **6 / 6**   | 1.0     |
-|                                                                                                                   | [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c)     | **5 / 5**   | 1.0     |
+| Problem set 1                                                                                                         | *Task*                                                             | *Test*      | *Style* |
+|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|-------------|---------|
+| [hello, world](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/world/hello.c)    | Print "hello, world"                                               | **5** / 5   | 1.0     |
+| [hello, it's me](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/me/hello.c)     | Prompt the user for their name and then say "hello" to that user.  | **5** / 5   | 1.0     |
+| [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-less/mario.c) | Print a right-aligned pyramid, using hashes (#) for bricks.        | **10** / 10 | 1.0     |
+| [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-more/mario.c) | Print an adjacent pyramid, using hashes (#) for bricks.            | **10** / 10 | 1.0     |
+| [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | Print the minimum coins needed to make the given amount of change. | **10** / 10 | 1.0     |
+| [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number.                  | **17** / 17 | 1.0     |
+
+| Additional practice                                                                                                | *Task*                                                                                | *Test*      | *Style* |
+|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|---------|
+| [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c)  | Debug the given code.                                                                 | **4** / 4   | 1.0     |
+| [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)     | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6   | 1.0     |
+| [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c)  | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5   | 1.0     |
 
 #### ✅ Week 2: Arrays
 
-| *Assignment*                                                                                                           | *Task*                                                                                                                   | *Test*      | *Style* |
-|------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|-------------|---------|
-| [Problem set 2](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_2_arrays/problem_set_2)             | [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/scrabble.c)         | **11 / 11** | 1.0     |
-|                                                                                                                        | [readability](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/readability.c)   | **11 / 11** | 1.0     |
-|                                                                                                                        | [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)             | **11 / 11** | 1.0     |
-|                                                                                                                        | [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c) | **18 / 18** | 1.0     |
-| [Additional practice](https://github.com/raydtutto/harvard-cs50x-2024/tree/main/src/week_2_arrays/additional_practice) | [hours](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | **6 / 6**   | 1.0     |
-|                                                                                                                        | [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | **6 / 6**   | 1.0     |
-|                                                                                                                        | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | **7 / 7**   | 1.0     |
+| Problem set 2                                                                                                             | *Task*                                                                        | *Test*      | *Style* |
+|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-------------|---------|
+| [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/scrabble.c)          | Implement a program that determines the winner of a short Scrabble-like game. | **11** / 11 | 1.0     |
+| [readability](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/readability.c)    | Calculate the approximate grade level needed to comprehend some text.         | **11** / 11 | 1.0     |
+| [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)              | Encrypt messages using Caesar’s cipher.                                       | **11** / 11 | 1.0     |
+| [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c)  | Encrypt messages using a substitution cipher.                                 | **18** / 18 | 1.0     |
+
+| Additional practice                                                                                                      | *Task*                                                                                                                                             | *Test*    | *Style* |
+|--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-----------|---------|
+| [hours](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. | **6** / 6 | 1.0     |
+| [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word, which you will input at the command line.                                                                                | **6** / 6 | 1.0     |
+| [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7 | 1.0     |
+
+#### ✍️ Week 3: Algorithms
+
+| Problem set 3                                                                                                           | *Task*                                                  | *Test*      | *Style* |
+|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|-------------|---------|
+| [sort](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)          | Determine which sorting algorithm is used by each file. | **3** / 3   |         |
+| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c)  | A program that runs a plurality election.               | **14** / 14 | 1.0     |
 
 ---
 
-#### ✍️ Week 3: Algorithms
 #### Week 4: Memory
 #### Week 5: Data Structures
 #### Week 6: Python
