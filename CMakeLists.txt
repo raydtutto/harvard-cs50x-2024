@@ -204,3 +204,8 @@ target_link_libraries(search_candidate PUBLIC cs50x)
 add_executable(factorial
         src/week_3_algorithms/notes/src/factorial.c)
 target_link_libraries(factorial PUBLIC cs50x)
+
+add_executable(plurality
+        src/week_3_algorithms/problem_set_3/plurality.c)
+target_link_libraries(plurality PUBLIC cs50x)
+add_executable(hello_world src/week_1_c/problem_set_1/world/hello.c)
