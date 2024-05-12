@@ -43,11 +43,11 @@ I started this course on **April 11, 2024**.
 | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | Print the minimum coins needed to make the given amount of change. | **10** / 10 | 1.0     |
 | [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number.                  | **17** / 17 | 1.0     |
 
-| Additional practice                                                                                                | *Task*                                                                                | *Test*      | *Style* |
-|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|---------|
-| [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c)  | Debug the given code.                                                                 | **4** / 4   | 1.0     |
-| [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)     | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6   | 1.0     |
-| [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c)  | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5   | 1.0     |
+| Week 1: Additional practice                                                                                       | *Task*                                                                                | *Test*      | *Style* |
+|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|---------|
+| [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c) | Debug the given code.                                                                 | **4** / 4   | 1.0     |
+| [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)    | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6   | 1.0     |
+| [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c) | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5   | 1.0     |
 
 #### ✅ Week 2: Arrays
 
@@ -58,7 +58,7 @@ I started this course on **April 11, 2024**.
 | [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)              | Encrypt messages using Caesar’s cipher.                                       | **11** / 11 | 1.0     |
 | [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c)  | Encrypt messages using a substitution cipher.                                 | **18** / 18 | 1.0     |
 
-| Additional practice                                                                                                      | *Task*                                                                                                                                             | *Test*    | *Style* |
+| Week 2: Additional practice                                                                                              | *Task*                                                                                                                                             | *Test*    | *Style* |
 |--------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|-----------|---------|
 | [hours](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. | **6** / 6 | 1.0     |
 | [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word, which you will input at the command line.                                                                                | **6** / 6 | 1.0     |
