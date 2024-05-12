@@ -66,10 +66,11 @@ I started this course on **April 11, 2024**.
 
 ### ✍️ Week 3: Algorithms
 
-| *Problem set 3*                                                                                                        | *Description*                                           | *Test*       | *Style*  |
-|:-----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:-------------|:---------|
-| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)     | Determine which sorting algorithm is used by each file. | **3** / 3    |          |
-| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | A program that runs a plurality election.               | **14** / 14  | 1.0      |
+| *Problem set 3*                                                                                                        | *Description*                                           | *Test*      | *Style*  |
+|:-----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:------------|:---------|
+| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)     | Determine which sorting algorithm is used by each file. | **3** / 3   |          |
+| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | A program that runs a plurality election.               | **14** / 14 | 1.0      |
+| [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                             | **25** / 25 | 1.0      |
 
 ---
 
