@@ -8,31 +8,29 @@ I started this course on **April 11, 2024**.
 
 ![](https://geps.dev/progress/27)
 
-## What You'll Find Here
+# What You'll Find Here
 
 - **Lecture Notes**: I keep detailed notes of lectures and supplementary materials.
 - **Problem Set Solutions**: Explore my solutions to the problem sets and additional practices assigned in CS50x, including programs written in C, Python, and other languages.
 - **Work in Progress**: This repository is a work in progress and will be continually updated as I progress through the course.
 
-## About CS50x
+# About CS50x
 
 [CS50x](https://cs50.harvard.edu/x/2024/) is an introductory course to computer science offered by Harvard University. It covers a wide range of topics, including programming in C, Python, web development, and more. The course is designed to be challenging yet accessible to beginners, making it an excellent choice for those looking to dive into the world of computer science.
 
-## Gradebook
+# Gradebook
 
 ***Test***: number of successfully completed tests.
 
 ***Style***: assessing compliance with a given coding style from 0.0 to 1.0 points.
 
----
-
-### ✅ Week 0: Scratch
+## ✅ Week 0: Scratch
 
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
 |:------------------------------------------------------------------------------------------------------------------------|:----------------------|:-----------|
 | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in  `Scratch` | **8** / 8  |
 
-### ✅ Week 1: C
+## ✅ Week 1: C
 
 | *Problem set 1*                                                                                                       | *Description*                                                      | *Test*       | *Style*  |
 |:----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------|:-------------|:---------|
@@ -49,7 +47,7 @@ I started this course on **April 11, 2024**.
 | [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)    | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6    | 1.0      |
 | [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c) | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5    | 1.0      |
 
-### ✅ Week 2: Arrays
+## ✅ Week 2: Arrays
 
 | *Problem set 2*                                                                                                          | *Description*                                                                 | *Test*       | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:-------------|:---------|
@@ -64,7 +62,7 @@ I started this course on **April 11, 2024**.
 | [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word, which you will input at the command line.                                                                                | **6** / 6  | 1.0      |
 | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.0      |
 
-### ✍️ Week 3: Algorithms
+## ✍️ Week 3: Algorithms
 
 | *Problem set 3*                                                                                                        | *Description*                                           | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:------------|:---------|
@@ -82,6 +80,11 @@ I started this course on **April 11, 2024**.
 #### Week 8: HTML, CSS, JavaScript
 #### Week 9: Flask
 #### Week 10: Cybersecurity
+
+> #### [Academic honesty](https://cs50.harvard.edu/x/2024/honesty/)
+> Please do not copy these solutions, if you are also taking CS50x course, try solving the problem sets on your own.
+>
+> I'm learning, so these solutions don't claim to be the best possible ones.
 
 ---
 
