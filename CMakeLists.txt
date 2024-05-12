@@ -5,7 +5,10 @@ set(CMAKE_C_STANDARD 11)
 
 add_subdirectory(thirdparty/cs50)
 
-# Adding target hello
+# Adding targets
+add_executable(hello_world
+        src/week_1_c/problem_set_1/world/hello.c)
+
 add_executable(hello
         src/week_1_c/problem_set_1/me/hello.c)
 # Link cs50.h
@@ -208,4 +211,7 @@ target_link_libraries(factorial PUBLIC cs50x)
 add_executable(plurality
         src/week_3_algorithms/problem_set_3/plurality.c)
 target_link_libraries(plurality PUBLIC cs50x)
-add_executable(hello_world src/week_1_c/problem_set_1/world/hello.c)
+
+add_executable(runoff
+        src/week_3_algorithms/problem_set_3/runoff.c)
+target_link_libraries(runoff PUBLIC cs50x)
