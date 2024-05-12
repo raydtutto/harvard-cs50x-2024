@@ -49,12 +49,12 @@ I started this course on **April 11, 2024**.
 
 ## ✅ Week 2: Arrays
 
-| *Problem set 2*                                                                                                          | *Description*                                                                 | *Test*       | *Style*  |
-|:-------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:-------------|:---------|
-| [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/scrabble.c)         | Implement a program that determines the winner of a short Scrabble-like game. | **11** / 11  | 1.0      |
-| [readability](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/readability.c)   | Calculate the approximate grade level needed to comprehend some text.         | **11** / 11  | 1.0      |
-| [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)             | Encrypt messages using Caesar’s cipher.                                       | **11** / 11  | 1.0      |
-| [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c) | Encrypt messages using a substitution cipher.                                 | **18** / 18  | 1.0      |
+| *Problem set 2*                                                                                                          | *Description*                                                         | *Test*       | *Style*  |
+|:-------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------|:---------|
+| [scrabble](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/scrabble.c)         | Determine the winner of a short Scrabble-like game.                   | **11** / 11  | 1.0      |
+| [readability](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/readability.c)   | Calculate the approximate grade level needed to comprehend some text. | **11** / 11  | 1.0      |
+| [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)             | Encrypt messages using Caesar’s cipher.                               | **11** / 11  | 1.0      |
+| [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c) | Encrypt messages using a substitution cipher.                         | **18** / 18  | 1.0      |
 
 | *Week 2: Additional practice*                                                                                            | *Description*                                                                                                                                      | *Test*     | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:---------|
@@ -67,7 +67,7 @@ I started this course on **April 11, 2024**.
 | *Problem set 3*                                                                                                        | *Description*                                           | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:------------|:---------|
 | [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)     | Determine which sorting algorithm is used by each file. | **3** / 3   |          |
-| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | A program that runs a plurality election.               | **14** / 14 | 1.0      |
+| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                               | **14** / 14 | 1.0      |
 | [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                             | **25** / 25 | 1.0      |
 
 ---
