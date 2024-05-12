@@ -6,7 +6,7 @@ This repository is dedicated to storing my projects, notes and files related to 
 
 I started this course on **April 11, 2024**.
 
-![](https://geps.dev/progress/27)
+![](https://geps.dev/progress/36)
 
 # What You'll Find Here
 
