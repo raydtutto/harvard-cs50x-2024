@@ -4,4 +4,4 @@
 .DS_Store
 
 cmake-build-*
-self-test-*
+self-test/
