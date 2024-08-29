@@ -223,3 +223,11 @@ target_link_libraries(test_hello PUBLIC cs50x)
 add_executable(test_hello_me
         self-test/ps1/test_hello_me.c)
 target_link_libraries(test_hello_me PUBLIC cs50x)
+
+add_executable(test_mario_less
+        self-test/ps1/test_mario_less.c)
+target_link_libraries(test_mario_less PUBLIC cs50x)
+
+add_executable(test_mario_more
+        self-test/ps1/test_mario_more.c)
+target_link_libraries(test_mario_more PUBLIC cs50x)
