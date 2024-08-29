@@ -215,3 +215,11 @@ target_link_libraries(plurality PUBLIC cs50x)
 add_executable(runoff
         src/week_3_algorithms/problem_set_3/runoff.c)
 target_link_libraries(runoff PUBLIC cs50x)
+
+add_executable(test_hello
+        self-test/ps1/test_hello.c)
+target_link_libraries(test_hello PUBLIC cs50x)
+
+add_executable(test_hello_me
+        self-test/ps1/test_hello_me.c)
+target_link_libraries(test_hello_me PUBLIC cs50x)
