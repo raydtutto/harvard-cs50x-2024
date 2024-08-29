@@ -2,5 +2,6 @@
 .idea
 # Misc
 .DS_Store
+.Test
 
 cmake-build-*
