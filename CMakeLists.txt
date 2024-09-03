@@ -235,3 +235,15 @@ target_link_libraries(test_mario_more PUBLIC cs50x)
 add_executable(test_cash
         self-test/ps1/test_cash.c)
 target_link_libraries(test_cash PUBLIC cs50x)
+
+add_executable(test_credit
+        self-test/ps1/test_credit.c)
+target_link_libraries(test_credit PUBLIC cs50x)
+
+add_executable(test_half
+        self-test/ps1/test_half.c)
+target_link_libraries(test_half PUBLIC cs50x)
+
+add_executable(test_scrabble
+        self-test/ps1/test_scrabble.c)
+target_link_libraries(test_scrabble PUBLIC cs50x)
