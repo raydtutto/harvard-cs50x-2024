@@ -245,5 +245,9 @@ add_executable(test_half
 target_link_libraries(test_half PUBLIC cs50x)
 
 add_executable(test_scrabble
-        self-test/ps1/test_scrabble.c)
+        self-test/ps2/test_scrabble.c)
 target_link_libraries(test_scrabble PUBLIC cs50x)
+
+add_executable(test_readability
+        self-test/ps2/test_readability.c)
+target_link_libraries(test_readability PUBLIC cs50x)
