@@ -259,3 +259,7 @@ target_link_libraries(test_caesar PUBLIC cs50x)
 add_executable(test_substitution
         self-test/ps2/test_substitution.c)
 target_link_libraries(test_substitution PUBLIC cs50x)
+
+add_executable(test_plurality
+        self-test/ps3/test_plurality.c)
+target_link_libraries(test_plurality PUBLIC cs50x)
