@@ -271,3 +271,7 @@ target_link_libraries(test_runoff PUBLIC cs50x)
 add_executable(tideman
         src/week_3_algorithms/problem_set_3/tideman.c)
 target_link_libraries(tideman PUBLIC cs50x)
+
+add_executable(atoi
+        src/week_3_algorithms/additional_practice/atoi.c)
+target_link_libraries(atoi PUBLIC cs50x)
