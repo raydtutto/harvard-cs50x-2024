@@ -267,3 +267,7 @@ target_link_libraries(test_plurality PUBLIC cs50x)
 add_executable(test_runoff
         self-test/ps3/test_runoff.c)
 target_link_libraries(test_runoff PUBLIC cs50x)
+
+add_executable(tideman
+        src/week_3_algorithms/problem_set_3/tideman.c)
+target_link_libraries(tideman PUBLIC cs50x)

@@ -32,14 +32,14 @@ I started this course on **April 11, 2024**.
 
 ## ✅ Week 1: C
 
-| *Problem set 1*                                                                                                       | *Description*                                                      | *Test*       | *Style*  |
-|:----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------|:-------------|:---------|
-| [hello, world](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/world/hello.c)    | Print "hello, world"                                               | **5** / 5    | 1.0      |
-| [hello, it's me](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/me/hello.c)     | Prompt the user for their name and then say "hello" to that user.  | **5** / 5    | 1.0      |
-| [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-less/mario.c) | Print a right-aligned pyramid, using hashes (#) for bricks.        | **10** / 10  | 1.0      |
-| [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-more/mario.c) | Print an adjacent pyramid, using hashes (#) for bricks.            | **10** / 10  | 1.0      |
-| [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | Print the minimum coins needed to make the given amount of change. | **10** / 10  | 1.0      |
-| [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number.                  | **17** / 17  | 1.0      |
+| *Problem set 1*                                                                                                       | *Description*                                                             | *Test*       | *Style*  |
+|:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|:---------|
+| [hello, world](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/world/hello.c)    | Print "hello, world"                                                      | **5** / 5    | 1.0      |
+| [hello, it's me](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/me/hello.c)     | Prompt the user for their name and then say "hello" to that user.         | **5** / 5    | 1.0      |
+| [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-less/mario.c) | Print a right-aligned pyramid, using hashes (#) for bricks.               | **10** / 10  | 1.0      |
+| [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/mario-more/mario.c) | Print an adjacent pyramid, using hashes (#) for bricks.                   | **10** / 10  | 1.0      |
+| [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | Print the minimum coins needed to make the given amount of change.        | **10** / 10  | 1.0      |
+| [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number using Luhn’s algorithm.  | **17** / 17  | 1.0      |
 
 | *Week 1: Additional practice*                                                                                     | *Description*                                                                         | *Test*       | *Style*  |
 |:------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:-------------|:---------|
@@ -59,16 +59,17 @@ I started this course on **April 11, 2024**.
 | *Week 2: Additional practice*                                                                                            | *Description*                                                                                                                                      | *Test*     | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:---------|
 | [hours](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. | **6** / 6  | 1.0      |
-| [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word, which you will input at the command line.                                                                                | **6** / 6  | 1.0      |
+| [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word entered at the command line.                                                                                              | **6** / 6  | 1.0      |
 | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.0      |
 
 ## ✍️ Week 3: Algorithms
 
-| *Problem set 3*                                                                                                        | *Description*                                           | *Test*      | *Style*  |
-|:-----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------|:------------|:---------|
-| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)     | Determine which sorting algorithm is used by each file. | **3** / 3   |          |
-| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                               | **14** / 14 | 1.0      |
-| [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                             | **25** / 25 | 1.0      |
+| *Problem set 3*                                                                                                        | *Description*                                                            | *Test*      | *Style*  |
+|:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:---------|
+| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)     | Determine which sorting algorithm is used by each file.                  | **3** / 3   |          |
+| [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                                                | **14** / 14 | 1.0      |
+| [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                                              | **25** / 25 | 1.0      |
+| [tideman](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/tideman.c)     | Implement ranked-preference voting using adjacency matrix of candidates. | **18** / 18 | 1.0      |
 
 ---
 
