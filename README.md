@@ -71,10 +71,11 @@ I started this course on **April 11, 2024**.
 | [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                                              | **25** / 25 | 1.0      |
 | [tideman](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/tideman.c)     | Implement ranked-preference voting using adjacency matrix of candidates. | **18** / 18 | 1.0      |
 
-| *Week 3: Additional practice*                                                                                      | *Description*                                                                        | *Test*   | *Style* |
-|:-------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------|:---------|:--------|
-| [atoi](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/additional_practice/atoi.c) | Rework 'atoi' function into recursion.                                               | No tests | 1.0     |
-| [temps_bubble](src/week_3_algorithms/additional_practice/temps/temps_bubble.c)                                     | Sort the average high temperature values in descending order using _**Bubble sort**_ | No tests | 1.0     |
+| *Week 3: Additional practice*                                                                                      | *Description*                                                                            | *Test*   | *Style* |
+|:-------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|:---------|:--------|
+| [atoi](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/additional_practice/atoi.c) | Rework 'atoi' function into recursion.                                                   | No tests | 1.0     |
+| [temps_bubble](src/week_3_algorithms/additional_practice/temps/temps_bubble.c)                                     | Sort the average high temperature values in descending order using _**Bubble sort**_.    | No tests | 1.0     |
+| [temps_selection](src/week_3_algorithms/additional_practice/temps/temps_selection.c)                               | Sort the average high temperature values in descending order using _**Selection sort**_. | No tests | 1.0     |
 
 ---
 
