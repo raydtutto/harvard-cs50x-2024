@@ -10,8 +10,7 @@ typedef struct
 {
     string city;
     int temp;
-}
-avg_temp;
+} avg_temp;
 
 avg_temp temps[NUM_CITIES];
 
@@ -70,7 +69,8 @@ void sort_cities(void)
     // • Repeat until the swap counter is 0:
     //     • Reset swap counter to 0
     //     • Look at each adjacent pair
-    //         • If two adjacent elements are not in order, swap them and add one to the swap counter
+    //         • If two adjacent elements are not in order, swap them and add one to the swap
+    //         counter
 
     bool swapped = false;
 
@@ -81,13 +81,8 @@ void sort_cities(void)
             if (temps[j].temp < temps[j + 1].temp)
             {
                 avg_temp temporary = temps[j];
-                // printf("\n\ntemporary =  temps[%i] ~ %s, %i\n", j, temps[j].city, temps[j].temp);
-
                 temps[j] = temps[j + 1];
-                // printf("\ntemps[%i] = temps[%i] ~ %s, %i\n", j, j + 1, temps[j + 1].city, temps[j + 1].temp);
-
                 temps[j + 1] = temporary;
-                // printf("\ntemps[%i] = temporary ~ %s, %i\n\n", j + 1, temporary.city, temporary.temp);
 
                 swapped = true;
             }
