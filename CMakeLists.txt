@@ -283,3 +283,7 @@ target_link_libraries(temps_bubble PUBLIC cs50x)
 add_executable(temps_selection
         src/week_3_algorithms/additional_practice/temps/temps_selection.c)
 target_link_libraries(temps_selection PUBLIC cs50x)
+
+add_executable(temps_insertion
+        src/week_3_algorithms/additional_practice/temps/temps_insertion.c)
+target_link_libraries(temps_insertion PUBLIC cs50x)
