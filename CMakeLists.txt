@@ -279,3 +279,7 @@ target_link_libraries(atoi PUBLIC cs50x)
 add_executable(temps_bubble
         src/week_3_algorithms/additional_practice/temps/temps_bubble.c)
 target_link_libraries(temps_bubble PUBLIC cs50x)
+
+add_executable(temps_selection
+        src/week_3_algorithms/additional_practice/temps/temps_selection.c)
+target_link_libraries(temps_selection PUBLIC cs50x)
