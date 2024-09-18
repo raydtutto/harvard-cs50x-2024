@@ -27,7 +27,7 @@ I started this course on **April 11, 2024**.
 ## ✅ Week 0: Scratch
 
 <details open>
-  <summary><i><h4  style="display:inline-block">Problem set 0</h4></i></summary>
+  <summary>Problem set 0</summary>
 
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
 |:------------------------------------------------------------------------------------------------------------------------|:----------------------|:-----------|
@@ -35,12 +35,10 @@ I started this course on **April 11, 2024**.
 
 </details>
 
----
-
 ## ✅ Week 1: C
 
-<details open>
-  <summary><i><h4  style="display:inline-block">Problem set 1</h4></i></summary>
+<details>
+  <summary>Problem set 1</summary>
 
 | *Problem set 1*                                                                                                       | *Description*                                                             | *Test*       | *Style*  |
 |:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|:---------|
@@ -53,12 +51,10 @@ I started this course on **April 11, 2024**.
 
 </details>
 
----
-
 ## ✅ Week 2: Arrays
 
 <details>
-  <summary><i><h4  style="display:inline-block">Problem set 2</h4></i></summary>
+  <summary>Problem set 2</summary>
 
 | *Problem set 2*                                                                                                          | *Description*                                                         | *Test*       | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------|:---------|
@@ -70,7 +66,7 @@ I started this course on **April 11, 2024**.
 </details>
 
 <details>
-  <summary><i><h4  style="display:inline-block">Additional practice</h4></i></summary>
+  <summary>Additional practice</summary>
 
 | *Week 2: Additional practice*                                                                                            | *Description*                                                                                                                                      | *Test*     | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:---------|
@@ -80,12 +76,10 @@ I started this course on **April 11, 2024**.
 
 </details>
 
----
-
 ## ✅ Week 3: Algorithms
 
 <details>
-  <summary><i><h4  style="display:inline-block">Problem set 3</h4></i></summary>
+  <summary>Problem set 3</summary>
 
 | *Problem set 3*                                                                                                        | *Description*                                                            | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:---------|
@@ -97,7 +91,7 @@ I started this course on **April 11, 2024**.
 </details>
 
 <details>
-  <summary><i><h4  style="display:inline-block">Additional practice</h4></i></summary>
+  <summary>Additional practice</summary>
 
 | *Week 3: Additional practice*                                                                                      | *Description*                                                                                                                                     | *Test*    | *Style* |
 |:-------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
