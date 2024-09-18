@@ -26,6 +26,8 @@ I started this course on **April 11, 2024**.
 
 ***Style***: assessing compliance with a given coding style from 0.0 to 1.0 points.
 
+---
+
 ### ✅ Week 0: Scratch
 
 <details>
@@ -36,6 +38,8 @@ I started this course on **April 11, 2024**.
 | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in  `Scratch` | **8** / 8  |
 
 </details>
+
+---
 
 ### ✅ Week 1: C
 
@@ -52,6 +56,8 @@ I started this course on **April 11, 2024**.
 | [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number using Luhn’s algorithm.  | **17** / 17  | 1.0      |
 
 </details>
+
+---
 
 ### ✅ Week 2: Arrays
 
@@ -77,6 +83,8 @@ I started this course on **April 11, 2024**.
 | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.0      |
 
 </details>
+
+---
 
 ### ✅ Week 3: Algorithms
 
@@ -105,6 +113,8 @@ I started this course on **April 11, 2024**.
 | [snackbar](src/week_3_algorithms/additional_practice/snackbar.c)                                                   | Complete two functions. 1: Add the menu items. 2: Implement a linear search algorithm to search for each item you choose, return the total price. | —         | 1.0     |
 
 </details>
+
+---
 
 ### ✍️ Week 4: Memory
 
