@@ -26,11 +26,21 @@ I started this course on **April 11, 2024**.
 
 ## ✅ Week 0: Scratch
 
+<details open>
+  <summary><i><h4  style="display:inline-block">Problem set 0</h4></i></summary>
+
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
 |:------------------------------------------------------------------------------------------------------------------------|:----------------------|:-----------|
 | [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in  `Scratch` | **8** / 8  |
 
+</details>
+
+---
+
 ## ✅ Week 1: C
+
+<details open>
+  <summary><i><h4  style="display:inline-block">Problem set 1</h4></i></summary>
 
 | *Problem set 1*                                                                                                       | *Description*                                                             | *Test*       | *Style*  |
 |:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|:---------|
@@ -41,13 +51,14 @@ I started this course on **April 11, 2024**.
 | [cash](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/cash/cash.c)              | Print the minimum coins needed to make the given amount of change.        | **10** / 10  | 1.0      |
 | [credit](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/problem_set_1/credit/credit.c)        | Check the validity of a given credit card number using Luhn’s algorithm.  | **17** / 17  | 1.0      |
 
-| *Week 1: Additional practice*                                                                                     | *Description*                                                                         | *Test*       | *Style*  |
-|:------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:-------------|:---------|
-| [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c) | Debug the given code.                                                                 | **4** / 4    | 1.0      |
-| [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)    | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6    | 1.0      |
-| [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c) | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5    | 1.0      |
+</details>
+
+---
 
 ## ✅ Week 2: Arrays
+
+<details>
+  <summary><i><h4  style="display:inline-block">Problem set 2</h4></i></summary>
 
 | *Problem set 2*                                                                                                          | *Description*                                                         | *Test*       | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------|:---------|
@@ -56,13 +67,25 @@ I started this course on **April 11, 2024**.
 | [caesar](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/caesar.c)             | Encrypt messages using Caesar’s cipher.                               | **11** / 11  | 1.0      |
 | [substitution](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/problem_set_2/substitution.c) | Encrypt messages using a substitution cipher.                         | **18** / 18  | 1.0      |
 
+</details>
+
+<details>
+  <summary><i><h4  style="display:inline-block">Additional practice</h4></i></summary>
+
 | *Week 2: Additional practice*                                                                                            | *Description*                                                                                                                                      | *Test*     | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:---------|
 | [hours](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. | **6** / 6  | 1.0      |
 | [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word entered at the command line.                                                                                              | **6** / 6  | 1.0      |
 | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.0      |
 
+</details>
+
+---
+
 ## ✅ Week 3: Algorithms
+
+<details>
+  <summary><i><h4  style="display:inline-block">Problem set 3</h4></i></summary>
 
 | *Problem set 3*                                                                                                        | *Description*                                                            | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:---------|
@@ -70,6 +93,11 @@ I started this course on **April 11, 2024**.
 | [plurality](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                                                | **14** / 14 | 1.0      |
 | [runoff](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                                              | **25** / 25 | 1.0      |
 | [tideman](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/tideman.c)     | Implement ranked-preference voting using adjacency matrix of candidates. | **18** / 18 | 1.0      |
+
+</details>
+
+<details>
+  <summary><i><h4  style="display:inline-block">Additional practice</h4></i></summary>
 
 | *Week 3: Additional practice*                                                                                      | *Description*                                                                                                                                     | *Test*    | *Style* |
 |:-------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
@@ -79,6 +107,8 @@ I started this course on **April 11, 2024**.
 | [temps_insertion](src/week_3_algorithms/additional_practice/temps/temps_insertion.c)                               | _**Insertion sort**_: Sort the average high temperature values in descending order.                                                               | —         | 1.0     |
 | [max](src/week_3_algorithms/additional_practice/max.c)                                                             | Write a function that finds the maximum value in an array given by user.                                                                          | **5** / 5 | 1.0     |
 | [snackbar](src/week_3_algorithms/additional_practice/snackbar.c)                                                   | Complete two functions. 1: Add the menu items. 2: Implement a linear search algorithm to search for each item you choose, return the total price. | —         | 1.0     |
+
+</details>
 
 ## ✍️ Week 4: Memory
 
