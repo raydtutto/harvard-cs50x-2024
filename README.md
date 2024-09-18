@@ -20,14 +20,16 @@ I started this course on **April 11, 2024**.
 
 # Gradebook
 
+> All tables within "Week" sections can be expanded.
+
 ***Test***: number of successfully completed tests.
 
 ***Style***: assessing compliance with a given coding style from 0.0 to 1.0 points.
 
-## ✅ Week 0: Scratch
+### ✅ Week 0: Scratch
 
 <details open>
-  <summary>Problem set 0</summary>
+  <summary>Click to view "Problem set 0"</summary>
 
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
 |:------------------------------------------------------------------------------------------------------------------------|:----------------------|:-----------|
@@ -35,7 +37,7 @@ I started this course on **April 11, 2024**.
 
 </details>
 
-## ✅ Week 1: C
+### ✅ Week 1: C
 
 <details>
   <summary>Problem set 1</summary>
@@ -51,7 +53,7 @@ I started this course on **April 11, 2024**.
 
 </details>
 
-## ✅ Week 2: Arrays
+### ✅ Week 2: Arrays
 
 <details>
   <summary>Problem set 2</summary>
@@ -76,7 +78,7 @@ I started this course on **April 11, 2024**.
 
 </details>
 
-## ✅ Week 3: Algorithms
+### ✅ Week 3: Algorithms
 
 <details>
   <summary>Problem set 3</summary>
@@ -104,7 +106,7 @@ I started this course on **April 11, 2024**.
 
 </details>
 
-## ✍️ Week 4: Memory
+### ✍️ Week 4: Memory
 
 ---
 
