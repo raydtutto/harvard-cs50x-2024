@@ -28,7 +28,7 @@ I started this course on **April 11, 2024**.
 
 ### ✅ Week 0: Scratch
 
-<details open>
+<details>
   <summary>Click to view "Problem set 0"</summary>
 
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
@@ -40,7 +40,7 @@ I started this course on **April 11, 2024**.
 ### ✅ Week 1: C
 
 <details>
-  <summary>Problem set 1</summary>
+  <summary>Click to view "Problem set 1"</summary>
 
 | *Problem set 1*                                                                                                       | *Description*                                                             | *Test*       | *Style*  |
 |:----------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------|:-------------|:---------|
@@ -56,7 +56,7 @@ I started this course on **April 11, 2024**.
 ### ✅ Week 2: Arrays
 
 <details>
-  <summary>Problem set 2</summary>
+  <summary>Click to view "Problem set 2"</summary>
 
 | *Problem set 2*                                                                                                          | *Description*                                                         | *Test*       | *Style*  |
 |:-------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|:-------------|:---------|
@@ -81,7 +81,7 @@ I started this course on **April 11, 2024**.
 ### ✅ Week 3: Algorithms
 
 <details>
-  <summary>Problem set 3</summary>
+  <summary>Click to view "Problem set 3"</summary>
 
 | *Problem set 3*                                                                                                        | *Description*                                                            | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:---------|
