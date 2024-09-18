@@ -20,11 +20,8 @@ I started this course on **April 11, 2024**.
 
 # Gradebook
 
-> All tables within "Week" sections can be expanded.
-
-***Test***: number of successfully completed tests.
-
-***Style***: assessing compliance with a given coding style from 0.0 to 1.0 points.
+> ***Test***: number of successfully completed tests.  
+> ***Style***: assessing compliance with a given coding style from 0.0 to 1.0 points.
 
 ---
 
