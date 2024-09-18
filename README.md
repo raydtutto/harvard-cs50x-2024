@@ -62,7 +62,7 @@ I started this course on **April 11, 2024**.
 | [no-vowels](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word entered at the command line.                                                                                              | **6** / 6  | 1.0      |
 | [password](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.0      |
 
-## ✍️ Week 3: Algorithms
+## ✅ Week 3: Algorithms
 
 | *Problem set 3*                                                                                                        | *Description*                                                            | *Test*      | *Style*  |
 |:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:---------|
@@ -80,9 +80,10 @@ I started this course on **April 11, 2024**.
 | [max](src/week_3_algorithms/additional_practice/max.c)                                                             | Write a function that finds the maximum value in an array given by user.                                                                          | **5** / 5 | 1.0     |
 | [snackbar](src/week_3_algorithms/additional_practice/snackbar.c)                                                   | Complete two functions. 1: Add the menu items. 2: Implement a linear search algorithm to search for each item you choose, return the total price. | —         | 1.0     |
 
+## ✍️ Week 4: Memory
+
 ---
 
-#### Week 4: Memory
 #### Week 5: Data Structures
 #### Week 6: Python
 #### Week 6.5: Artificial Intelligence
