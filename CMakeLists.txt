@@ -295,3 +295,4 @@ target_link_libraries(max PUBLIC cs50x)
 add_executable(snackbar
         src/week_3_algorithms/additional_practice/snackbar.c)
 target_link_libraries(snackbar PUBLIC cs50x)
+add_executable(addresses src/week_4_memory/notes/src/addresses.c)
