@@ -54,6 +54,17 @@ I started this course on **April 11, 2024**.
 
 </details>
 
+<details open>
+  <summary>Additional practice</summary>
+
+| *Week 1: Additional practice*                                                                               | *Description*                                                                         | *Test*    | *Style*  |
+|:------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:----------|:---------|
+| [debug](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug.c) | Debug the given code.                                                                 | **4** / 4 | 1.0      |
+| [half](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half.c)   | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6 | 1.0      |
+| [prime](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime.c) | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5 | 1.0      |
+
+</details>
+
 ---
 
 ### ✅ Week 2: Arrays
