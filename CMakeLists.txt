@@ -319,3 +319,7 @@ target_link_libraries(copy_3 PUBLIC cs50x)
 add_executable(copy_4
         src/week_4_memory/notes/src/copy/copy_4.c)
 target_link_libraries(copy_4 PUBLIC cs50x)
+
+add_executable(memory
+        src/week_4_memory/notes/src/memory.c)
+target_link_libraries(memory PUBLIC cs50x)
