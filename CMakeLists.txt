@@ -337,3 +337,4 @@ add_executable(get_string
 add_executable(phonebook
         src/week_4_memory/notes/src/phonebook.c)
 target_link_libraries(phonebook PUBLIC cs50x)
+add_executable(cp src/week_4_memory/notes/src/cp.c)
