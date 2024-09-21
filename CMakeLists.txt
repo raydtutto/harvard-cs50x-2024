@@ -303,3 +303,19 @@ target_link_libraries(addresses PUBLIC cs50x)
 add_executable(w4_compare
         src/week_4_memory/notes/src/w4_compare.c)
 target_link_libraries(w4_compare PUBLIC cs50x)
+
+add_executable(copy_1
+        src/week_4_memory/notes/src/copy/copy_1.c)
+target_link_libraries(copy_1 PUBLIC cs50x)
+
+add_executable(copy_2
+        src/week_4_memory/notes/src/copy/copy_2.c)
+target_link_libraries(copy_2 PUBLIC cs50x)
+
+add_executable(copy_3
+        src/week_4_memory/notes/src/copy/copy_3.c)
+target_link_libraries(copy_3 PUBLIC cs50x)
+
+add_executable(copy_4
+        src/week_4_memory/notes/src/copy/copy_4.c)
+target_link_libraries(copy_4 PUBLIC cs50x)
