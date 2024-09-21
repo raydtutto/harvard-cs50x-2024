@@ -299,3 +299,7 @@ target_link_libraries(snackbar PUBLIC cs50x)
 add_executable(addresses
         src/week_4_memory/notes/src/addresses.c)
 target_link_libraries(addresses PUBLIC cs50x)
+
+add_executable(w4_compare
+        src/week_4_memory/notes/src/w4_compare.c)
+target_link_libraries(w4_compare PUBLIC cs50x)
