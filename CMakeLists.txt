@@ -323,3 +323,7 @@ target_link_libraries(copy_4 PUBLIC cs50x)
 add_executable(memory
         src/week_4_memory/notes/src/memory.c)
 target_link_libraries(memory PUBLIC cs50x)
+
+add_executable(swap
+        src/week_4_memory/notes/src/swap.c)
+target_link_libraries(swap PUBLIC cs50x)
