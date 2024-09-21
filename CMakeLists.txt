@@ -328,6 +328,12 @@ add_executable(swap
         src/week_4_memory/notes/src/swap.c)
 target_link_libraries(swap PUBLIC cs50x)
 
-add_executable(get_int src/week_4_memory/notes/src/get/get_int.c)
+add_executable(get_int
+        src/week_4_memory/notes/src/get/get_int.c)
 
-add_executable(get_string src/week_4_memory/notes/src/get/get_string.c)
+add_executable(get_string
+        src/week_4_memory/notes/src/get/get_string.c)
+
+add_executable(phonebook
+        src/week_4_memory/notes/src/phonebook.c)
+target_link_libraries(phonebook PUBLIC cs50x)
