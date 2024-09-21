@@ -648,3 +648,366 @@ Profit!
 
 ## Garbage values
 
+If you create a variable but not declare it with an equal sign and then start using it, you might be manipulating
+the `garbage value`.
+
+There is the garbage value `y`:
+
+```c++
+int main(void)
+{
+    int *x;
+    int *y;
+    
+    x = malloc(sizeof(int));
+    
+    *x = 42;
+    *y = 13; // we didn't allocated `y` as we did with `x`
+    
+    // Unpredicted behaviour on the next steps
+    
+    y = x;
+    
+    *y = 13;
+    
+    return 0;
+}
+```
+
+This one will be correct:
+
+```c++
+int main(void)
+{
+    int *x;
+    int *y;
+    
+    x = malloc(sizeof(int));
+    
+    *x = 42;
+    
+    y = x; // allocated `y` on the address of `x`
+    
+    *y = 13; // *x = 13
+    
+    return 0;
+}
+```
+
+Watch a [fun video](https://youtu.be/5VnDaHBi8dM?feature=shared) about pointers and memory. Copyright by Nick Parlante, 1999.
+
+---
+
+## Swapping
+
+### / Passing by value
+
+Let's make some swap function:
+
+```c++
+#include <stdio.h>
+
+void swap(int a, int b);
+
+int main(void)
+{
+    int x = 1;
+    int y = 2;
+
+    printf("x is %i, y is %i\n", x, y);
+    swap(x, y);
+    printf("x is %i, y is %i\n", x, y);
+
+    return 0;
+}
+
+void swap(int a, int b) {
+    int tmp = a;
+    a = b;
+    b = tmp;
+}
+```
+
+But it doesn't work as we expected.
+
+```
+Output:
+x is 1, y is 2
+x is 1, y is 2
+```
+
+Why? Let's talk about `scope`.
+
+```c++
+swap(x, y);
+```
+
+Here we are `passing by value` - passing `x` and `y` to the function `swap()`. It makes a copy of a passing value.
+
+- `Machine code` - the top of your memory is the programs machine code;
+- `Globals` - global variables declared outside of `main()`;
+- `Heap` - reserved computer memory that stores data.
+- `Stack` at the bottom - an abstract data type that serves as a collection of elements. Local variables are allocated
+automatically when a function is called, and they are deallocated automatically when the function exits.
+
+<img src="img/08.png" alt="Memory structure">
+
+So all changes we've made happened in separate `swap()` `stack frame` and not in the `main()`.
+
+We successfully swapped int `a` and `b`, and then it terminates `swap()` and get back to `main()`, where everything is as it was.
+
+<img src="img/09.png" alt="Mistake with `swap()`">
+
+In conclusion, our function `swap()` didn't work properly because we used `passing by value`.
+
+### / Passing by reference
+
+To solve `swap()` problem we need to use `passing by reference`. Let's slightly change the code:
+
+```c++
+#include <stdio.h>
+
+void swap(int *a, int *b);
+
+int main(void)
+{
+    int x = 1;
+    int y = 2;
+
+    printf("x is %i, y is %i\n", x, y);
+    swap(&x, &y); // passing by reference
+    printf("x is %i, y is %i\n", x, y);
+
+    return 0;
+}
+
+// Let's dereference `a` and `b`
+void swap(int *a, int *b) { // get the addresses of integers as arguments
+    int tmp = *a; // `tmp` is just a variable
+    *a = *b;
+    *b = tmp;
+}
+```
+
+---
+
+## Overflow
+
+`heap overflow` - overflowing the heap
+
+`stack overflow` - overflowing the stack
+
+`buffer overflow` - overflowing of the chunk of memory
+
+Let's look at the functions that we took for granted:
+
+- `get_char`
+- `get_double`
+- `get_float`
+- `get_int`
+- `get_long`
+- `get_string`
+
+Those are not included in `C` language, they are included with `CS50.h` lib.
+
+`C` does not make it easy to get the input from the user safely, there is always a risk to `buffer overflow`.
+
+---
+
+## `scanf()`
+
+Let's try to get an integer from a user without CS50's library.
+
+`get_int`
+
+```c++
+#include <stdio.h>
+
+int main(void) {
+    int n; // declares an integer where we want to put user's input
+    printf("n: ");
+    scanf("%i", &n); // passing by reference
+    printf("\n");
+
+    printf("n = %i\n", n);
+
+    return 0;
+}
+```
+
+Now let's try to get a user's string: `get_string`
+
+```c++
+#include <stdio.h>
+
+int main(void) {
+    char *s; // will store the user's string input
+    printf("s: ");
+    scanf("%s", s);
+    printf("\n");
+
+    printf("s = %s\n", s);
+
+    return 0;
+}
+```
+
+But there is an error:
+
+```
+Output:
+Segmentation fault (core dumped)
+```
+
+Let's make an array instead:
+
+```c++
+#include <stdio.h>
+
+int main(void) {
+    char s[4];
+    printf("s: ");
+    scanf("%s", s);
+    printf("\n");
+
+    printf("s = %s\n", s);
+
+    return 0;
+}
+```
+
+This code will work if the user inputs only 3 chars like "Hi!" or less and dumped again if there will be more characters.
+
+In CS50 lib `get_string` uses `malloc()` again and again on each char by a user.
+
+---
+
+## File I/O
+
+`I` for `Input`, `O` for `Output`.
+
+Common functions that are related to file:
+
+- `fopen()` - opens a file;
+- `fclose()` - closes a file;
+- `fprintf()` - allows you to "write" information to the screen for the user to view;
+- `fscanf()` - reads formatted data from a file and returns it as an array of values;
+- `fread()` - read file;
+- `fwrite()` - write file;
+- `fseek()` - used for setting the file pointer at the specific position in the file.
+
+Let's write a `phonebook`. It will save for us the needed data in the file:
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    // `.csv` is a file format of a lightweight spritesheet
+    // we need to tell HOW we want to open a file:
+    // "r" - for reading
+    // "w" - for writing
+    // "a" - for pending
+
+    // `fopen()` returns a pointer to a file
+    FILE *file = fopen("phonebook.csv", "a"); // we need to add data to a file, so we use "a"
+
+    char *name = get_string("Name: ");
+    char *number = get_string("Number: ");
+
+    // fprintf(printing to `file`, data to write "%s, %s\n", which data)
+    fprintf(file, "%s, %s\n", name, number);
+
+    fclose(file); // closes file
+
+    return 0;
+}
+```
+
+It creates a file `phonebook.csv` (for example in `cmake-build-debug`). Every time we execute our program `phonebook` and write
+something, it will write the data in the file `phonebook.csv`.
+
+<img src="img/10.png" alt="Memory structure">
+
+> **WARNING**
+> 
+> We need to check if file is not NULL. For example file is not found.
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    // `.csv` is a file format of a lightweight spritesheet
+    // we need to tell HOW we want to open a file:
+    // "r" - for reading
+    // "w" - for writing
+    // "a" - for pending
+
+    // `fopen()` returns a pointer to a file
+    FILE *file = fopen("phonebook.csv", "a"); // we need to add data to a file, so we use "a"
+    if (file == NULL)
+    {
+        return 1;
+    }
+
+    char *name = get_string("Name: ");
+    char *number = get_string("Number: ");
+
+    // fprintf(printing to `file`, data to write "%s, %s\n", which data)
+    fprintf(file, "%s, %s\n", name, number);
+
+    fclose(file); // closes file
+
+    return 0;
+}
+```
+
+---
+
+## `cp`
+
+`uint8_t` - unsigned 8 bit value
+
+```c++
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+
+typedef uint8_t BYTE;
+
+int main(int argc, char *argv[])
+{
+    // "r" - read mode
+    // "rb" - read binary mode, only `0` and `1`, like images
+    FILE *src = fopen(argv[1], "rb");
+    FILE *dst = fopen(argv[2],  "wb");
+
+    BYTE b;
+
+    while (fread(&b, sizeof(b), 1, src) != 0)
+    {
+        fwrite(&b, sizeof(b), 1, dst);
+    }
+
+    fclose(dst);
+    fclose(src);
+
+    return 0;
+}
+```
+
+> `fread(&b, sizeof(b), 1, src) != 0`
+> 
+> - `fread` - reads a file for you;
+> - `fread(where to load those bytes, how big is the file, how many bytes copy at a time, from where to read)`;
+> - `fread() != 0` - checks how many bytes where successfully read, for at longs as it succeeded.
+
+> `fwrite(&b, sizeof(b), 1, dst)`
+>
+> - `fread(where to find the byte, how big is the file, how many bytes copy at a time, destination)`;
+> - `fread() != 0` - checks how many bytes where successfully read, for at longs as it succeeded.
+
+As a result we had copied our `cat.jpg` to a `backup.jpg`.
