@@ -189,7 +189,7 @@ typedef uint8_t BYTE; // unsigned integer with 8 bits
 
 ## Pointer arithmetic
 
-Let's do some math on addresses:
+Let's do some math on addresses: ```addresses```
 
 ```c++
 #include <stdio.h>
@@ -210,4 +210,441 @@ int main(void)
 ---
 
 ## String comparison
+
+Let's write some simple comparison code:
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int i = get_int("i: ");
+    int j = get_int("j: ");
+
+    if (i == j)
+    {
+        printf("Same\n");
+    }
+    else
+    {
+        printf("Different\n");
+    }
+
+    return 0;
+}
+```
+
+This code just takes two integers from the user and compares them.
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+    char *t = get_string("t: ");
+
+    if (s == t) // compares the addresses of the first letters, not the letters themselves
+    {
+        printf("Same\n");
+    }
+    else
+    {
+        printf("Different\n");
+    }
+
+    return 0;
+}
+```
+
+It looks like this:
+
+<img src="img/06.png" alt="Comparing strings with `==`">
+
+So, addresses `*s == *t` will always be false.
+
+> You cannot compare two strings using the `==` operator.
+>
+> The `==` operator will attempt to compare the memory locations of the strings instead of the characters therein.
+> It is recommended to use of `strcmp` instead.
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+    char *t = get_string("t: ");
+    
+    if (strcmp(s, t) == 0) // `strcmp` compares chars in string
+    {
+        printf("Same\n");
+    }
+    else
+    {
+        printf("Different\n");
+    }
+
+    return 0;
+}
+```
+
+We can print the addresses of the first letters: ```addresses```
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+    char *t = get_string("t: ");
+
+    printf("%p\n", s); // no need for `&` before `s`
+    printf("%p\n", t); // prints address of the first letter
+    
+    return 0;
+}
+```
+
+### Let's code `copy`
+
+`copy_1`
+
+```c++
+#include <cs50.h>
+#include <ctype.h> // for `toupper`
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string s = get_string("s: ");
+    
+    string t = s; // assumably copy one string to another
+    
+    t[0] = toupper(t[0]); // assumably capitalizes the letter
+    
+    printf("%s\n", s);
+    printf("%s\n", t); // expecting the word from `s` but with capitalized first letter
+    
+    return 0;
+}
+```
+
+> It doesn't work as we expected, there are capitalized letters in both strings:
+> 
+> Output:  
+> s: hi!  
+> Hi!  
+> Hi!
+
+Let's look closer at the code:
+
+```c++
+string t = s; // takes the address of `s` over to `t`
+```
+
+So, the code looks like this:
+
+<img src="img/07.png" alt="s = t">
+
+Let's make `copy_2`
+
+```c++
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+    
+    char *t = s;
+
+    if (strlen > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
+    
+    printf("%s\n", s);
+    printf("%s\n", t);
+    
+    return 0;
+}
+```
+
+Now it's more obvious that we are copying the first char address to the other pointer.
+
+But there is still a bug.
+
+Let's improve once more and write `copy_3`
+
+```c++
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h> // for `malloc` and `free`
+#include <string.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+    
+    char *t = malloc(strlen(s) + 1);
+
+    for (int i = 0, n = strlen(s); i <= n; ++i) // `i <= n` copies all four chars with the last `\0`
+    {
+        t[i] = s[i];
+    }
+
+    if (strlen > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
+    
+    printf("%s\n", s);
+    printf("%s\n", t);
+    
+    return 0;
+}
+```
+
+> Now everything is ok:
+> - We created `t` separately from `s` with duplicated values; 
+> - Capitalized  char only within `t`
+>
+> Output:  
+> s: hi!  
+> hi!  
+> Hi!
+> 
+> `malloc` is returning the address of the first character.
+
+Improve again `copy_4`.
+
+We can get rid of this and use another function `strcpy()`
+
+```
+for (int i = 0, n = strlen(s); i <= n; ++i) // `i <= n` copies all four chars with the last `\0`
+{
+    t[i] = s[i];
+}
+```
+
+If something goes wrong, and we are out of memory:
+
+```c++
+if (t == NULL) // if `malloc` return NULL, there is no enough memory available
+        return 1;
+```
+
+`malloc()` is accompanied by another function `free()`, it's the opposite of `malloc()`.
+
+> When you are done with your computer's memory you supposed to give it back.
+>
+> It is always better to use `free()` after `malloc()`.
+
+So the code will look like this `copy_4`:
+
+```c++
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h> // for `malloc` and `free`
+#include <string.h>
+
+int main(void)
+{
+    char *s = get_string("s: ");
+
+    
+    char *t = malloc(strlen(s) + 1);
+
+    if (t == NULL)
+        return 1;
+
+    strcpy(t, s);
+
+    if (strlen > 0)
+    {
+        t[0] = toupper(t[0]);
+    }
+    
+    printf("%s\n", s);
+    printf("%s\n", t);
+
+    free(t); // deallocates `t`
+    
+    return 0;
+}
+```
+
+> `NULL` is just an address `0` and it signifies error. The address `0` is never used by computer's memory.
+
+---
+
+## `malloc` and `valgrind`
+
+> Command `valgrind` doesn't work on macOS since Mojave, but it works on Windows and Linux.
+
+Terminal command `valgrind` checks your memory usage for you.
+
+```c++
+#include <stdio.h>
+#include <stdlib.h> // for `malloc()`
+
+int main(void) {
+    int *x = malloc(3 * sizeof(int));
+    // `sizeof(int)` gets the size of an integer on any devices
+    // `3 * sizeof(int)` creates an array of integers
+
+
+    x[1] = 72;
+    x[2] = 73;
+    x[3] = 33;
+
+    return 0;
+}
+```
+
+Let's check the code above with `valgrind` command:
+
+```
+$ valgrind ./memory
+==3187== Memcheck, a memory error detector
+==3187== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==3187== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==3187== Command: ./memory
+==3187== 
+==3187== Invalid write of size 4
+==3187==    at 0x109177: main (memory.c:11)
+==3187==  Address 0x4b9f04c is 0 bytes after a block of size 12 alloc'd
+==3187==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3187==    by 0x109158: main (memory.c:5)
+==3187== 
+==3187== 
+==3187== HEAP SUMMARY:
+==3187==     in use at exit: 12 bytes in 1 blocks
+==3187==   total heap usage: 1 allocs, 0 frees, 12 bytes allocated
+==3187== 
+==3187== 12 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==3187==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3187==    by 0x109158: main (memory.c:5)
+==3187== 
+==3187== LEAK SUMMARY:
+==3187==    definitely lost: 12 bytes in 1 blocks
+==3187==    indirectly lost: 0 bytes in 0 blocks
+==3187==      possibly lost: 0 bytes in 0 blocks
+==3187==    still reachable: 0 bytes in 0 blocks
+==3187==         suppressed: 0 bytes in 0 blocks
+==3187== 
+==3187== For lists of detected and suppressed errors, rerun with: -s
+==3187== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+```
+
+- `==3187== Invalid write of size 4` - setting a value in the memory;
+- `==3187==    at 0x109177: main (memory.c:11)` - (memory.c:11) / mistake is `memory.c` on line `11`;
+
+So, x[3] doesn't exist because our array `x` is of size `x[3]` and indexes are starting from `[0]`.
+
+Let's correct this:
+
+```c++
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int *x = malloc(3 * sizeof(int));
+
+    x[0] = 72;
+    x[1] = 73;
+    x[2] = 33;
+
+    return 0;
+}
+```
+
+Check with `valgrind` again:
+
+```
+$ valgrind ./memory
+==10575== Memcheck, a memory error detector
+==10575== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==10575== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==10575== Command: ./memory
+==10575== 
+==10575== 
+==10575== HEAP SUMMARY:
+==10575==     in use at exit: 12 bytes in 1 blocks
+==10575==   total heap usage: 1 allocs, 0 frees, 12 bytes allocated
+==10575== 
+==10575== 12 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==10575==    at 0x4846828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10575==    by 0x109158: main (memory.c:5)
+==10575== 
+==10575== LEAK SUMMARY:
+==10575==    definitely lost: 12 bytes in 1 blocks
+==10575==    indirectly lost: 0 bytes in 0 blocks
+==10575==      possibly lost: 0 bytes in 0 blocks
+==10575==    still reachable: 0 bytes in 0 blocks
+==10575==         suppressed: 0 bytes in 0 blocks
+==10575== 
+==10575== For lists of detected and suppressed errors, rerun with: -s
+==10575== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+```
+
+- `==10575== 12 bytes in 1 blocks are definitely lost in loss record 1 of 1` - simply means that we lost some bytes, `memory leak` detected;
+- `==10575==    definitely lost: 12 bytes in 1 blocks`
+- `==10575==    by 0x109158: main (memory.c:5)` - we called `malloc` on line 5. `valgrind` doesn't know when we should free the memory, but it knows that we definitely need to do it somewhere.
+
+Let's add `free()` to the program `memory`:
+
+```c++
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int *x = malloc(3 * sizeof(int));
+
+    x[0] = 72;
+    x[1] = 73;
+    x[2] = 33;
+
+    free(x);
+
+    return 0;
+}
+```
+
+Check memory with `valgrind` once more:
+
+```
+$ valgrind ./memory
+==15892== Memcheck, a memory error detector
+==15892== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==15892== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==15892== Command: ./memory
+==15892== 
+==15892== 
+==15892== HEAP SUMMARY:
+==15892==     in use at exit: 0 bytes in 0 blocks
+==15892==   total heap usage: 1 allocs, 1 frees, 12 bytes allocated
+==15892== 
+==15892== All heap blocks were freed -- no leaks are possible
+==15892== 
+==15892== For lists of detected and suppressed errors, rerun with: -s
+==15892== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+```
+
+Profit!
+
+---
+
+## Garbage values
 
