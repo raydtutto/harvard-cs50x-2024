@@ -117,5 +117,97 @@ The pointer seems rather large. Indeed, a pointer is usually stored as an `8-byt
 
 ---
 
-## Strings
+## CS50's `string`
+
+`string` is an array of chars and always have a null character at the end:
+
+```c++
+string s = "Hi!" // has 4 bytes not 3, because of the null character at the end
+```
+
+| `s[0]` | `s[1]` | `s[2]` | `s[3]` |
+|--------|--------|--------|--------|
+| H      | I      | !      | \0     | 
+ 
+All these characters obviously are having addresses, for example:
+
+| `0x123` | `0x124` | `0x125` | `0x126` |
+|---------|---------|---------|---------|
+| H       | I       | !       | \0      |
+
+> The trick is that `string` is actually a `pointer`:
+> ```c++
+> *s = &s[0]
+> ```
+> 
+> `s` has an address of the `s[0]` and the null character `\0` declares the end of an array.
+>
+
+<img src="img/05.png" alt="`n` visualisation within memory">
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    string s = "HI!";
+    printf("%s\n", s); // prints the array of chars
+    printf("\n");
+
+    printf("%p\n", s); // prints an address of s[0]
+    printf("\n");
+
+    printf("%p\n", &s[0]); // prints an address of the first character
+    printf("%p\n", &s[1]); // prints an address of the second character
+    printf("%p\n", &s[2]); // prints an address of the third character
+    printf("%p\n", &s[3]); // prints an address of the forth NULL character
+}
+```
+
+So actually `string` from CS50 lib points to first `char` from array of chars:
+> char *s = "HI!";
+
+```c++
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = "HI!";
+    printf("%s", s);
+}
+```
+
+The cs50 library includes a struct as follows: `typedef char *string`.  
+This struct, when using the cs50 library, allows one to use a custom data type called string.
+
+```c++
+typedef uint8_t BYTE; // unsigned integer with 8 bits
+```
+
+---
+
+## Pointer arithmetic
+
+Let's do some math on addresses:
+
+```c++
+#include <stdio.h>
+
+int main(void)
+{
+    char *s = "HI!";
+    printf("%c", *s); // prints an address of the first character
+    printf("%c", *(s + 1)); // prints an address of the first character
+    printf("%c\n", *(s + 2)); // prints an address of the first character
+}
+```
+
+- When you write `s[0]` compiler do `*s`
+- When you write `s[1]` compiler do `*(s + 1)`
+- When you write `s[2]` compiler do `*(s + 2)`
+
+---
+
+## String comparison
 
