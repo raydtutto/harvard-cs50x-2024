@@ -26,7 +26,7 @@ Some of the most common file input/output (I/O) functions that we’ll be workin
 
 ## 1. `fopen()`
 - Opens a file and returns a file pointer to it;
-- Always check the return value to make sure you don’t get back NULL.
+- Always check the return value to make sure you don’t get back `NULL`.
 
 [Operations](https://www.ibm.com/docs/en/zos/2.4.0?topic=functions-fopen-open-file):
 - `"r"` - Open a text file for reading (The file must exist).
@@ -216,7 +216,7 @@ Lots of other useful functions abound in `stdio.h` for you to work with:
 - `fgets()` - reads a full string from a file _(like `fgetc()` but for a string)_.
 - `fputs()` - writes a full string to a file _(like `fputc()` but for a string)_.
 - `fprintf()` - writes a formatted string to a file.
-- `fseek()` - allows you rewind or fast-forward within a file.
+- `fseek()` - allows you to rewind or fast-forward within a file.
 - `ftell()` - tells you at what (byte) position you are at within a file.
 - `feof()` - tells you whether you’ve read to the end of a file.
 - `ferror()` - indicates whether an error has occurred in working with a file.
