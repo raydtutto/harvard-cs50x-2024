@@ -344,3 +344,6 @@ add_executable(cp
 add_executable(pdf
         src/week_4_memory/notes/src/pdf.c)
 target_link_libraries(pdf PUBLIC cs50x)
+
+add_executable(volume
+        src/week_4_memory/problem_set_4/volume/volume.c)
