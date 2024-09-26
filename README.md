@@ -130,10 +130,11 @@ of topics, including programming in C, Python, web development, and more.
 <details open>
   <summary>Problem set 4</summary>
 
-| *Problem set 4*                                                                                                                | *Description*                                                                                                                    | *Test*      | *Style* |
-|:-------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|:------------|:--------|
-| [volume.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/volume/volume.c)          | Change the volume of a sound file by a given factor.                                                                             | **5** / 5   | 1.00    |
-| [filter-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-less/helpers.c) | Implement the functions in `helpers.c` such that a user can apply grayscale, sepia, reflection, or blur filters to their images. | **22** / 22 | 1.00    |
+| *Problem set 4*                                                                                                                | *Description*                                                                                               | *Test*      | *Style* |
+|:-------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:------------|:--------|
+| [volume.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/volume/volume.c)          | Change the volume of a sound file by a given factor.                                                        | **5** / 5   | 1.00    |
+| [filter-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-less/helpers.c) | Implement the functions that can apply `grayscale`, `sepia`, `reflection`, or `blur` filters to the images. | **22** / 22 | 1.00    |
+| [filter-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-more/helpers.c) | Implement the functions that can apply `grayscale`, `reflection`, `blur`, or `edges` filters to the images. | **23** / 23 | 1.00    |
 </details>
 
 ---
