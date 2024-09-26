@@ -354,3 +354,7 @@ add_executable(filter
         src/week_4_memory/problem_set_4/filter-less/helpers.h
         src/week_4_memory/problem_set_4/filter-less/bmp.h)
 add_executable(test_filters self-test/ps4/test_filters.c)
+add_executable(filter-more src/week_4_memory/problem_set_4/filter-more/filter-more.c
+        src/week_4_memory/problem_set_4/filter-more/bmp.h
+        src/week_4_memory/problem_set_4/filter-more/helpers.c
+        src/week_4_memory/problem_set_4/filter-more/helpers.h)
