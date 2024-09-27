@@ -135,6 +135,16 @@ of topics, including programming in C, Python, web development, and more.
 | [volume.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/volume/volume.c)          | Change the volume of a sound file by a given factor.                                                        | **5** / 5   | 1.00    |
 | [filter-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-less/helpers.c) | Implement the functions that can apply `grayscale`, `sepia`, `reflection`, or `blur` filters to the images. | **22** / 22 | 1.00    |
 | [filter-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-more/helpers.c) | Implement the functions that can apply `grayscale`, `reflection`, `blur`, or `edges` filters to the images. | **23** / 23 | 1.00    |
+| [recover.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/recover/recover.c)       | Implement a program that recovers JPEGs from a forensic image.                                              | **7** / 7   | 1.00    |
+</details>
+
+<details open>
+  <summary>Additional practice</summary>
+
+| *Week 4: Additional practice*                                                                                                     | *Description*                                                   | *Test*    | *Style* |
+|:----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|:----------|:--------|
+| [bottomup.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/bottomup/bottomup.c) | Change the orientation of the image from bottom-up to top-down. | **3** / 3 | 1.00    |
+
 </details>
 
 ---
