@@ -144,7 +144,7 @@ of topics, including programming in C, Python, web development, and more.
 | *Week 4: Additional practice*                                                                                                     | *Description*                                                   | *Test*    | *Style* |
 |:----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|:----------|:--------|
 | [bottomup.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/bottomup/bottomup.c) | Change the orientation of the image from bottom-up to top-down. | **3** / 3 | 1.00    |
-
+| [license.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/license/license.c)    | Debug the given code.                                           | **3** / 3 | 1.00    |
 </details>
 
 ---
