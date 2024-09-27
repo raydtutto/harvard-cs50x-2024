@@ -358,3 +358,6 @@ add_executable(filter-more src/week_4_memory/problem_set_4/filter-more/filter-mo
         src/week_4_memory/problem_set_4/filter-more/bmp.h
         src/week_4_memory/problem_set_4/filter-more/helpers.c
         src/week_4_memory/problem_set_4/filter-more/helpers.h)
+add_executable(recover src/week_4_memory/problem_set_4/recover/recover.c)
+add_executable(bottomup src/week_4_memory/additional_practice/bottomup/bottomup.c
+        src/week_4_memory/additional_practice/bottomup/bmp.h)
