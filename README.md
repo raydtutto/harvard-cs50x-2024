@@ -125,7 +125,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ---
 
-### ✍️ Week 4: Memory
+### ✅ Week 4: Memory
 
 <details open>
   <summary>Problem set 4</summary>
@@ -149,7 +149,10 @@ of topics, including programming in C, Python, web development, and more.
 
 ---
 
-#### Week 5: Data Structures
+### ✍️ Week 5: Data Structures
+
+---
+
 #### Week 6: Python
 #### Week 6.5: Artificial Intelligence
 #### Week 7: SQL
