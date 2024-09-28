@@ -353,12 +353,25 @@ add_executable(filter
         src/week_4_memory/problem_set_4/filter-less/helpers.c
         src/week_4_memory/problem_set_4/filter-less/helpers.h
         src/week_4_memory/problem_set_4/filter-less/bmp.h)
+
 add_executable(test_filters self-test/ps4/test_filters.c)
-add_executable(filter-more src/week_4_memory/problem_set_4/filter-more/filter-more.c
+
+add_executable(filter-more
+        src/week_4_memory/problem_set_4/filter-more/filter-more.c
         src/week_4_memory/problem_set_4/filter-more/bmp.h
         src/week_4_memory/problem_set_4/filter-more/helpers.c
         src/week_4_memory/problem_set_4/filter-more/helpers.h)
-add_executable(recover src/week_4_memory/problem_set_4/recover/recover.c)
-add_executable(bottomup src/week_4_memory/additional_practice/bottomup/bottomup.c
+
+add_executable(recover
+        src/week_4_memory/problem_set_4/recover/recover.c)
+
+add_executable(bottomup
+        src/week_4_memory/additional_practice/bottomup/bottomup.c
         src/week_4_memory/additional_practice/bottomup/bmp.h)
-add_executable(license src/week_4_memory/additional_practice/license/license.c)
+
+add_executable(license
+        src/week_4_memory/additional_practice/license/license.c)
+
+add_executable(list_1
+        src/week_5_data_structures/notes/src/list/list_1.c)
+add_executable(list_2 src/week_5_data_structures/notes/src/list/list_2.c)
