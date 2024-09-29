@@ -200,7 +200,7 @@ return 1;
 ```
 
 1. The `list` of size three integers is created.
-2. Then, three memory addresses can be assigned the values 1, 2, and 3.
+2. Then, three memory addresses can be assignded the values 1, 2, and 3.
 3. Then, a `tmp` list of size four is created.
 4. Next, the list is copied from the first to the second.
 5. The value for the 4 is added to the `tmp` list.
@@ -213,3 +213,71 @@ return 1;
 ---
 
 ## Linked list
+
+The syntax that we need to make a `linked list`:
+
+- `struct`
+- `.` dot operator. Using to get inside the structure.
+- `*` to dereference the pointer (on the last week we used it only to declare a pointer). 
+- `->` it is the combination of `*` and `.` - goes to an address and looks inside a structure.
+
+A `linked list` is one of the most powerful data structures within `C`:
+
+- Allows you to include values that are located at varying areas of memory;
+- Further, they allow you to dynamically grow and shrink the list as you desire.
+
+Imagine three values stored at three different areas of memory as follows:
+
+<img src="img/06.png" alt="Linked list 1">
+
+How could one stitch together these values in a list?
+
+We could imagine this data pictured above as follows with `pointers`:
+
+<img src="img/07.png" alt="Linked list 2">
+
+We could utilize more memory to keep track of where the next item is.
+
+<img src="img/08.png" alt="Linked list 3">
+
+> Notice that `NULL` is utilized to indicate that nothing else is next in the list.
+
+> By convention, we would keep `one more element` in memory, a `pointer`, that keeps track of the first item in the list.
+
+<img src="img/09.png" alt="Linked list 4">
+
+Abstracting away the memory addresses, the list would appear as follows:
+
+<img src="img/10.png" alt="Linked list 5">
+
+These boxes are called nodes. A node contains both an item and a pointer called next.
+
+In code, you can imagine a node as follows:
+
+```c++
+typedef
+{
+    int number;
+    // Next line will cause an error:
+    // The node is not declared yet on this line of code
+    node *next;
+} node;
+```
+
+The good template will be:
+
+```c++
+typedef struct node 
+{
+    int number;
+    struct node *next;
+} node; // this line just shrink `struct node` to `node`
+```
+
+- Notice that the item contained within this node is an integer called number.
+- Second, a pointer to a node called next is included, which will point to another node somewhere in memory.
+
+---
+
+## Creating a linked list
+
