@@ -389,3 +389,7 @@ target_link_libraries(list_4 PUBLIC cs50x)
 add_executable(list_5
         src/week_5_data_structures/notes/src/list/list_5.c)
 target_link_libraries(list_5 PUBLIC cs50x)
+
+add_executable(list_6
+        src/week_5_data_structures/notes/src/list/list_6.c)
+target_link_libraries(list_6 PUBLIC cs50x)
