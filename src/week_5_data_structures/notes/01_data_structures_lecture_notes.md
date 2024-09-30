@@ -939,4 +939,155 @@ That is, the ultimate is for access to be instantaneous.
 
 ## Hashing
 
+> `Hashing` - is a technique, literally a function, that takes any number of inputs
+> and maps them to a finite number of outputs.
+> 
+> `Hashing` is the idea of taking a value and being able to output a value that becomes a shortcut to it later.
 
+Imagine a card's deck:
+- Took a random card from a deck;
+- Detect the card suit;
+- Place it to the needed bucket with the needed suit symbol.
+
+As a result, we will have a stack of cards sorted by suit, and when we need to find a specific card,
+we will just need to remember the suit of the card and then search only in the bucket with that symbol.
+
+We just `hashed` the data.
+
+We took some number of inputs (52 cards) and mapped it to a finite number of outputs (4 buckets).
+
+---
+
+### - Hash tables
+
+A `hash function` is an algorithm that reduces a larger value to something small and predictable.
+Generally, this function takes in an item you wish to add to your hash table, and returns an integer representing
+the array index in which the item should be placed.
+
+We use `hash function` to make `hash tables`.
+
+> A `hash table` is a combination of both arrays and linked lists.
+>
+> When implemented in code, a hash table is an array of pointers to nodes.
+
+A hash table could be imagined as follows:
+- Notice that this is an `array[26]` that is assigned each value of the alphabet.
+- We get the speed benefits of an array: everything is contiguous, we can do simple arithmetic, like jump to the middle,
+very easily.
+- Index `0` represents `A`, `1` is `B`, `25` is `Z` and so on.
+
+<img src="img/27.png" alt="Hash table 1">
+
+Then, at each location of the `array`, a `linked list` is used to track each value being stored there:
+- We have a vertical array
+- And horizontal linked list
+
+At this step we have an `array of linked list`:
+
+<img src="img/28.png" alt="Hash table 2">
+
+> `Collisions` are when you add values to the hash table, and something already exists at the hashed location.
+> In the above, collisions are simply appended to the end of the list.
+> 
+> The worst case now is `O(n)`, but we need `O(1)`.
+
+`Collisions` can be reduced by better programming your hash table and hash algorithm. 
+You can imagine an improvement upon the above as follows:
+- Now we have even more buckets =)
+
+<img src="img/29.png" alt="Hash table 3">
+
+> But it will consume a lot of memory.
+
+Consider the following example of a hash algorithm:
+
+<img src="img/30.png" alt="Hash table 4">
+
+```c++
+node *table[26];
+
+typedef struct
+{
+    char *name;
+    char *number;
+    struct node *next;
+} person;
+```
+
+Let's code a hash function:
+
+```c++
+#include <ctype.h>
+
+int hash(char *word)
+{
+    return toupper(word[0]) - 'A';
+    
+    // We will need there more error check,
+    // But it will return us the needed first letter's number in array.
+}
+```
+
+Even better approach is to make the `const` value, if you don't need to change this value:
+
+```c++
+int hash(const char *word)
+```
+
+Let's make the result always positive, because we don't need some negative numbers here. So the improved code
+will look like this:
+
+```c++
+#include <ctype.h>
+
+unsigned int hash(const char *word)
+{
+    return toupper(word[0]) - 'A';
+}
+```
+
+> The running time will still be `O(n)` for mathematicians, but actually it will be `O(n/k)` (k = number od buckets)
+> and from a programmer's point of view it actually better.
+
+You, as the programmer, have to make a decision about the advantages of using more memory
+to have a large hash table and potentially reducing search time or using less memory and potentially increasing search
+time.
+
+---
+
+## Trie
+
+`Tries` are another form of data structure, `trie` is a tree of arrays.
+
+- Every node is an array;
+- Every location in that array generally represents a letter of the alphabet.
+
+Imagine that we need to store our friend `Toad` to the trie.
+
+It will look like this:
+
+<img src="img/31.png" alt="Trie 1">
+
+> One downside to `Tries` is that they tend to take up a large amount of memory.
+> Notice that we need nodes just to store `Toad`!
+
+We can add `Toadette` and `Tom` to our trie:
+
+<img src="img/32.png" alt="Trie 2">
+
+```c++
+typedef struct node
+{
+    struct node *children[26];
+    char *number;
+} node;
+```
+
+- `struct node *children[26]` - every node in a trie is a size of 26;
+- `char *number` - in each of those nodes there is a room for a person's phone number. If there is a non-null number here,
+that's equivalent to there being a green box or the end of a node.
+
+> - `Tries` are always searchable in constant time or `O(1)`.
+> - But many resources are required to use it.
+
+Most computers nowadays use hash tables, not tries, to implement dictionaries.
