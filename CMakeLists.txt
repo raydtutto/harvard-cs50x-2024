@@ -374,4 +374,18 @@ add_executable(license
 
 add_executable(list_1
         src/week_5_data_structures/notes/src/list/list_1.c)
-add_executable(list_2 src/week_5_data_structures/notes/src/list/list_2.c)
+
+add_executable(list_2
+        src/week_5_data_structures/notes/src/list/list_2.c)
+
+add_executable(list_3
+        src/week_5_data_structures/notes/src/list/list_3.c)
+target_link_libraries(list_3 PUBLIC cs50x)
+
+add_executable(list_4
+        src/week_5_data_structures/notes/src/list/list_4.c)
+target_link_libraries(list_4 PUBLIC cs50x)
+
+add_executable(list_5
+        src/week_5_data_structures/notes/src/list/list_5.c)
+target_link_libraries(list_5 PUBLIC cs50x)
