@@ -694,3 +694,249 @@ int main(int argc, char *argv[])
 ---
 
 ## Trees
+
+### - Binary search trees
+
+`Binary search trees` are another data structure that can be used to store data more efficiently such
+that it can be searched and retrieved.
+
+- We have an array with 7 elements;
+- Let's highlight the middle of the array with yellow;
+- Then highlight the middle of the middles with red;
+- We now have an implicit structure.
+
+<img src="img/17.png" alt="Binary tree 1">
+
+Let's add a dimension into this:
+
+<img src="img/18.png" alt="Binary tree 2">
+
+- Green leaves are at the very bottom;
+- The root node is on the very top.
+
+Let's use the pointers to stitch them together:
+ - `*left` child
+ - `*right` child
+
+<img src="img/19.png" alt="Binary tree 2">
+
+> - Everything on the left of the root (`left subtree`) is smaller than the `right subtree`.
+> - Each of those subtrees compose a larger root tree
+
+Let's rewrite our template for a linked list:
+
+```c++
+typedef struct node
+{
+    int number;
+    struct node *left; // next
+    struct node *right; // previous
+} node;
+```
+
+> Search will take `O(log n)` steps now with divide and conquer approach.
+
+### - Recursive `search()` through binary tree
+
+Suppose we need to implement a recursive function `search()`, that need to search a tree and return true or false:
+
+- `node *tree` - pointer to our tree;
+- `number` - what we are searching for.
+
+```c++
+bool search(node *tree, int number)
+{
+    // Return if there is no tree there
+    if (tree == NULL)
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+    else // number == tree->number
+    {
+        return true;
+    }
+}
+```
+
+### - Balanced tree
+
+Suppose we declare `root` and define it to `2`:
+
+<img src="img/20.png" alt="Balanced tree 1">
+
+We append number `1` to the right:
+
+<img src="img/21.png" alt="Balanced tree 2">
+
+Let's add `3` and now we have a balanced tree:
+
+<img src="img/22.png" alt="Balanced tree 3">
+
+### - Unbalanced tree
+
+Suppose we declare `root` and this time we define it to `1`:
+
+<img src="img/23.png" alt="Unbalanced tree 1">
+
+Then we add number `2`:
+
+<img src="img/24.png" alt="Unbalanced tree 2">
+
+And number `3`:
+
+<img src="img/25.png" alt="Unbalanced tree 3">
+
+We have a `linked list` now, not a tree.
+
+We could make it a binary tree by moving every element to the left.
+
+> By themselves, binary search tree don't necessarily  guarantee any sort of balance.
+
+Let's write a binary tree:
+
+```c++
+// Implements a list of numbers as a binary search tree
+
+#include <stdio.h>
+#include <stdlib.h>
+
+// Represents a node
+typedef struct node
+{
+    int number;
+    struct node *left;
+    struct node *right;
+}
+node;
+
+void free_tree(node *root);
+void print_tree(node *root);
+
+int main(void)
+{
+    // Tree of size 0
+    node *tree = NULL;
+
+    // Add number to list
+    node *n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        return 1;
+    }
+    n->number = 2;
+    n->left = NULL;
+    n->right = NULL;
+    tree = n;
+
+    // Add number to list
+    n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        free_tree(tree);
+        return 1;
+    }
+    n->number = 1;
+    n->left = NULL;
+    n->right = NULL;
+    tree->left = n;
+
+    // Add number to list
+    n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+        free_tree(tree);
+        return 1;
+    }
+    n->number = 3;
+    n->left = NULL;
+    n->right = NULL;
+    tree->right = n;
+
+    // Print tree
+    print_tree(tree);
+
+    // Free tree
+    free_tree(tree);
+    return 0;
+}
+
+void free_tree(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    free_tree(root->left);
+    free_tree(root->right);
+    free(root);
+}
+
+void print_tree(node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    print_tree(root->left);
+    printf("%i\n", root->number);
+    print_tree(root->right);
+}
+```
+
+> - This `search()` function begins by going to the location of tree.
+> - Then, it uses recursion to search for `number`.
+> - The `free_tree()` function recursively frees the tree.
+> - `print_tree()` recursively prints the tree.
+>
+> A tree like the above offers dynamism that an array does not offer. It can grow and shrink as we wish.
+
+---
+
+## Dictionaries
+
+`Dictionaries` - another abstract data type like `stack` and `queue`.
+
+Dictionaries, like actual book-form dictionaries that have a word and a definition, have:
+- `key` _e.g word_;
+- `value` _e.g. definition_;
+
+> **Dictionaries** associates `keys` with `values`.
+
+Imagine a table:
+
+| keys | values |
+|------|--------|
+| ...  | ...    |
+
+We could use an array for this table, but it wouldn't be dynamically changeable.
+
+So, we can imagine how works `Contacts` app on iOS or Android:
+
+- names of your contacts will be `keys`;
+- phone numbers and other data will be `values`;
+
+| name | number |
+|------|--------|
+| ...  | ...    |
+
+The holy grail of algorithmic time complexity is `O(1)` or constant time.
+
+That is, the ultimate is for access to be instantaneous.
+
+<img src="img/26.png" alt="Time complexity">
+
+> Dictionaries can offer this speed of access through `hashing`.
+
+---
+
+## Hashing
+
+
