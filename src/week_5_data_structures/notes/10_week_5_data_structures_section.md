@@ -427,8 +427,3 @@ int hash(string phrase)
 > - Always gives you the same value for the same input
 > - Produces an even distribution across buckets
 > - Uses all buckets
-
----
-
-## Inheritance
-
