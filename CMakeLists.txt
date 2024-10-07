@@ -412,3 +412,7 @@ add_executable(speller
 add_executable(trie
         src/week_5_data_structures/additional_practice/trie.c)
 target_link_libraries(trie PUBLIC cs50x)
+
+add_executable(calculator_week6
+        src/week_6_python/notes/src/calculator_week6.c)
+target_link_libraries(calculator_week6 PUBLIC cs50x)
