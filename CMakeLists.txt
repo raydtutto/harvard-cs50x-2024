@@ -410,5 +410,5 @@ add_executable(speller
         src/week_5_data_structures/problem_set_5/speller/dictionary.h)
 
 add_executable(trie
-        src/week_5_data_structures/additional_practice/trie/trie.c)
+        src/week_5_data_structures/additional_practice/trie.c)
 target_link_libraries(trie PUBLIC cs50x)

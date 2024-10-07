@@ -1,7 +1,7 @@
 // Saves popular dog names in a trie
 // https://www.dailypaws.com/dogs-puppies/dog-names/common-dog-names
 
-#include <cs50.h>
+#include <../../../thirdparty/cs50/include/cs50.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
