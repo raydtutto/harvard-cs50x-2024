@@ -4,7 +4,7 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
-![](https://geps.dev/progress/45)
+![](https://geps.dev/progress/54)
 
 # What You'll Find Here
 
@@ -154,9 +154,10 @@ of topics, including programming in C, Python, web development, and more.
 <details open>
   <summary>Problem set 5</summary>
 
-| *Problem set 5*                                                                                                                   | *Description*                               | *Test*    | *Style* |
-|:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|:----------|:--------|
-| [inheritance.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/inheritance.c) | Simulate genetic inheritance of blood type. | **7** / 7 | 1.00    |
+| *Problem set 5*                                                                                                                    | *Description*                                                    | *Test*    | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|:----------|:--------|
+| [inheritance.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/inheritance.c)  | Simulate genetic inheritance of blood type.                      | **7** / 7 | 1.00    |
+| [speller](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/speller/dictionary.c) | Implement a program that spell-checks a file using a hash table. | **9** / 9 | 1.00    |
 
 </details>
 
