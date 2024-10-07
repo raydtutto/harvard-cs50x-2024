@@ -149,7 +149,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ---
 
-### ✍️ Week 5: Data Structures
+### ✅ Week 5: Data Structures
 
 <details open>
   <summary>Problem set 5</summary>
@@ -171,7 +171,10 @@ of topics, including programming in C, Python, web development, and more.
 
 ---
 
-#### Week 6: Python
+### ✍️ Week 6: Python
+
+---
+
 #### Week 6.5: Artificial Intelligence
 #### Week 7: SQL
 #### Week 8: HTML, CSS, JavaScript
