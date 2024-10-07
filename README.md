@@ -161,6 +161,14 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
+<details open>
+  <summary>Additional practice</summary>
+
+| *Week 5: Additional practice*                                                                                             | *Description*                 | *Test* | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------|:------------------------------|:-------|:--------|
+| [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. | —      | 1.00    |
+</details>
+
 ---
 
 #### Week 6: Python
