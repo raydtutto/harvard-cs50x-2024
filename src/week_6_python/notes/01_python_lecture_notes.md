@@ -217,3 +217,182 @@ print(f"hello, {answer}")
 ---
 
 ## Variables
+
+Variable declaration is simplified too. You need not declare the type of the variable.
+
+```python
+counter = 0
+
+# You can do Simple math
+counter = counter + 1
+counter += 1
+```
+
+❌ Python does not include this syntax:
+- `++`
+- `--`
+
+---
+
+## Types
+
+Data types in Python do not need to be explicitly declared.
+
+For example, you saw how `answer` above is a string, but we did not have to tell the interpreter this was the case:
+- It knew data type on its own.
+
+In Python, commonly used types include:
+- `bool`
+- `float`
+- `int`
+- `str` (`string` from C)
+
+Notice that `long` and `double` are missing.
+
+Python will handle what data type should be used for larger and smaller numbers.
+
+Some other data types in Python include:
+- `range` of values
+- `list` of values (like an array but better)
+- `tuple` (similar to list, but immutable)
+- `dict` (hash tables for free)
+- `set` (collection of values, that gets rid of any duplicates)
+
+> Each of these data types can be implemented in C, but in Python they can be implemented more simply.
+
+For Python cs50 lib provide this functions:
+- `get_float`
+- `get_int`
+- `get_string` (that is `str` in Python)
+
+---
+
+## Calculator
+
+Let's write simple calculator to sum up given numbers in C:
+
+```c++
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int x = get_int("x: ");
+    int y = get_int("y: ");
+
+    printf("%i\n", x + y);
+    return 0;
+}
+```
+
+And then in Python:
+
+```python
+from cs50 import get_int
+
+x = get_int("x: ")
+y = get_int("y: ")
+
+print(x + y)
+```
+
+If `x` = 1 and `y` = 2  
+Output is correct: `3`
+
+Now try the same but without cs50 lib:
+
+```python
+x = input("x: ")
+y = input("y: ")
+
+print(x + y)
+```
+
+Output is incorrect for our goal: `12`
+
+> Python thinks that `x`, `y` are strings.
+
+We need to define that we are using integers:
+
+```python
+# Convert x and y to integers
+x = int(input("x: "))
+y = int(input("y: "))
+
+print(x + y)
+```
+
+Now the output is correct: `3`
+
+There is also another way to convert data types:
+
+```python
+x = input("x: ")
+x = int(x)
+y = input("y: ")
+y = int(y)
+
+print(x + y)
+```
+
+And another way:
+
+```python
+x = input("x: ")
+y = input("y: ")
+
+print(int(x) + int(y))
+```
+
+> In Python we are _**casting**_ data types not _**converting**_ like it was in C.
+
+It is better to use `get_int` and `get_float` from cs50 lib. Here is an explanation:
+
+```python
+x = int(input("x: "))
+y = int(input("y: "))
+
+print(x + y)
+```
+
+If the user give us numbers, everything will be as planned.
+
+❌ But if the user give us some words, we're going to see a runtime error.
+
+```commandline
+x: fg
+Traceback (most recent call last):
+  File "/workspaces/160549765/calculator.py", line 13, in <module>
+    x = int(input("x: "))
+        ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'cat'
+```
+
+Simply, it just said that the cat is not an integer.
+
+> ❌ Python's `int()` conversion cannot convert str to int.
+> 
+> ✅ So, it's safer to use `get_int` and `get_float` from cs50 lib.
+> 
+> They will prompt the user for an integer or float until the user provides it to us.
+> 
+> ```python
+> from cs50 import get_float, get_int, get_string
+> ```
+
+There is another way to use functions from libraries:
+- It helps when you have multiple libraries included and functions with the same names;
+- You can clarify from which library you need the function to work.
+
+```python
+import cs50
+
+x = cs50.get_int(input("x: "))
+y = cs50.get_int(input("y: "))
+
+print(x + y)
+```
+
+---
+
+## Conditionals
