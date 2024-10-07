@@ -28,7 +28,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 0: Scratch
 
-<details open>
+<details onclose>
   <summary>Problem set 0</summary>
 
 | *Problem set 0*                                                                                                         | *Description*         | *Test*     |
@@ -41,7 +41,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 1: C
 
-<details open>
+<details onclose>
   <summary>Problem set 1</summary>
 
 | *Problem set 1*                                                                                                         | *Description*                                                             | *Test*       | *Style* |
@@ -55,7 +55,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 1: Additional practice*                                                                                       | *Description*                                                                         | *Test*    | *Style* |
@@ -70,7 +70,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 2: Arrays
 
-<details open>
+<details onclose>
   <summary>Problem set 2</summary>
 
 | *Problem set 2*                                                                                                            | *Description*                                                         | *Test*       | *Style* |
@@ -82,7 +82,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 2: Additional practice*                                                                                              | *Description*                                                                                                                                      | *Test*     | *Style* |
@@ -97,7 +97,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 3: Algorithms
 
-<details open>
+<details onclose>
   <summary>Problem set 3</summary>
 
 | *Problem set 3*                                                                                                          | *Description*                                                            | *Test*      | *Style* |
@@ -109,7 +109,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 3: Additional practice*                                                                                        | *Description*                                                                                                                                     | *Test*    | *Style* |
@@ -127,7 +127,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 4: Memory
 
-<details open>
+<details onclose>
   <summary>Problem set 4</summary>
 
 | *Problem set 4*                                                                                                                | *Description*                                                                                               | *Test*      | *Style* |
@@ -138,7 +138,7 @@ of topics, including programming in C, Python, web development, and more.
 | [recover.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/recover/recover.c)       | Implement a program that recovers JPEGs from a forensic image.                                              | **7** / 7   | 1.00    |
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 4: Additional practice*                                                                                                     | *Description*                                                   | *Test*    | *Style* |
@@ -151,7 +151,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 5: Data Structures
 
-<details open>
+<details onclose>
   <summary>Problem set 5</summary>
 
 | *Problem set 5*                                                                                                                    | *Description*                                                    | *Test*    | *Style* |
@@ -161,7 +161,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 5: Additional practice*                                                                                             | *Description*                 | *Test* | *Style* |
