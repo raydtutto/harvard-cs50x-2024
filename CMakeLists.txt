@@ -402,3 +402,6 @@ add_executable(section_table
         src/week_5_data_structures/notes/src/section/section_table.c)
 target_link_libraries(section_table PUBLIC cs50x)
 add_executable(inheritance src/week_5_data_structures/problem_set_5/inheritance.c)
+add_executable(speller src/week_5_data_structures/problem_set_5/speller/speller.c
+        src/week_5_data_structures/problem_set_5/speller/dictionary.c
+        src/week_5_data_structures/problem_set_5/speller/dictionary.h)
