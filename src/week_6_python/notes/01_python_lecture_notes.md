@@ -362,7 +362,7 @@ If the user give us numbers, everything will be as planned.
 ```commandline
 x: fg
 Traceback (most recent call last):
-  File "/workspaces/160549765/calculator.py", line 13, in <module>
+  File "/workspaces/calculator.py", line 13, in <module>
     x = int(input("x: "))
         ^^^^^^^^^^^^^^^^^
 ValueError: invalid literal for int() with base 10: 'cat'
@@ -396,3 +396,789 @@ print(x + y)
 ---
 
 ## Conditionals
+
+### `if`
+
+In C:
+
+```c++
+if (x < y)
+{
+  printf("x is less than y\n");
+}
+```
+
+Python:
+
+```python
+if x < y:
+    print("x is less than y")
+```
+
+- conditional statement not in parentheses `(...)`;
+- no curly braces around, Python using `:` colon instead of them;
+- in Python indentation is really important, when in C tabulation is a question of readability;
+
+### What about `if ... else`?
+
+C:
+
+```c++
+if (x < y)
+{
+  printf("x is less than y\n");
+}
+else
+{
+  printf("x is not less than y\n");
+}
+```
+
+Python:
+
+```python
+if x < y:
+    print("x is less than y")
+else:
+    print("x is not less than y")
+```
+
+### `if ... else if ... else`
+
+C:
+
+```c++
+if (x < y)
+{
+  printf("x is less than y\n");
+}
+else if (x > y)
+{
+  printf("x is greater than y\n");
+}
+else
+{
+  printf("x is equal to y\n");
+}
+```
+
+Python:
+
+```python
+if x < y:
+    print("x is less than y")
+elif x < y:
+    print("x is greater than y")
+else:
+    print("x is equal to y")
+```
+
+`elif` = `else if`
+
+---
+
+## Compare
+
+### - `int`
+
+`compare.py`
+
+```python
+from cs50 import get_int
+
+x = get_int("What's x? ")
+y = get_int("What's y? ")
+
+if x < y:
+    print("x is less than y")
+elif x > y:
+    print("x is greater than y")
+else:
+    print("x is equal to y")
+```
+
+### - `str`
+
+```python
+s = input("s: ")
+t = input("t: ")
+
+if s == t:
+    print("Same")
+else:
+    print("Different")
+```
+
+In C string is a `char *`, so conditional `(s == t)` will always be false, `s` and `t` are located on different indexes.
+
+> But Python is a higher-level language, where we don't work with pointers, only with values.
+
+---
+
+## Agree
+
+At first, let's look on our code `agree` from one of the last weeks:
+
+```c++
+#include "cs50.h"
+#include <stdio.h>
+
+int main(void)
+{
+    char c = get_char("Do you agree? ");
+
+    if (c == 'y' || c == 'Y')
+    {
+        printf("Agreed.\n");
+    }
+    else if (c == 'n' || c == 'N')
+    {
+        printf("Not agreed.\n");
+    }
+
+    return 0;
+}
+```
+
+In C we worked with upper-case and lower-case separately. What about Python?
+
+```python
+s = input("Do you agree? ")
+
+if s == "Y" or s == "y":
+    print("Agreed")
+elif s == "N" or s == "n":
+    print("Not agreed")
+```
+
+We can improve this code using Python data type `list`:
+
+```python
+s = input("Do you agree? ")
+
+if s in ["y", "Y", "yes", "Yes", "YES", "YEs", "yES", "yEs", "YeS"]:
+  print("Agreed")
+elif s in ["n", "N", "no", "No", "NO", "nO"]:
+  print("Not agreed")
+```
+
+But there is a problem: the list may become huge only because of the upper-lower-case variations.
+
+We can do it better using `str` Python's data type.
+
+> **Object-oriented programming** or **OOP**:
+> Your data types cannot only have values, they can also have functionality built into them.
+> 
+> Strings in C should be lowercaseable, uppercaseable, capitalizable and so on.
+>
+> In Python's `str` all of those functions (tolower(), toupper(), isupper(), islower()) are built into the 
+> strings themselves.
+> 
+> [Here](https://docs.python.org/3/library/stdtypes.html#string-methods) you can see all implemented methods in `str`.
+> 
+> > All up-to-date [Python documentation](https://docs.python.org/).
+
+Let's improve again:
+
+```python
+s = input("Do you agree? ")
+
+s = s.lower() 
+
+if s in ["y", "yes"]:
+    print("Agreed")
+elif s in ["n", "no"]:
+    print("Not agreed")
+```
+
+Here we are converting the given string to lower-case before comparing. 
+
+Remember struct from C? It works the same way:
+
+- `s = s.lower()` - we have a variable `s` of data type `str`, separated it by dot `.`, we are going into `str` and
+calling to method `lower()` within `str`.
+
+✅ We can make it look simpler and _unite declaration with method_:
+
+```python
+s = input("Do you agree? ").lower() 
+
+if s in ["y", "yes"]:
+    print("Agreed")
+elif s in ["n", "no"]:
+    print("Not agreed")
+```
+
+---
+
+## Loops
+
+> Let's get familiar with built-in functions within 
+> [Python documentation](https://docs.python.org/3/library/functions.html).
+>
+> It is not a large list, but remember that much more functionality are built into data type themselves.
+
+Now let's get back to loops.
+
+`while` loop in C:
+
+```c++
+#include <stdio.h>
+
+int main(void)
+{
+    int i = 0;
+    while (i < 3)
+    {
+        printf("meow\n");
+        i++;
+    }
+}
+```
+
+### - `while` loop
+
+in Python:
+
+```python
+# while loop
+i = 0
+while i < 3:
+  print("meow")
+  i += 1
+```
+
+### - `for` loop
+
+in Python:
+
+```python 
+# `for` loop
+for i in [0, 1, 2]:
+  print("meow")
+  
+# another more common `for` loop
+for i in range(3):
+  print("meow")
+```
+
+`range()` - method that returns a range of values, starting from `0`.
+
+> Notice that `i` is never explicitly used. However, Python will increment the value of `i` for you.
+
+Actually, we don't care so much for the name of `i`, it is not important, so we can also do this:
+- `_` a valid character for a name, doesn't mean anything special. Just means that we need this variable only
+for this loop.
+
+```python
+for _ in range(3):
+  print("meow")
+```
+
+### - `forever` loop
+
+in C: 
+
+```c++
+while(true)
+{
+  printf("meow");
+}
+```
+
+in Python:
+
+```c++
+while True:
+  print("meow")
+```
+
+> In Python `True` and `False` are capitalized.
+
+---
+
+## - uppercase.py
+
+Let's write a program that will uppercase the given string:
+
+```python
+before = input("Before: ")
+
+print("After: ")
+for c in before:
+    print(c.upper())
+```
+
+It will have an output like this:
+
+```commandline
+$ python uppercase.py
+Before: cat
+After: 
+C
+A
+T
+$
+```
+
+---
+
+## Named parameters
+
+We didn't want to the new line automatically inserted after `after`.
+
+Let's talk about `named parameters`:
+- we can pass in another argument to the `print()` function.
+
+```python
+before = input("Before: ")
+
+print("After: ", end="")
+for c in before:
+  print(c.upper(), end="")
+print()
+```
+
+- `end=""` - in Python by default we have `end="\0"`, with empty argument we are overriding this step.
+- `print()` - an empty `print()` just prints a new line  `"\0"`
+
+Output will be correct:
+
+```commandline
+$ python uppercase.py
+Before: cat
+After: CAT
+$
+```
+
+Also, we will achieve the same result here:
+
+```python
+before = input("Before: ")
+print("After: ", end="")
+print(before.upper())
+```
+
+```commandline
+$ python uppercase.py
+Before: cat
+After: CAT
+$ 
+```
+
+Let's combine further:
+
+```python
+before = input("Before: ")
+after = before.upper()
+print(f"After: {after}")
+```
+
+And once more:
+
+```python
+before = input("Before: ")
+print(f"After: {before.upper()}")
+```
+
+> We can put some code into curly braces with a variable. Just don't put a huge line of code for readability.
+> 
+> Named parameters as Positional parameters - matters the order in which you specify them, not something else.
+
+---
+
+## Abstraction
+
+### - meow.py
+
+`meow_1` will work, but it's not a good design:
+
+```python
+print("meow")
+print("meow")
+print("meow")
+```
+
+`meow_2` have a better way with `for` loop:
+
+```python
+for i in range(3):
+    print("meow")
+```
+
+`meow_3` have a function:
+
+```python
+def meow():
+  print("meow")
+
+meow()
+meow()
+meow()
+```
+
+`meow_4` combines function with loop:
+
+```python
+def meow():
+  print("meow")
+
+for i in range(3):
+    meow()
+```
+
+It will work. But like in C, we want to see in our `main()` only the main part of the program,
+without function definitions at the top of the file.
+
+> ❌ If we try to put definition at the bottom, the program will not work:
+
+```python
+for i in range(3):
+  meow()
+
+def meow():
+  print("meow")
+```
+
+> We can define our main() in Python, although it's not necessary:
+
+```python
+def main():
+    for i in range(3):
+        meow()
+
+        
+def meow():
+  print("meow")
+```
+
+❌ The output for `meow_5` will be **_empty_**.
+- We didn't call `main()`
+
+> ✅ `meow_6` Generally, the very last line of code in Python will be a call to `main()`.
+
+```python
+def main():
+    for i in range(3):
+        meow()
+
+        
+def meow():
+  print("meow")
+
+  
+main()
+```
+
+Let's enhance implementation in `meow_7`.
+- Parameterize and take an argument itself.
+
+```python
+def main():
+    meow(3)
+
+        
+def meow(n):
+  for i in range(n):
+    print("meow")
+
+  
+main()
+```
+
+What we did here:
+1. `def meow(n):` - we gave `meow()` a parameter `n`;
+   2. inside `meow()` we have a loop with `range()` of `n`;
+3. `meow(3)` - within `main()` we define `n` as `3`.
+
+> We can also put a function into a library, import it from a file and make it usable by others.
+
+---
+
+## Truncation
+
+Recall that in C, we experienced **_truncation_** where one integer being divided by another could result in an inprecise result.
+
+You can see how Python handles such division as follows by modifying your code for `calculator_1.py`:
+
+```python
+x = int(input("x: "))
+y = int(input("y: "))
+
+z = x / y
+print(z)
+```
+
+Output will be:
+
+```commandline
+$ python calculator_1.py
+x: 3
+y: 5
+0.6
+$ 
+```
+
+> We can see that Python doesn't truncate.
+> 
+> Python is smarter when it comes to converting one value to another.
+
+## Floating Point imprecision
+
+Whereby if you want to represent a number, like 1/3, and on a piece of paper it's, like 0.3 with a line over it.
+
+Assume we want to see 50 decimal points:
+
+```python
+x = int(input("x: "))
+y = int(input("y: "))
+
+z = x / y
+print(f"{z:.50f}")
+```
+
+- `{}` - curly braces indicates a variable within string
+- `z:.50f` - `.50` the number of points we want to see,`f` at the end indicates a float value
+
+Output:
+
+```commandline
+$ python calculator_1.py
+x: 1
+y: 3
+0.33333333333333331482961625624739099293947219848633
+$ 
+```
+
+As you can see we have a **_floating point imprecision_** here. 
+
+You can use a third-party libraries to avoid this.
+
+---
+
+## Integer overflow
+
+- If you count to high, you might accidentally overflow the capacity of an integer and end up going back 
+to 0 or negative.
+
+> _**There is no integer overflow in Python.**_
+> 
+> Integer will grow and grow as much as you need, if you have enough memory .
+
+---
+
+## Exceptions
+
+`calculator_2.py` without exception:
+
+```python
+def get_int(prompt):
+    return int(input(prompt))
+
+
+def main():
+    x = get_int("x: ")
+    y = get_int("y: ")
+     
+    print(x + y)
+    
+    
+main()
+```
+
+- double blanklines between definitions is a matter of readability
+
+This code works, but if the user inputs words, there will be an error:
+
+```commandline
+$ python calculator_1.py
+x: cat
+Traceback (most recent call last):
+  File "/workspaces/calculator_1.py", line 21, in <module>
+    main()
+  File "/workspaces/calculator_1.py", line 15, in main
+    x = get_int("x: ")
+        ^^^^^^^^^^^^^^
+  File "/workspaces/calculator_1.py", line 11, in get_int
+    return int(input(prompt))
+           ^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'cat'
+$ 
+```
+
+Let's look further into errors:
+1. `line 21` calls a main function
+2. `line 15` the real problem 
+3. `ValueError` - the most common type of exception (also exist `NameError` and so on)
+
+It was fixed in `cs50` lib, but how?
+
+Now we will take a look on `calculator_3.py` with an exception:
+ 
+```python
+def get_int(prompt):
+    try:
+        return int(input(prompt))
+    except ValueError:
+        print("Not an integer")
+
+
+def main():
+    x = get_int("x: ")
+    y = get_int("y: ")
+
+    print(x + y)
+
+
+main()
+```
+
+- `try` - literally means try, `try` demand for `except`, it will not work without `except`;
+- `except` means except;
+- `ValueError` - type of exception. 
+
+'get_int' from cs50 lib continues to prompt the user for a number after the wrong input. We can do the same:
+
+`calculator_4.py`
+
+```python
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Not an integer")
+
+
+def main():
+    x = get_int("x: ")
+    y = get_int("y: ")
+
+    print(x + y)
+
+
+main()
+```
+
+Now the program will continue to prompt for a number after the error explaining phrase.
+
+We can do it silently also, without a phrase:
+
+`calculator_5.py`
+
+```python
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            pass
+
+
+def main():
+    x = get_int("x: ")
+    y = get_int("y: ")
+
+    print(x + y)
+
+
+main()
+```
+
+
+- `pass` means just don't do anything.
+
+---
+
+## Mario
+
+Let's revisit `mario_1` problem set from week 1.
+
+```python
+for i in range(3):
+    print("#")
+```
+
+Now we can prompt for a height `mario_2`:
+
+> There is no `do ... while` loop in Python.
+
+```python
+ from cs50 import get_int
+
+# If there is a valid input break from the infinite loop
+while True:
+    n = get_int("Height: ")
+    if n > 0:
+        break
+
+for i in range(n):
+    print("#")
+``` 
+
+Let's make a horizontal version `mario_3.py`:
+
+```python
+for i in range(4):
+    print("?", end="")
+```
+
+Or even like this `mario_4.py`:
+
+```python
+print("?" * 4)
+```
+
+Can we make a huge brick? `mario_5.py`:
+
+```python
+for i in range(3):
+    for j in range(3):
+        print("#")
+```
+
+Output for `mario_5.py`:
+
+```commandline
+$ python mario.py
+#
+#
+#
+#
+#
+#
+#
+#
+#
+$
+```
+
+Let's fix this in `mario_6.py`:
+
+```python
+for i in range(3):
+    for j in range(3):
+        print("#", end="")
+    print()
+```
+
+or like in `mario_7.py`
+
+```python
+for i in range(3):
+    print("#" * 3)
+```
+
+THe output will be correct:
+
+```commandline
+$ python mario.py
+###
+###
+###
+$ 
+```
+
+---
+
+## Lists
