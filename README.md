@@ -31,9 +31,9 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Problem set 0</summary>
 
-| *Problem set 0*                                                                                                         | *Description*         | *Test*     |
-|:------------------------------------------------------------------------------------------------------------------------|:----------------------|:-----------|
-| [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in  `Scratch` | **8** / 8  |
+| *Problem set 0*                                                                                                         | *Description*                                              | *Test*     |
+|:------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|:-----------|
+| [scratch](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_0_scratch/problem_set_0/pset0_solution.md) | Project in "Scratch": arcade game, imitation of `Arkanoid` | **8** / 8  |
 
 </details>
 
@@ -172,6 +172,19 @@ of topics, including programming in C, Python, web development, and more.
 ---
 
 ### ✍️ Week 6: Python
+
+<details open>
+  <summary>Problem set 5</summary>
+
+| *Problem set 6*                                                                                                                                 | *Description*                                                      | *Test*      | *Style* |
+|:------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------|:------------|:--------|
+| [hello.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_6/sentimental-hello/hello.py)                | Prompt the user for their name and then say "hello" to that user.  | **3** / 3   | 1.00    |
+| [mario-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_6/sentimental-mario-less/mario.py)         | Print a right-aligned pyramid, using hashes (#) for bricks.        | **9** / 9   | 1.00    |
+| [mario-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_6/sentimental-mario-more/mario.py)         | Print an adjacent pyramid, using hashes (#) for bricks.            | **9** / 9   | 1.00    |
+| [cash using `conditions`](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_6/sentimental-cash/cash_1.py) | Print the minimum coins needed to make the given amount of change. | -           | -       |
+| [cash using `loop`](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_6/sentimental-cash/cash_2.py)       | Print the minimum coins needed to make the given amount of change. | **10** / 10 | 1.00    |
+
+</details>
 
 ---
 
