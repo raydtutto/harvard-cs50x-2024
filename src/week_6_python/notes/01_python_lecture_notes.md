@@ -1182,3 +1182,336 @@ $
 ---
 
 ## Lists
+
+List is like an `array[]` in C, but:
+- size is automatically grow and shrink for you;
+- no need to implement it, it already exists.
+
+Python documentation for [lists](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range).
+
+Three basic sequence types:
+- list
+- tuple
+- range objects
+
+For example, if we wanted to taking averages of scores, we can do that using a combination of `list` and `len()`.
+
+`len()` - calculate a length of a list, [len() documentation](https://docs.python.org/3/library/functions.html#len)
+
+### - scores.py
+
+Let's find an average of scores in `scores_1.py`:
+
+```python
+scores = [72, 73, 33]
+
+average = sum(scores) / len(scores)
+print(f"Average: {average:.1f}")
+```
+
+In `scores_2.py` we will prompt the user for scores:
+
+```python
+from cs50 import get_int
+
+# Create an empty list
+scores = []
+
+for i in range(3):
+     score = get_int("Score:  ")
+     # Add new value onto the end
+     scores.append(score)
+
+average = sum(scores) / len(scores)
+print(f"Average: {average:.1f}")
+```
+
+This variant will work too:
+
+```python
+for i in range(3):
+     score = get_int("Score:  ")
+     scores = scores + [score]
+```
+
+We are adding to lists `scores` and `[score]`.
+
+### - phonebook.py
+
+Let's implement a program `phonebook_1.py`, that will seek for a name from a list:
+
+```python
+names = ["Carter", "David", "John Harvard" ]
+
+name = input("Name: ")
+
+for n in names:
+     if n == name:
+           print("Found")
+           break
+print("Not found")
+```
+
+❌ It will have a wrong output:
+
+```commandline
+$ python phonebook.py 
+Name: David
+Found
+Not found
+```
+
+Let's try again:
+
+```python
+names = ["Carter", "David", "John Harvard" ]
+
+name = input("Name: ")
+
+for n in names:
+    if n == name:
+        print("Found")
+        break
+    else:
+        print("Not found")
+```
+
+❌ It will have a wrong output either:
+
+```commandline
+$ python phonebook.py 
+Name: David
+Not found
+Found
+```
+
+What's wrong?
+- in `phonebook_1.py` we break from a loop and then print "Not found" in every case;
+- in `phonebook_2.py` we not found "David" at the first element and print "Not found", then we find "David"
+in the next element and print "found".
+
+✅ We can fix it in `phonebook_2.py`:
+
+```python
+names = ["Carter", "David", "John Harvard" ]
+
+name = input("Name: ")
+
+for n in names:
+    if n == name:
+        print("Found")
+        break
+else:
+    print("Not found")
+```
+
+> In Python even `for` loops have an `else` clause:
+> - If you break out of a loop
+> - You get to the `else` clause
+
+We can improve this code more and get rid of the loop in `phonebook_3.py`:
+
+```python
+names = ["Carter", "David", "John Harvard" ]
+
+name = input("Name: ")
+
+if name in names:
+    print("Found")
+else:
+    print("Not found")
+```
+
+---
+
+## Dictionaries
+
+Python also have [dictionaries](https://docs.python.org/3/library/stdtypes.html#dict) - `dict`.
+
+Let's rewrite phonebook using dictionaries in `phonebook_4.py`:
+
+```python
+people = [
+    {"name": "Carter", "number": "+1-617-495-1000"},
+    {"name": "David", "number": "+1-617-495-1000"},
+    {"name": "John", "number": "+1-949-468-2750"},
+]
+
+name = input("Name: ")
+
+for person in people:
+    if person["name"] == name:
+        number = person["number"]
+        print(f"Found: {number}")
+        break
+else:
+    print("Not found")
+```
+
+- We make a list `people` of dictionaries with keys "name" and values "number";
+- Within `for` loop we are searching for the needed data and put this dictionary "number" into variable `number`.
+
+We can tighten the code in `phonebook_5.py`:
+
+```python
+people = [
+    {"name": "Carter", "number": "+1-617-495-1000"},
+    {"name": "David", "number": "+1-617-495-1000"},
+    {"name": "John", "number": "+1-949-468-2750"},
+]
+
+name = input("Name: ")
+
+for person in people:
+    if person["name"] == name:
+        print(f"Found: {person['number']}")
+        break
+else:
+    print("Not found")
+```
+
+- `print(f"Found: {person['number']}")` We used `''` within `""`, it is acceptable for clarifying the compiler
+boundaries.
+
+We can simplify our dictionaries in `phonebook_6.py`:
+
+```python
+people = {
+    "Carter": "+1-617-495-1000",
+    "David": "+1-617-495-1000",
+    "John": "+1-949-468-2750",
+}
+
+name = input("Name: ")
+
+if name in people:
+    number = people[name]
+    print(f"Found: {number}")
+else:
+    print("Not found")
+```
+
+- Here we made just one dictionary instead of three.
+
+---
+
+## `sys` library
+
+`sys` library have a system related functionality inside -
+[Python documentation](https://docs.python.org/3/library/sys.html).
+
+As with C, you can also utilize command-line arguments.
+
+### - Command line arguments in Python
+
+### -- `argv`
+
+You can use `argc` and `argv` from the `sys` lib:
+
+```python
+from sys import argv
+
+if len(argv) == 2:
+    print(f"hello, {argv[1]}")
+else:
+    print("hello, world")
+```
+
+It works!
+
+```commandline
+$ python greet.py 
+hello, world
+$ python greet.py ann
+hello, ann
+$ 
+```
+
+> There are three words at the prompt but command 'python' is ignored from 'argv'.
+
+### -- `exit()`
+
+Let's add an exit from a program in `greet_2.py`
+
+```python
+import sys
+
+if len(sys.argv) != 2:
+    print("Missing command-line argument")
+    sys.exit(1)
+
+print(f"hello, {sys.argv[1]}")
+sys.exit(0)
+
+```
+
+> `sys.exit(1)` - an `exit()` function from `sys` can return values like it was in C.
+
+---
+
+## pip
+
+Let's install some library with this command:
+
+```commandline
+$ pip install cowsay
+```
+
+```python
+import cowsay
+
+cowsay.cow("This is CS50")
+```
+
+```commandline
+$ python moo.py 
+  ____________
+| This is CS50 |
+  ============
+            \
+             \
+               ^__^
+               (oo)\_______
+               (__)\       )\/\
+                   ||----w |
+                   ||     ||
+$ 
+```
+
+```python
+import cowsay
+
+name = input("What's your name? ")
+cowsay.cow(f"Hello, {name}")
+```
+
+```commandline
+$ python moo.py 
+What's your name? Ann
+  ________________________
+| Hello, Ann! This is CS50 |
+  ========================
+                        \
+                         \
+                           ^__^
+                           (oo)\_______
+                           (__)\       )\/\
+                               ||----w |
+                               ||     ||
+$ 
+```
+
+Let's try something completely different:
+
+```commandline
+$ pip install qrcode
+```
+
+```commandline
+import qrcode
+
+img = qrcode.make("https://youtu.be/EHi0RDZ31VA")
+img.save("qr.png", "PNG")
+```
+
+And we've got an image with a QR of this lecture!
