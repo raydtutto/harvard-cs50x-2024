@@ -416,3 +416,7 @@ target_link_libraries(trie PUBLIC cs50x)
 add_executable(calculator_week6
         src/week_6_python/notes/src/calculator/calculator_week6.c)
 target_link_libraries(calculator_week6 PUBLIC cs50x)
+
+add_executable(credit_2
+        src/week_1_c/problem_set_1/credit/credit_2.c)
+target_link_libraries(credit_2 PUBLIC cs50x)
