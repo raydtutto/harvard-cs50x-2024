@@ -14,7 +14,7 @@ int count_digits = 0;
 bool isAmex(const long card_number);
 bool isMaster(const long card_number);
 bool isVisa(const long card_number);
-int every_digit(long card_number);
+int sum_every_digit(long card_number);
 int multipy_and_sum(const int last_digit);
 void check(const long card_number);
 
@@ -24,11 +24,11 @@ int main(void)
     // Prompt the card number
     const long card = get_long("Number: ");
 
-    // Sum every other digit
-    const int sum_digit = every_digit(card);
+    // Sum digits
+    const int sum_of_digits = sum_every_digit(card);
 
     // Check the sum's last digit and amount of digits
-    if (sum_digit % 10 != 0 || count_digits < 13 || count_digits > 16)
+    if (sum_of_digits % 10 != 0 || count_digits < 13 || count_digits > 16)
     {
         printf("INVALID\n");
         return 1;
@@ -95,8 +95,8 @@ bool isVisa(const long card_number)
     return false;
 }
 
-// Sum every digits
-int every_digit(long card_number)
+// Sum digits
+int sum_every_digit(long card_number)
 {
     int sum = 0;
     bool isAlternate = false;
@@ -132,6 +132,7 @@ int every_digit(long card_number)
     return sum;
 }
 
+// Multiply and sum digits
 int multipy_and_sum(const int last_digit)
 {
     // Multiply last digit
@@ -150,6 +151,7 @@ int multipy_and_sum(const int last_digit)
     return sum;
 }
 
+// Check for card's type
 void check(const long card_number)
 {
     if (isAmex(card_number))
