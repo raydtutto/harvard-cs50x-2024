@@ -4,7 +4,7 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
-![](https://geps.dev/progress/54)
+![](https://geps.dev/progress/60)
 
 # What You'll Find Here
 
@@ -136,6 +136,7 @@ of topics, including programming in C, Python, web development, and more.
 | [filter-less](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-less/helpers.c) | Implement the functions that can apply `grayscale`, `sepia`, `reflection`, or `blur` filters to the images. | **22** / 22 | 1.00    |
 | [filter-more](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/filter-more/helpers.c) | Implement the functions that can apply `grayscale`, `reflection`, `blur`, or `edges` filters to the images. | **23** / 23 | 1.00    |
 | [recover.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/problem_set_4/recover/recover.c)       | Implement a program that recovers JPEGs from a forensic image.                                              | **7** / 7   | 1.00    |
+
 </details>
 
 <details onclose>
@@ -145,6 +146,7 @@ of topics, including programming in C, Python, web development, and more.
 |:----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|:----------|:--------|
 | [bottomup.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/bottomup/bottomup.c) | Change the orientation of the image from bottom-up to top-down. | **3** / 3 | 1.00    |
 | [license.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/license/license.c)    | Debug the given code.                                           | **3** / 3 | 1.00    |
+
 </details>
 
 ---
@@ -167,11 +169,12 @@ of topics, including programming in C, Python, web development, and more.
 | *Week 5: Additional practice*                                                                                             | *Description*                 | *Test* | *Style* |
 |:--------------------------------------------------------------------------------------------------------------------------|:------------------------------|:-------|:--------|
 | [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. | —      | 1.00    |
+
 </details>
 
 ---
 
-### ✍️ Week 6: Python
+### ✅ Week 6: Python
 
 <details open>
   <summary>Problem set 6</summary>
@@ -189,9 +192,21 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
+<details open>
+  <summary>Additional practice</summary>
+
+| *Week 6: Additional practice*                                                                                                 | *Description*                                                                            | *Test*    | *Style* |
+|:------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|:----------|:--------|
+| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/bank_2.py) | Prompt the user for a greeting, give different amount of cash depending on the greeting. | **7** / 7 | 1.00    |
+
+</details>
+
 ---
 
-#### Week 6.5: Artificial Intelligence
+### ✍️ Week 6.5: Artificial Intelligence
+
+---
+
 #### Week 7: SQL
 #### Week 8: HTML, CSS, JavaScript
 #### Week 9: Flask
