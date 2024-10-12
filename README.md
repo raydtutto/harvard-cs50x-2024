@@ -100,12 +100,12 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Problem set 3</summary>
 
-| *Problem set 3*                                                                                                          | *Description*                                                            | *Test*      | *Style* |
-|:-------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:------------|:--------|
-| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)       | Determine which sorting algorithm is used by each file.                  | —           | —       |
-| [plurality.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                                                | **14** / 14 | 1.00    |
-| [runoff.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                                              | **25** / 25 | 1.00    |
-| [tideman.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/tideman.c)     | Implement ranked-preference voting using adjacency matrix of candidates. | **18** / 18 | 1.00    |
+| *Problem set 3*                                                                                                          | *Description*                                                              | *Test*      | *Style* |
+|:-------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------|:------------|:--------|
+| [sort.txt](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/sort.txt)       | Determine which sorting algorithm is used by each file.                    | —           | —       |
+| [plurality.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/plurality.c) | Run a plurality election.                                                  | **14** / 14 | 1.00    |
+| [runoff.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/runoff.c)       | Simulate a runoff election.                                                | **25** / 25 | 1.00    |
+| [tideman.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/problem_set_3/tideman.c)     | Implement ranked-preference voting using `adjacency matrix` of candidates. | **18** / 18 | 1.00    |
 
 </details>
 
@@ -156,19 +156,19 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Problem set 5</summary>
 
-| *Problem set 5*                                                                                                                    | *Description*                                                    | *Test*    | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|:----------|:--------|
-| [inheritance.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/inheritance.c)  | Simulate genetic inheritance of blood type.                      | **7** / 7 | 1.00    |
-| [speller](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/speller/dictionary.c) | Implement a program that spell-checks a file using a hash table. | **9** / 9 | 1.00    |
+| *Problem set 5*                                                                                                                    | *Description*                                                      | *Test*    | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------|:----------|:--------|
+| [inheritance.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/inheritance.c)  | Simulate genetic `inheritance` of blood type.                      | **7** / 7 | 1.00    |
+| [speller](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/problem_set_5/speller/dictionary.c) | Implement a program that spell-checks a file using a `hash table`. | **9** / 9 | 1.00    |
 
 </details>
 
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 5: Additional practice*                                                                                             | *Description*                                                                                    | *Test* | *Style* |
-|:--------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|:-------|:--------|
-| [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. _Introducing more complex data structures and working with tries_. | —      | 1.00    |
+| *Week 5: Additional practice*                                                                                             | *Description*                                                                                      | *Test* | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|:-------|:--------|
+| [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. _Introducing more complex data structures and working with `tries`_. | —      | 1.00    |
 
 </details>
 
