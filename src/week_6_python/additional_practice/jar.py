@@ -82,7 +82,7 @@ def main():
     jar.deposit(12)
     print(str(jar))
 
-    # # Withdraw one cookie
+    # Withdraw one cookie
     jar.withdraw(4)
     print(str(jar))
 
