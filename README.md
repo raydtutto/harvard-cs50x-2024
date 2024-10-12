@@ -195,9 +195,10 @@ of topics, including programming in C, Python, web development, and more.
 <details open>
   <summary>Additional practice</summary>
 
-| *Week 6: Additional practice*                                                                                        | *Description*                                                                            | *Test*    | *Style* |
-|:---------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|:----------|:--------|
-| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py) | Prompt the user for a greeting, give different amount of cash depending on the greeting. | **7** / 7 | 1.00    |
+| *Week 6: Additional practice*                                                                                          | *Description*                                                                             | *Test*    | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|:----------|:--------|
+| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)   | Prompt the user for a greeting, give different amount of cash depending on the greeting.  | **7** / 7 | 1.00    |
+| [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py) | Prompt the user for a text, print it using the fonts supported by `FIGlet`.               | **7** / 7 | 1.00    |
 
 </details>
 
