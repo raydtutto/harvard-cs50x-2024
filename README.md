@@ -58,11 +58,11 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 1: Additional practice*                                                                                       | *Description*                                                                         | *Test*    | *Style* |
-|:--------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------|:----------|:--------|
-| [debug.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c) | Debug the given code.                                                                 | **4** / 4 | 1.00    |
-| [half.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)    | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. | **6** / 6 | 1.00    |
-| [prime.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c) | Test if a number is prime, and return true if it is, and false if it is not.          | **5** / 5 | 1.00    |
+| *Week 1: Additional practice*                                                                                       | *Description*                                                                                                         | *Test*    | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|:----------|:--------|
+| [debug.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/debug/debug.c) | Debug the given code. _Becoming familiar with C syntax and debugging programs_.                                       | **4** / 4 | 1.00    |
+| [half.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/half/half.c)    | Calculate the amount each of you owes based on the bill amount, the tax, and the tip. _Practice creating a function_. | **6** / 6 | 1.00    |
+| [prime.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_1_c/additional_practice/prime/prime.c) | Test if a number is prime, and return true if it is, and false if it is not. _Practice using `for` loops_.            | **5** / 5 | 1.00    |
 
 </details>
 
@@ -85,11 +85,11 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 2: Additional practice*                                                                                              | *Description*                                                                                                                                      | *Test*     | *Style* |
-|:---------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:--------|
-| [hours.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. | **6** / 6  | 1.00    |
-| [no-vowels.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word entered at the command line.                                                                                              | **6** / 6  | 1.00    |
-| [password.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password.                                                                                                                  | **7** / 7  | 1.00    |
+| *Week 2: Additional practice*                                                                                              | *Description*                                                                                                                                                                                                                                               | *Test*     | *Style* |
+|:---------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:--------|
+| [hours.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/hours.c)         | Complete a function that calculates, based on a user’s input, a total number of hours or an average number of hours across a given number of days. _Practice with `arrays`, passing arrays as parameters to a function, integer division and type casting_. | **6** / 6  | 1.00    |
+| [no-vowels.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/no-vowels.c) | Replace vowels in a word entered at the command line. _Practice with `strings`, `command-line arguments`, and writing an entire program from scratch_.                                                                                                      | **6** / 6  | 1.00    |
+| [password.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_2_arrays/additional_practice/password.c)   | Check the validity of a password. _Practice iterating through a `string`, using the `ctype.h` library, and using `Boolean` variables_.                                                                                                                      | **7** / 7  | 1.00    |
 
 </details>
 
@@ -112,14 +112,14 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 3: Additional practice*                                                                                        | *Description*                                                                                                                                     | *Test*    | *Style* |
-|:---------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
-| [atoi.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/additional_practice/atoi.c) | Rework 'atoi' function into recursion.                                                                                                            | —         | 1.00    |
-| [temps_bubble.c](src/week_3_algorithms/additional_practice/temps/temps_bubble.c)                                     | _**Bubble sort**_: Sort the average high temperature values in descending order.                                                                  | —         | 1.00    |
-| [temps_selection.c](src/week_3_algorithms/additional_practice/temps/temps_selection.c)                               | _**Selection sort**_: Sort the average high temperature values in descending order.                                                               | —         | 1.00    |
-| [temps_insertion.c](src/week_3_algorithms/additional_practice/temps/temps_insertion.c)                               | _**Insertion sort**_: Sort the average high temperature values in descending order.                                                               | —         | 1.00    |
-| [max.c](src/week_3_algorithms/additional_practice/max.c)                                                             | Write a function that finds the maximum value in an array given by user.                                                                          | **5** / 5 | 1.00    |
-| [snackbar.c](src/week_3_algorithms/additional_practice/snackbar.c)                                                   | Complete two functions. 1: Add the menu items. 2: Implement a linear search algorithm to search for each item you choose, return the total price. | —         | 1.00    |
+| *Week 3: Additional practice*                                                                                        | *Description*                                                                                                                                 | *Test*    | *Style* |
+|:---------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
+| [atoi.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_3_algorithms/additional_practice/atoi.c) | Rework 'atoi' function into recursion. _Practice creating `recursive functions`_.                                                             | —         | 1.00    |
+| [temps_bubble.c](src/week_3_algorithms/additional_practice/temps/temps_bubble.c)                                     | _**Bubble sort**_: Sort the average high temperature values in descending order. _Practice working with `structs` and `sorting algorithms`_.  | —         | 1.00    |
+| [temps_selection.c](src/week_3_algorithms/additional_practice/temps/temps_selection.c)                               | _**Selection sort**_: Sort the average high temperature values in descending order. _Practice working with structs and sorting algorithms_.   | —         | 1.00    |
+| [temps_insertion.c](src/week_3_algorithms/additional_practice/temps/temps_insertion.c)                               | _**Insertion sort**_: Sort the average high temperature values in descending order. _Practice working with structs and sorting algorithms_.   | —         | 1.00    |
+| [max.c](src/week_3_algorithms/additional_practice/max.c)                                                             | Write a function that finds the maximum value in an array given by user. _Practice `passing arrays` to functions and finding maximum values_. | **5** / 5 | 1.00    |
+| [snackbar.c](src/week_3_algorithms/additional_practice/snackbar.c)                                                   | Search for each item you choose, return the total price. _Practice using structs and writing a `linear search algorithm`_.                    | —         | 1.00    |
 
 </details>
 
@@ -142,10 +142,10 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 4: Additional practice*                                                                                                     | *Description*                                                   | *Test*    | *Style* |
-|:----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|:----------|:--------|
-| [bottomup.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/bottomup/bottomup.c) | Change the orientation of the image from bottom-up to top-down. | **3** / 3 | 1.00    |
-| [license.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/license/license.c)    | Debug the given code.                                           | **3** / 3 | 1.00    |
+| *Week 4: Additional practice*                                                                                                     | *Description*                                                                                                    | *Test*    | *Style* |
+|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|:----------|:--------|
+| [bottomup.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/bottomup/bottomup.c) | Change the orientation of the image from bottom-up to top-down. _Practice working with `images` and `metadata`_. | **3** / 3 | 1.00    |
+| [license.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_4_memory/additional_practice/license/license.c)    | Debug the given code. _Practice working with `files` and `file pointers`_.                                       | **3** / 3 | 1.00    |
 
 </details>
 
@@ -166,9 +166,9 @@ of topics, including programming in C, Python, web development, and more.
 <details onclose>
   <summary>Additional practice</summary>
 
-| *Week 5: Additional practice*                                                                                             | *Description*                 | *Test* | *Style* |
-|:--------------------------------------------------------------------------------------------------------------------------|:------------------------------|:-------|:--------|
-| [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. | —      | 1.00    |
+| *Week 5: Additional practice*                                                                                             | *Description*                                                                                    | *Test* | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|:-------|:--------|
+| [trie.c](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_5_data_structures/additional_practice/trie.c) | Search for a name using trie. _Introducing more complex data structures and working with tries_. | —      | 1.00    |
 
 </details>
 
@@ -195,10 +195,10 @@ of topics, including programming in C, Python, web development, and more.
 <details open>
   <summary>Additional practice</summary>
 
-| *Week 6: Additional practice*                                                                                          | *Description*                                                                             | *Test*    | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|:----------|:--------|
-| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)   | Prompt the user for a greeting, give different amount of cash depending on the greeting.  | **7** / 7 | 1.00    |
-| [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py) | Prompt the user for a text, print it using the fonts supported by `FIGlet`.               | **7** / 7 | 1.00    |
+| *Week 6: Additional practice*                                                                                          | *Description*                                                                                                                       | *Test*    | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
+| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)   | Prompt the user for a greeting, give different amount of cash depending on the greeting. _Practice with `str`s_.                    | **7** / 7 | 1.00    |
+| [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py) | Prompt the user for a text, print it using the fonts supported by FIGlet. _Practice with `libraries` and `command-line arguments`_. | **7** / 7 | 1.00    |
 
 </details>
 
