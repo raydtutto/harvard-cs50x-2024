@@ -199,6 +199,7 @@ of topics, including programming in C, Python, web development, and more.
 |:-----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
 | [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)   | Prompt the user for a greeting, give different amount of cash depending on the greeting. _Practice with `str`s_.                    | **7** / 7 | 1.00    |
 | [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py) | Prompt the user for a text, print it using the fonts supported by FIGlet. _Practice with `libraries` and `command-line arguments`_. | **7** / 7 | 1.00    |
+| [jar.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/jar.py)       | Implement a cookie jar in which to store cookies. _Introduction to `classes` and `object-oriented programming`_.                    | **7** / 7 | 1.00    |
 
 </details>
 
