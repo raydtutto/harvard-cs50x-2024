@@ -195,11 +195,12 @@ of topics, including programming in C, Python, web development, and more.
 <details open>
   <summary>Additional practice</summary>
 
-| *Week 6: Additional practice*                                                                                          | *Description*                                                                                                                       | *Test*    | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
-| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)   | Prompt the user for a greeting, give different amount of cash depending on the greeting. _Practice with `str`s_.                    | **7** / 7 | 1.00    |
-| [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py) | Prompt the user for a text, print it using the fonts supported by FIGlet. _Practice with `libraries` and `command-line arguments`_. | **7** / 7 | 1.00    |
-| [jar.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/jar.py)       | Implement a cookie jar in which to store cookies. _Introduction to `classes` and `object-oriented programming`_.                    | **7** / 7 | 1.00    |
+| *Week 6: Additional practice*                                                                                                                | *Description*                                                                                                                       | *Test*    | *Style* |
+|:---------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------|:--------|
+| [bank.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/bank_2.py)                         | Prompt the user for a greeting, give different amount of cash depending on the greeting. _Practice with `str`s_.                    | **7** / 7 | 1.00    |
+| [figlet.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/figlet.py)                       | Prompt the user for a text, print it using the fonts supported by FIGlet. _Practice with `libraries` and `command-line arguments`_. | **7** / 7 | 1.00    |
+| [jar.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/jar.py)                             | Implement a cookie jar in which to store cookies. _Introduction to `classes` and `object-oriented programming`_.                    | **7** / 7 | 1.00    |
+| [seven-day-average.py](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/additional_practice/seven-day-average.py) | Track COVID cases using a 7-day average. _Practice with `requests`, `dicts`, and `live data`_.                                      | —         | 1.00    |
 
 </details>
 
