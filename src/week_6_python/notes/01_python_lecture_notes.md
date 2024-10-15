@@ -1,4 +1,4 @@
-# Week 6: Python
+# Week 6.5: Python
 
 Instructor: **[David J. Malan](https://github.com/dmalan)**
 
