@@ -222,9 +222,9 @@ No problem set or practical tasks were provided.
 #### Week 10: Cybersecurity
 
 > #### [Academic honesty](https://cs50.harvard.edu/x/2024/honesty/)
-> Please do not copy these solutions, if you are also taking CS50x course, try solving the problem sets on your own.
+> Please do not copy these solutions if you are also taking the CS50x course, try to solve the problem sets yourself.
 >
-> I'm learning, so these solutions don't claim to be the best possible ones.
+> I am learning, so these solutions do not claim to be the best possible.
 
 ---
 
