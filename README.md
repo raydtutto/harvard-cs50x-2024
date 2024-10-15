@@ -4,7 +4,7 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
-![](https://geps.dev/progress/60)
+![](https://geps.dev/progress/66)
 
 # What You'll Find Here
 
@@ -207,11 +207,16 @@ of topics, including programming in C, Python, web development, and more.
 
 ---
 
-### ✍️ Week 6.5: Artificial Intelligence
+### ✅ Week 6.5: Artificial Intelligence
+
+No problem set or practical tasks were provided.
 
 ---
 
-#### Week 7: SQL
+### ✍️ Week 7: SQL
+
+---
+
 #### Week 8: HTML, CSS, JavaScript
 #### Week 9: Flask
 #### Week 10: Cybersecurity
