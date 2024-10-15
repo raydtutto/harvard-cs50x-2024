@@ -176,7 +176,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 6: Python
 
-<details open>
+<details onclose>
   <summary>Problem set 6</summary>
 
 | *Problem set 6*                                                                                                                                    | *Description*                                                                | *Test*      | *Style* |
@@ -192,7 +192,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 6: Additional practice*                                                                                                                | *Description*                                                                                                                                                         | *Test*    | *Style* |
