@@ -786,7 +786,7 @@ to one another as follows:
 <img src="img/cs50Week7Slide025.png" alt="IMDB's database">
 
 There are 6 different tables:
-- IMDB using `tsv` format for their tables (Tab Separated Values). It is like `csv` (coma separated values)
+- IMDB is using `tsv` format for their tables (Tab Separated Values). It is like `csv` (coma separated values)
 but with tabs.
 
 | people              | shows                          | stars                 | writers               | genres            | ratings                    |
