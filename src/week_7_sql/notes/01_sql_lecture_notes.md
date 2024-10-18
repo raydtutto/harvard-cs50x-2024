@@ -806,5 +806,313 @@ At first, write first 10 titles from `shows` table:
 ```sqlite
 sqlite3 shows.db
 sqlite> SELECT * FROM shows LIMIT 10;
++-------+-----------------------------+------+----------+
+|  id   |            title            | year | episodes |
++-------+-----------------------------+------+----------+
+| 62614 | Zeg 'ns Aaa                 | 1981 | 227      |
+| 63881 | Catweazle                   | 1970 | 26       |
+| 63962 | UFO                         | 1970 | 26       |
+| 65269 | Ace of Wands                | 1970 | 46       |
+| 65270 | The Adventures of Don Quick | 1970 | 6        |
+| 65271 | Albert and Victoria         | 1970 | 12       |
+| 65272 | All My Children             | 1970 | 9691     |
+| 65273 | Archie's Funhouse           | 1970 | 23       |
+| 65274 | Arnie                       | 1970 | 48       |
+| 65276 | Barefoot in the Park        | 1970 | 12       |
++-------+-----------------------------+------+----------+
+sqlite> 
 ```
+
+Also we can look at the table `ratings`:
+
+```sqlite
+sqlite> SELECT * FROM ratings LIMIT 10;
++---------+--------+-------+
+| show_id | rating | votes |
++---------+--------+-------+
+| 62614   | 6.7    | 355   |
+| 63881   | 7.8    | 1096  |
+| 63962   | 7.9    | 3972  |
+| 65269   | 7.7    | 119   |
+| 65270   | 7.7    | 28    |
+| 65271   | 5.4    | 7     |
+| 65272   | 6.8    | 3152  |
+| 65273   | 6.8    | 196   |
+| 65274   | 7.1    | 130   |
+| 65276   | 7.2    | 64    |
++---------+--------+-------+
+sqlite> 
+```
+
+How many rows in `shows`?
+
+```sqlite
+sqlite> SELECT COUNT(*) FROM shows;
++----------+
+| COUNT(*) |
++----------+
+| 217314   |
++----------+
+sqlite> 
+```
+
+> We can see a standard relationship between `shows` and `ratings`, look at the arrow: `one-to-one` relationship.
+>
+> <img src="img/cs50Week7Slide032.png" alt="IMDB's database">
+>
+> _**Every show in this design has one rating.**_
+> Or every row in the `shows` table has a corresponding row in the `ratings` table.
+
+---
+
+## SQL data types
+
+We can look at the structure of `shows` with command `.schema`:
+
+```sqlite
+sqlite> .schema shows
+CREATE TABLE shows (
+    id INTEGER,
+    title TEXT NOT NULL,
+    year NUMERIC,
+    episodes INTEGER,
+    PRIMARY KEY(id)
+);
+sqlite> 
+```
+
+- `TEXT NOT NULL` literally means the same;
+- `NUMERIC` for numbers that are formatted specially like dates; 
+- `PRIMARY KEY` uniquely identifies your data, this key will be duplicated in another table.
+
+Let's have a look at `ratings` structure now:
+
+```sqlite
+sqlite> .schema ratings
+CREATE TABLE ratings (
+    show_id INTEGER NOT NULL,
+    rating REAL NOT NULL,
+    votes INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+sqlite> 
+```
+
+- `REAL` aka float number;
+- `FOREIGN KEY ... REFERENCES` means that the first element `show_id` represent a key `id` from shows.db.
+
+---
+
+The most common data types:
+- `BLOB` binary large objects that are groups of ones and zeros;
+- `INTEGER` an integer;
+- `NUMERIC` for numbers that are formatted specially like dates;
+- `REAL` like a float;
+- `TEXT` for strings and the like.
+- ... there are even more types in other databases: _Oracle_, _MySQL_, _PostgreSQL_ and etc.
+
+Additionally, columns can be set to add special constraints with keywords:
+- `NOT NULL` cannot be NULL;
+- `UNIQUE` means no duplicates are allowed.
+
+---
+
+## Multiple databases
+
+Several databases that have some relation to each other.
+
+Keywords:
+- `PRIMARY KEY` is a show_id for shows.db and person_id for people.db;
+- `FOREIGN KEY` these type of keys exist in ratings.db, they represent primary keys from other tables.
+
+---
+
+## Querying
+
+Let's have a look on a list of the first 10 shows with good ratings above 6.0:
+- Remember that list isn't sorted,  and we are looking for first ten shows in the table, not the top shows.
+
+```sqlite
+sqlite> SELECT * FROM ratings WHERE rating >= 6.0 LIMIT 10;
++---------+--------+-------+
+| show_id | rating | votes |
++---------+--------+-------+
+| 62614   | 6.7    | 355   |
+| 63881   | 7.8    | 1096  |
+| 63962   | 7.9    | 3972  |
+| 65269   | 7.7    | 119   |
+| 65270   | 7.7    | 28    |
+| 65272   | 6.8    | 3152  |
+| 65273   | 6.8    | 196   |
+| 65274   | 7.1    | 130   |
+| 65276   | 7.2    | 64    |
+| 65277   | 8.1    | 29    |
++---------+--------+-------+
+sqlite> 
+```
+
+With data like that we can't decide which show to see, we need to make changes:
+
+```sqlite
+sqlite> SELECT show_id FROM ratings WHERE rating >= 6.0 LIMIT 10;
++---------+
+| show_id |
++---------+
+| 62614   |
+| 63881   |
+| 63962   |
+| 65269   |
+| 65270   |
+| 65272   |
+| 65273   |
+| 65274   |
+| 65276   |
+| 65277   |
++---------+
+sqlite> 
+```
+
+We get the same result, but with fewer data, and it didn't help at all. We could try to find all the shows separately:
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE id = 62614;
++-------+-------------+------+----------+
+|  id   |    title    | year | episodes |
++-------+-------------+------+----------+
+| 62614 | Zeg 'ns Aaa | 1981 | 227      |
++-------+-------------+------+----------+
+sqlite> 
+```
+
+But it is frustrating.
+
+### --- Nested queries
+
+We need to see the ratings and simultaneously see the show titles which are in another table. 
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE id IN
+   ...> (SELECT show_id FROM ratings WHERE rating >= 6.0 LIMIT 10);
++-------+-----------------------------+------+----------+
+|  id   |            title            | year | episodes |
++-------+-----------------------------+------+----------+
+| 62614 | Zeg 'ns Aaa                 | 1981 | 227      |
+| 63881 | Catweazle                   | 1970 | 26       |
+| 63962 | UFO                         | 1970 | 26       |
+| 65269 | Ace of Wands                | 1970 | 46       |
+| 65270 | The Adventures of Don Quick | 1970 | 6        |
+| 65272 | All My Children             | 1970 | 9691     |
+| 65273 | Archie's Funhouse           | 1970 | 23       |
+| 65274 | Arnie                       | 1970 | 48       |
+| 65276 | Barefoot in the Park        | 1970 | 12       |
+| 65277 | The Best of Everything      | 1970 | 114      |
++-------+-----------------------------+------+----------+
+sqlite>
+```
+
+We can distill the data and left only titles :
+
+```sqlite
+sqlite> SELECT title FROM shows WHERE id IN
+   ...> (SELECT show_id FROM ratings WHERE rating >= 6.0 LIMIT 10);
++-----------------------------+
+|            title            |
++-----------------------------+
+| Zeg 'ns Aaa                 |
+| Catweazle                   |
+| UFO                         |
+| Ace of Wands                |
+| The Adventures of Don Quick |
+| All My Children             |
+| Archie's Funhouse           |
+| Arnie                       |
+| Barefoot in the Park        |
+| The Best of Everything      |
++-----------------------------+
+sqlite> 
+```
+
+Finally, we can decide what to watch. But where are ratings?
+
+Let's combine data to see titles and ratings side by side:
+- `JOIN` means join data from the separate tables;
+
+At first, have a look at a simplified versions of the `shows` and `ratings` tables :
+
+| id     | title      |
+|--------|------------|
+| 386676 | The Office |
+
+| show_id | rating |
+|---------|--------|
+| 386676  | ...    |
+
+They have in `id` in common:
+- `386676` - PRIMARY KEY `id` from `shows`;
+- `386676` - FOREIGN KEY `show_id` from `ratings`.
+
+ Let's flip `title` and `id`'s in `shows` and `JOIN` tables:
+
+| title      | id     | show_id | rating |
+|------------|--------|---------|--------|
+| The Office | 386676 | 386676  | ...    |
+
+We can leave only `id` column:
+
+| title      | id     | rating |
+|------------|--------|--------|
+| The Office | 386676 | ...    |
+
+We just created a `temporary` table that is a joined version of `shows` and `ratings`.
+
+But we need only `title` and `rating` columns. Let's implement that idea and `JOIN` tables:
+- in `shows.id` and in `ratings.show_id` we have a dot `.` separating table from column, so `table.column`.
+It is not about structure like it was in C or Python.
+
+```sqlite
+sqlite> SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
++-------+-----------------------------+------+----------+---------+--------+-------+
+|  id   |            title            | year | episodes | show_id | rating | votes |
++-------+-----------------------------+------+----------+---------+--------+-------+
+| 62614 | Zeg 'ns Aaa                 | 1981 | 227      | 62614   | 6.7    | 355   |
+| 63881 | Catweazle                   | 1970 | 26       | 63881   | 7.8    | 1096  |
+| 63962 | UFO                         | 1970 | 26       | 63962   | 7.9    | 3972  |
+| 65269 | Ace of Wands                | 1970 | 46       | 65269   | 7.7    | 119   |
+| 65270 | The Adventures of Don Quick | 1970 | 6        | 65270   | 7.7    | 28    |
+| 65272 | All My Children             | 1970 | 9691     | 65272   | 6.8    | 3152  |
+| 65273 | Archie's Funhouse           | 1970 | 23       | 65273   | 6.8    | 196   |
+| 65274 | Arnie                       | 1970 | 48       | 65274   | 7.1    | 130   |
+| 65276 | Barefoot in the Park        | 1970 | 12       | 65276   | 7.2    | 64    |
+| 65277 | The Best of Everything      | 1970 | 114      | 65277   | 8.1    | 29    |
++-------+-----------------------------+------+----------+---------+--------+-------+
+sqlite> 
+```
+
+We get the wide table with a lot of unnecessary data for our original goal. Let's minimize our temporary table:
+- change `*` to the columns we need;
+
+```sqlite
+sqlite> SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
++-----------------------------+--------+
+|            title            | rating |
++-----------------------------+--------+
+| Zeg 'ns Aaa                 | 6.7    |
+| Catweazle                   | 7.8    |
+| UFO                         | 7.9    |
+| Ace of Wands                | 7.7    |
+| The Adventures of Don Quick | 7.7    |
+| All My Children             | 6.8    |
+| Archie's Funhouse           | 6.8    |
+| Arnie                       | 7.1    |
+| Barefoot in the Park        | 7.2    |
+| The Best of Everything      | 8.1    |
++-----------------------------+--------+
+sqlite> 
+```
+Now we have the list that we needed originally.
+
+Actually, we don't need a long line with `shows.id = ratings.show_id` we can change it on `id = show_id`, SQL can tell
+which table you want. **_But for consistency and readability use `table.column`._**
+
+### --- `JOIN` shows and genres
 
