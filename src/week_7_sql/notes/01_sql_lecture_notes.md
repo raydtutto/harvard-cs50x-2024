@@ -14,7 +14,7 @@ Instructor: **[David J. Malan](https://github.com/dmalan)**
 Imagine a survey that questions you some topics. All the input that were given to this survey can often be described
 in patterns of columns and rows.
 
-> A simplest way to store a bunch of data is to save as `flat-file database`. 
+> A simplest way to store a bunch of data is to save as `flat-file database`.
 
 **Spreadsheets** like those created in _Microsoft Excel_ and _Google Sheets_ can be outputted to a `csv`
 or `Comma-Separated Values` file.
@@ -27,6 +27,7 @@ in a single table represented by a text file. We call this form of data a `flat-
 - First, download `favorites.csv` and upload it to your file explorer inside `cs50.dev`.
 
 The `favorites.csv` will look like this:
+
 - The first line is a `Header row`, which describes what each of those columns means.
 
 ```
@@ -57,6 +58,7 @@ close(file)
 ### - `favorites_1.py`
 
 But let's write it in more `pythonic` way:
+
 - `with` will close the opened file for you, when program will be out of this block of code;
 
 ```python
@@ -91,10 +93,11 @@ favorite = row[1]
 The better approach is to dance over Header row instead.
 
 Let's make our code better `favorites_2.py`:
+
 - The difference between `DictReader` and `reader` is that it automatically analyzes that first line in the file,
-figures out what are all of your columns called and, thereafter, when you iterate over `reader` it's no longer
-a `list[3]`. Each row in this loop is now a `dictionary` instead. The `keys` are getting from the `Header`, the values
-are all rows beneath.
+  figures out what are all of your columns called and, thereafter, when you iterate over `reader` it's no longer
+  a `list[3]`. Each row in this loop is now a `dictionary` instead. The `keys` are getting from the `Header`, the values
+  are all rows beneath.
 
 ```python
 import csv
@@ -144,7 +147,7 @@ with open("favorites.csv", "r") as file:
             scratch += 1
 
 # Printing is outside the loop, because at this step
-# we don't need an opened file anymore.          
+# we don't need an opened file anymore.      
 print(f"C: {c}")
 print(f"Python: {python}")
 print(f"Scratch: {scratch}")
@@ -200,7 +203,7 @@ for favorite in sorted(counts, key=counts.get):
 ```
 
 - `get()` - a function to use within Dictionary, it gets the value for the key. So we sort by the right column
-instead of the left.
+  instead of the left.
 
 ```
 -- Output --
@@ -296,7 +299,7 @@ from collections import Counter
 with open("favorites.csv", "r") as file:
     # Read data and import into reader
     reader = csv.DictReader(file)
-    
+  
     counts = Counter()
 
     for row in reader:
@@ -318,12 +321,14 @@ Instead of endlessly iterating with specific csv files, we can use database.
 the data you want to work with.
 
 SQL follows `CRUD` paradigm, in which we can do four things:
+
 - **C**reate
 - **R**ead
 - **U**pdate
 - **D**elete
 
- Specifically in SQL there are more keywords to follow this idea:
+Specifically in SQL there are more keywords to follow this idea:
+
 - `CREATE`, `INSERT`
 - `SELECT`
 - `UPDATE`
@@ -366,6 +371,7 @@ sqlite> .mode csv
 Then we need to import our file in format: _command_, _file_, _name of created table_
 
 This command will:
+
 - open a file
 - load a file
 - read row by row
@@ -407,6 +413,7 @@ CREATE TABLE IF NOT EXISTS "favorites"(
 ## KEYWORDS
 
 There are a lot of keywords in SQL, let get familiar with some of them:
+
 - `AVG` calculates average;
 - `COUNT` counts the number of things;
 - `DISTINCT` get unique or distinct values;
@@ -543,7 +550,7 @@ sqlite>
 
 We can use keywords to declare where to start filtering the data
 
-- `WHERE` 
+- `WHERE`
 - `LIKE`
 - `ORDER BY`
 - `LIMIT`
@@ -616,6 +623,7 @@ sqlite>
 ```
 
 Let's reverse the list:
+
 - `ASC` ascending order from lowest to highest;
 - `DESC` descending order from highest to lowest;
 
@@ -634,6 +642,7 @@ sqlite>
 We can create `aliases` in SQL for most common commands.
 
 For example, `COUNT(*) AS n` will make `n` an alias for COUNT() function:
+
 - Have a look at the name of a right column, it's `n` now instead of `COUNT(*)` as was earlier.
 
 ```sqlite
@@ -708,12 +717,13 @@ sqlite>
 
 We can delete data from the database table.
 
-> DELETE FROM table WHERE condition; 
+> DELETE FROM table WHERE condition;
 
 > Never hit `Enter` after this command, it will **_DELETE ALL THE DATA_** from the table:
+>
 > ```sqlite
 > DELETE FROM favorites;
-> ``` 
+> ```
 
 ```sqlite
 sqlite> DELETE FROM favorites WHERE Timestamp IS NULL;
@@ -786,11 +796,13 @@ to one another as follows:
 <img src="img/cs50Week7Slide025.png" alt="IMDB's database">
 
 There are 6 different tables:
+
 - IMDB is using `tsv` format for their tables (Tab Separated Values). It is like `csv` (coma separated values)
-but with tabs.
+  but with tabs.
+
 
 | people              | shows                          | stars                 | writers               | genres            | ratings                    |
-|---------------------|--------------------------------|-----------------------|-----------------------|-------------------|----------------------------|
+| ------------------- | ------------------------------ | --------------------- | --------------------- | ----------------- | -------------------------- |
 | `id` `name` `birth` | `id` `title` `year` `episodes` | `show_id` `person_id` | `show_id` `person_id` | `show_id` `genre` | `show_id` `rating` `votes` |
 
 ---
@@ -856,6 +868,8 @@ sqlite> SELECT COUNT(*) FROM shows;
 sqlite> 
 ```
 
+> ### `one-to-one` relationship
+>
 > We can see a standard relationship between `shows` and `ratings`, look at the arrow: `one-to-one` relationship.
 >
 > <img src="img/cs50Week7Slide032.png" alt="IMDB's database">
@@ -882,7 +896,7 @@ sqlite>
 ```
 
 - `TEXT NOT NULL` literally means the same;
-- `NUMERIC` for numbers that are formatted specially like dates; 
+- `NUMERIC` for numbers that are formatted specially like dates;
 - `PRIMARY KEY` uniquely identifies your data, this key will be duplicated in another table.
 
 Let's have a look at `ratings` structure now:
@@ -904,6 +918,7 @@ sqlite>
 ---
 
 The most common data types:
+
 - `BLOB` binary large objects that are groups of ones and zeros;
 - `INTEGER` an integer;
 - `NUMERIC` for numbers that are formatted specially like dates;
@@ -912,6 +927,7 @@ The most common data types:
 - ... there are even more types in other databases: _Oracle_, _MySQL_, _PostgreSQL_ and etc.
 
 Additionally, columns can be set to add special constraints with keywords:
+
 - `NOT NULL` cannot be NULL;
 - `UNIQUE` means no duplicates are allowed.
 
@@ -922,6 +938,7 @@ Additionally, columns can be set to add special constraints with keywords:
 Several databases that have some relation to each other.
 
 Keywords:
+
 - `PRIMARY KEY` is a show_id for shows.db and person_id for people.db;
 - `FOREIGN KEY` these type of keys exist in ratings.db, they represent primary keys from other tables.
 
@@ -930,6 +947,7 @@ Keywords:
 ## Querying
 
 Let's have a look on a list of the first 10 shows with good ratings above 6.0:
+
 - Remember that list isn't sorted,  and we are looking for first ten shows in the table, not the top shows.
 
 ```sqlite
@@ -988,7 +1006,7 @@ But it is frustrating.
 
 ### --- Nested queries
 
-We need to see the ratings and simultaneously see the show titles which are in another table. 
+We need to see the ratings and simultaneously see the show titles which are in another table.
 
 ```sqlite
 sqlite> SELECT * FROM shows WHERE id IN
@@ -1034,40 +1052,49 @@ sqlite>
 
 Finally, we can decide what to watch. But where are ratings?
 
+### --- `JOIN` "shows" and "ratings"
+
 Let's combine data to see titles and ratings side by side:
+
 - `JOIN` means join data from the separate tables;
 
 At first, have a look at a simplified versions of the `shows` and `ratings` tables :
 
+
 | id     | title      |
-|--------|------------|
+| ------ | ---------- |
 | 386676 | The Office |
 
+
 | show_id | rating |
-|---------|--------|
+| ------- | ------ |
 | 386676  | ...    |
 
 They have in `id` in common:
+
 - `386676` - PRIMARY KEY `id` from `shows`;
 - `386676` - FOREIGN KEY `show_id` from `ratings`.
 
- Let's flip `title` and `id`'s in `shows` and `JOIN` tables:
+Let's flip `title` and `id`'s in `shows` and `JOIN` tables:
+
 
 | title      | id     | show_id | rating |
-|------------|--------|---------|--------|
+| ---------- | ------ | ------- | ------ |
 | The Office | 386676 | 386676  | ...    |
 
 We can leave only `id` column:
 
+
 | title      | id     | rating |
-|------------|--------|--------|
+| ---------- | ------ | ------ |
 | The Office | 386676 | ...    |
 
 We just created a `temporary` table that is a joined version of `shows` and `ratings`.
 
 But we need only `title` and `rating` columns. Let's implement that idea and `JOIN` tables:
+
 - in `shows.id` and in `ratings.show_id` we have a dot `.` separating table from column, so `table.column`.
-It is not about structure like it was in C or Python.
+  It is not about structure like it was in C or Python.
 
 ```sqlite
 sqlite> SELECT * FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10;
@@ -1089,6 +1116,7 @@ sqlite>
 ```
 
 We get the wide table with a lot of unnecessary data for our original goal. Let's minimize our temporary table:
+
 - change `*` to the columns we need;
 
 ```sqlite
@@ -1109,10 +1137,453 @@ sqlite> SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_
 +-----------------------------+--------+
 sqlite> 
 ```
+
 Now we have the list that we needed originally.
 
 Actually, we don't need a long line with `shows.id = ratings.show_id` we can change it on `id = show_id`, SQL can tell
 which table you want. **_But for consistency and readability use `table.column`._**
 
-### --- `JOIN` shows and genres
+### --- `JOIN` "shows" and "genres"
+
+> ### `one-to-many` relationship
+>
+> Shows can have multiple genres and that's why we need `one-to-many` relationship here.
+>
+> <img src="img/06.png" alt="shows and genres relation">
+
+```sqlite
+sqlite> SELECT * FROM genres LIMIT 10;
++---------+-----------+
+| show_id |   genre   |
++---------+-----------+
+| 62614   | Comedy    |
+| 63881   | Adventure |
+| 63881   | Comedy    |
+| 63881   | Family    |
+| 63962   | Action    |
+| 63962   | Sci-Fi    |
+| 65269   | Family    |
+| 65269   | Fantasy   |
+| 65270   | Comedy    |
+| 65270   | Sci-Fi    |
++---------+-----------+
+```
+
+Notice that shows id are duplicated and genres too. Let's find show with id `63881`:
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE id = 63881;
++-------+-----------+------+----------+
+|  id   |   title   | year | episodes |
++-------+-----------+------+----------+
+| 63881 | Catweazle | 1970 | 26       |
++-------+-----------+------+----------+
+```
+
+Have a look on genres schema:
+
+```sqlite
+sqlite> .schema genres
+CREATE TABLE genres (
+    show_id INTEGER NOT NULL,
+    genre TEXT NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+```
+
+Find the first 10 shows with "Comedy" genre:
+
+```sqlite
+sqlite> SELECT show_id FROM genres WHERE genre = 'Comedy' LIMIT 10;
++---------+
+| show_id |
++---------+
+| 62614   |
+| 63881   |
+| 65270   |
+| 65271   |
+| 65273   |
+| 65274   |
+| 65276   |
+| 65283   |
+| 65285   |
+| 65287   |
++---------+
+```
+
+Again but with titles instead of id:
+
+```sqlite
+sqlite> SELECT title FROM shows WHERE id IN
+   ...>  (SELECT show_id FROM genres WHERE genre = 'Comedy' LIMIT 10);
++-----------------------------+
+|            title            |
++-----------------------------+
+| Zeg 'ns Aaa                 |
+| Catweazle                   |
+| The Adventures of Don Quick |
+| Albert and Victoria         |
+| Archie's Funhouse           |
+| Arnie                       |
+| Barefoot in the Park        |
+| Comedy Tonight              |
+| The Culture Vultures        |
+| Make Room for Granddaddy    |
++-----------------------------+
+```
+
+Try to have a look at all the genres that "Catweazle" show with id `63881` have:
+
+```sqlite
+sqlite> SELECT genre FROM genres WHERE show_id = 63881;
++-----------+
+|   genre   |
++-----------+
+| Adventure |
+| Comedy    |
+| Family    |
++-----------+
+```
+
+We can have the same result with the different command combination:
+
+```sqlite
+sqlite> SELECT genre FROM genres WHERE show_id =
+   ...>  (SELECT id FROM shows WHERE title = 'Catweazle');
++-----------+
+|   genre   |
++-----------+
+| Adventure |
+| Comedy    |
+| Family    |
++-----------+
+```
+
+Let's have a look on `shows` and `genres` tables:
+
+
+| id    | title     |
+|-------|-----------|
+| 63881 | Catweazle |
+
+
+| show_id | genre     |
+|---------|-----------|
+| 63881   | Adventure |
+| 63881   | Comedy    |
+| 63881   | Family    |
+
+Let's flip `shows` again and `JOIN` the tables:
+
+| title     | id    | show_id | genre     |
+|-----------|-------|---------|-----------|
+| Catweazle | 63881 | 63881   | Adventure |
+| Catweazle | 63881 | 63881   | Comedy    |
+| Catweazle | 63881 | 63881   | Family    |
+
+Notice that we need to duplicate data again and again. Now we can delete the id:
+
+| title     | genre     |
+|-----------|-----------|
+| Catweazle | Adventure |
+| Catweazle | Comedy    |
+| Catweazle | Family    |
+
+We just made a new temporary table with the title and genres. Let's write it down:
+
+```sqlite
+sqlite> SELECT * FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
++-------+-----------+------+----------+---------+-----------+
+|  id   |   title   | year | episodes | show_id |   genre   |
++-------+-----------+------+----------+---------+-----------+
+| 63881 | Catweazle | 1970 | 26       | 63881   | Adventure |
+| 63881 | Catweazle | 1970 | 26       | 63881   | Comedy    |
+| 63881 | Catweazle | 1970 | 26       | 63881   | Family    |
++-------+-----------+------+----------+---------+-----------+
+```
+
+This duplicated data is ok in this case, because it is a temporary table. Let's leave only title and genres:
+
+```sqlite
+sqlite> SELECT title, genre FROM shows JOIN genres ON shows.id = genres.show_id WHERE id = 63881;
++-----------+-----------+
+|   title   |   genre   |
++-----------+-----------+
+| Catweazle | Adventure |
+| Catweazle | Comedy    |
+| Catweazle | Family    |
++-----------+-----------+
+```
+
+### --- `JOIN` "shows", "stars" and "people"
+
+> ### `many-to-many` relationship
+>
+> There are a lot of shows and a lot of people involved into them.
+> 
+> The idea is that the third table `stars` is linking together `shows` and `people` any numbers of time.
+>
+> <img src="img/07.png" alt="shows, stars and people relation">
+
+Try to find 'The Office' show:
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE title = 'The Office';
++----------+------------+------+----------+
+|    id    |   title    | year | episodes |
++----------+------------+------+----------+
+| 112108   | The Office | 1995 | 6        |
+| 290978   | The Office | 2001 | 14       |
+| 386676   | The Office | 2005 | 188      |
+| 1791001  | The Office | 2010 | 30       |
+| 2186395  | The Office | 2012 | 8        |
+| 8305218  | The Office | 2019 | 28       |
+| 20877972 | The Office | 2022 | 20       |
++----------+------------+------+----------+
+sqlite> 
+```
+
+There are plenty, but we need just one of them with year 2005.
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE title = 'The Office' AND year = 2005;
++--------+------------+------+----------+
+|   id   |   title    | year | episodes |
++--------+------------+------+----------+
+| 386676 | The Office | 2005 | 188      |
++--------+------------+------+----------+
+sqlite> 
+```
+
+Now we need to get data from `stars` table to be able to work with `people` table after that:
+
+> ### ❌ Be careful
+> The mistake here is `*` on the second command line, because we can't equal `show_id`
+> to the entire roll of information.
+>
+> ```sqlite
+> sqlite> SELECT person_id FROM stars WHERE show_id =
+>   ...> (SELECT * FROM shows WHERE title = 'The Office' AND year = 2005);
+> Parse error: row value misused
+> SELECT person_id FROM stars WHERE show_id = (SELECT * FROM shows WHERE title =
+>                      error here ---^
+> sqlite> 
+> ```
+
+So we need to make `show_id` equal to `id` and now we can have a list of persons id:
+
+```sqlite
+sqlite> SELECT person_id FROM stars WHERE show_id =
+   ...>  (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005);
++-----------+
+| person_id |
++-----------+
+| 1526554   |
+| 136797    |
+| 278979    |
+| 1024677   |
+| 933988    |
+| 1534715   |
+| 1580911   |
++-----------+
+sqlite> 
+```
+
+Let's `nest a nested query` to have actual names from `people` table:
+
+```sqlite
+sqlite> SELECT name FROM people WHERE id IN
+   ...>  (SELECT person_id FROM stars WHERE show_id =
+   ...>   (SELECT id FROM shows WHERE title = 'The Office' AND year = 2005));
++--------------------+
+|        name        |
++--------------------+
+| Steve Carell       |
+| Jenna Fischer      |
+| Rainn Wilson       |
+| John Krasinski     |
+| Angela Kinsey      |
+| Leslie David Baker |
+| Brian Baumgartner  |
++--------------------+
+sqlite> 
+```
+
+Let's find all the shows where Steve Carell was involved:
+
+```sqlite
+sqlite> SELECT title FROM shows WHERE id IN
+   ...>  (SELECT show_id FROM stars WHERE person_id =
+   ...>   (SELECT id FROM people WHERE name = 'Steve Carell'));
++------------------------------------+
+|               title                |
++------------------------------------+
+| The Dana Carvey Show               |
+| Over the Top                       |
+| Watching Ellie                     |
+| Come to Papa                       |
+| The Office                         |
+| Entertainers with Byron Allen      |
+| The Naked Trucker and T-Bones Show |
+| ES.TV HD                           |
+| Inside Comedy                      |
+| Rove LA                            |
+| Metacafe Unfiltered                |
+| Fabrice Fabrice Interviews         |
+| Riot                               |
+| Séries express                     |
+| Hollywood Sessions                 |
+| First Impressions with Dana Carvey |
+| LA Times: The Envelope             |
+| Space Force                        |
+| Some Good News                     |
+| The Office: Superfan Episodes      |
++------------------------------------+
+sqlite> 
+```
+
+Now let's `JOIN` data from three tables:
+
+```sqlite
+sqlite> SELECT title FROM shows
+   ...> JOIN stars ON shows.id = stars.show_id
+   ...> JOIN people ON stars.person_id = people.id
+   ...> WHERE name = 'Steve Carell';
++------------------------------------+
+|               title                |
++------------------------------------+
+| The Dana Carvey Show               |
+| Over the Top                       |
+| Watching Ellie                     |
+| Come to Papa                       |
+| The Office                         |
+| Entertainers with Byron Allen      |
+| The Naked Trucker and T-Bones Show |
+| Some Good News                     |
+| ES.TV HD                           |
+| Inside Comedy                      |
+| Rove LA                            |
+| Metacafe Unfiltered                |
+| Fabrice Fabrice Interviews         |
+| The Office: Superfan Episodes      |
+| Riot                               |
+| Séries express                     |
+| Hollywood Sessions                 |
+| First Impressions with Dana Carvey |
+| LA Times: The Envelope             |
+| Space Force                        |
++------------------------------------+
+sqlite> 
+```
+
+There is another way to get this data:
+
+```sqlite
+sqlite> SELECT title FROM shows, stars, people
+   ...> WHERE shows.id = stars.show_id
+   ...> AND people.id = stars.person_id
+   ...> AND name = 'Steve Carell';
++------------------------------------+
+|               title                |
++------------------------------------+
+| The Dana Carvey Show               |
+| Over the Top                       |
+| Watching Ellie                     |
+| Come to Papa                       |
+| The Office                         |
+| Entertainers with Byron Allen      |
+| The Naked Trucker and T-Bones Show |
+| Some Good News                     |
+| ES.TV HD                           |
+| Inside Comedy                      |
+| Rove LA                            |
+| Metacafe Unfiltered                |
+| Fabrice Fabrice Interviews         |
+| The Office: Superfan Episodes      |
+| Riot                               |
+| Séries express                     |
+| Hollywood Sessions                 |
+| First Impressions with Dana Carvey |
+| LA Times: The Envelope             |
+| Space Force                        |
++------------------------------------+
+sqlite>
+```
+
+### --- `writers` table
+
+Let's have a look on `writers` schema:
+
+```sqlite
+sqlite> .schema writers
+CREATE TABLE writers (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+sqlite> 
+```
+
+And find commons with `stars` schema:
+
+```sqlite
+sqlite> .schema stars
+CREATE TABLE stars (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+sqlite> 
+```
+
+We can conclude that `writers` is the linking table for `shows` and `people` too.
+
+To have a look on all schemas in database just write `.schema` in the command line:
+
+```sqlite
+sqlite> .schema
+CREATE TABLE genres (
+    show_id INTEGER NOT NULL,
+    genre TEXT NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+CREATE TABLE people (
+    id INTEGER,
+    name TEXT NOT NULL,
+    birth NUMERIC,
+    PRIMARY KEY(id)
+);
+CREATE TABLE ratings (
+    show_id INTEGER NOT NULL,
+    rating REAL NOT NULL,
+    votes INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id)
+);
+CREATE TABLE shows (
+    id INTEGER,
+    title TEXT NOT NULL,
+    year NUMERIC,
+    episodes INTEGER,
+    PRIMARY KEY(id)
+);
+CREATE TABLE stars (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+CREATE TABLE writers (
+    show_id INTEGER NOT NULL,
+    person_id INTEGER NOT NULL,
+    FOREIGN KEY(show_id) REFERENCES shows(id),
+    FOREIGN KEY(person_id) REFERENCES people(id)
+);
+sqlite> 
+```
+
+---
+
+## Indexes
 
