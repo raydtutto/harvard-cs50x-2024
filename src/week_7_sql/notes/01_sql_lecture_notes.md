@@ -381,11 +381,17 @@ This command will:
 sqlite> .import favorites.csv favorites
 ```
 
+---
+
+### --- Quit SQL mode
+
 After that we can quit out SQLite.
 
 ```commandline
 sqlite> .quit
 ```
+
+---
 
 As a result, we have in our folder `favorites.db` file, it is an optimised version of CSV file.
 
@@ -1761,3 +1767,165 @@ It took only `0.001` seconds when it was `2.157` seconds!
 ---
 
 ## Python and SQL
+
+### --- ``favorites_9_sql.py``
+
+We can combine one language with another:
+- `from cs50 import SQL` for simplicity;
+- `db = SQL("sqlite:///favorites.db")` opens a .db in Python;
+- `= ?` like `%s` from C language.
+
+```python
+from cs50 import SQL
+
+db = SQL("sqlite:///favorites.db")
+
+favorite = input("Favorite: ")
+
+rows =  db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = ?", favorite)
+
+# Get the first row from the result
+row = rows[0]
+
+print(row["n"])
+```
+
+At first, let's have a look on the result from SQL mode with the same prompt:
+
+```sqlite
+favorites/ $ sqlite3 favorites.db 
+sqlite> SELECT COUNT(*) AS n FROM favorites WHERE problem = 'Scratch';
++----+
+| n  |
++----+
+| 34 |
++----+
+sqlite> .quit
+```
+
+And the output for our Python program will be this:
+
+```
+favorites/ $ python favorites.py 
+Favorite: Scratch
+Scratch: 34
+```
+
+> The common way to use languages: combine them for different purposes.
+> 
+> - SQL is best at reading data from databases.
+> - Python is probably best for creating UI or web applications.
+
+> [CS50 Library for Python](https://cs50.readthedocs.io/libraries/cs50/python/#cs50.SQL)
+
+---
+
+## Race conditions
+
+We can try to imagine how "Meta" implements a counter to keep track of the likes on Instagram:
+
+```python
+# Select the current number of `likes` from `posts` table where `id` of the post (ideally a PRIMARY KEY)
+# equals whatever the user clicked on.
+# or simply: Create a temporary table containing the current number of likes.
+rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+
+# Declare a variable `likes` to get at the first row's `likes` column from our temporary table.
+likes = rows[0]["likes"]
+
+# Update the `posts` table setting the `likes` equal to `likes + 1` where `id` is equal `id`.
+db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes + 1, id);
+```
+
+The problem with systems like Metas, Googles, Microsofts etc. is that they are executing a code like this on multiple
+servers (thousands of them!), that might be executed slightly out of order. One might be faster, one might be slower.
+
+> We run into a `race condition`, where the servers are racing to handle one user but other users requests
+> are happening at the same time.
+> 
+> There are keywords in certain databases to avoid this:
+> - `BEGIN TRANSACTION` means that those three lines of code should either all happen together or not happen at all.
+> **Happen without interruption**. Likes will be processed in the order of the queue;
+> - `COMMIT`
+> - `ROLLBACK`
+> 
+> ```python
+> db.execute("BEGIN TRANSACTION")
+> rows = db.execute("SELECT likes FROM posts WHERE id = ?", id);
+> likes = rows[0]["likes"]
+> db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes + 1, id);
+> db.execute("COMMIT")
+> ```
+
+---
+
+## SQL injection attacks
+
+Our code from `favorites_9_sql.py` is vulnerable to attacks. Placeholders like `?` are dangerous, because all inputs
+from users are potentially dangerous.
+
+1. Imagine an abstract login screen, that need the username or an email and the password.
+2. Imagine that they are taking user's input from forms and just plugging your input into SQL query that they
+wrote in advance, and they are waiting for those inputs.
+3. On the login screen we can type in some syntax to fields that have special meaning to certain databases.
+
+   - e.g. in SQLite single quotes `'...'` are very important;
+   - comment character in SQLite is dash `--`
+   - If you want the rest of the line to be ignored, just type `--`
+
+<img src="img/09.png" alt="attack">
+
+Suppose the code for getting input is this:
+
+```python
+rows = db.execute("SELECT * FROM users WHERE username = ? AND password = ?", username, password)
+if rows:
+...
+```
+
+- ✅ `"SELECT * FROM users WHERE username = ? AND password = ?"` this line is save
+
+But what about this code?
+
+```python
+rows = db.execute(f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'")
+if rows:
+...
+```
+
+- ❌ `f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"` it is not safe.
+  - `f"` means format string;
+  - `'{username}'` placeholder for user's name, `'{password}'` placeholder for user's password with single quotes,
+  which is correct in string format.
+  - BUT if you blindly plug user's input into pre-made queries, other people can finish your thought for you in ways
+  you don't expect.
+  - Let's add the dangerous input from the user in our code:
+
+```python
+rows = db.execute(f"SELECT * FROM users WHERE username = 'malan@harvard.edu'--' AND password = '{password}'")
+if rows:
+...
+```
+
+- `'malan@harvard.edu'--'` the second single quote from the input finishes the thought that the developer started.
+- `--` means ignore the rest of that
+- let's have a look on what's actually executed after the input:
+
+```python
+rows = db.execute(f"SELECT * FROM users WHERE username = 'malan@harvard.edu'")
+if rows:
+...
+```
+
+> ### We are searching for user's mail, but we are not checking the password.
+> This way anyone could log in into your system.
+
+But we can avoid this and use placeholders on potentially dangerous input:
+
+```python
+rows = db.execute(f"SELECT * FROM users WHERE username = 'malan@harvard.edu''--' AND password = '{password}'")
+if rows:
+...
+```
+
+- `'--'` notice that dash-dash input now have two single quotes - it fixes the possible danger.
