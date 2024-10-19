@@ -1587,3 +1587,177 @@ sqlite>
 
 ## Indexes
 
+In SQL you can time your queries with `.timer ON` command. Just type it in the command line:
+
+```sqlite
+sqlite> .timer ON
+sqlite> SELECT * FROM shows WHERE title = 'The Office';
++----------+------------+------+----------+
+|    id    |   title    | year | episodes |
++----------+------------+------+----------+
+| 112108   | The Office | 1995 | 6        |
+| 290978   | The Office | 2001 | 14       |
+| 386676   | The Office | 2005 | 188      |
+| 1791001  | The Office | 2010 | 30       |
+| 2186395  | The Office | 2012 | 8        |
+| 8305218  | The Office | 2019 | 28       |
+| 20877972 | The Office | 2022 | 20       |
++----------+------------+------+----------+
+Run Time: real 0.029 user 0.021096 sys 0.008516
+sqlite> 
+```
+
+So the `SELECT` command took only real 0.029 seconds and it's a pretty good result.
+
+We can do better time with `indexes`.
+ 
+> In SQL we can create `indexes` - a data structure that makes it faster to perform queries like `SELECT` and others.
+> 
+> If you are certain that some columns are searched more frequently than others, you can prepare a database
+> in advance to build-up some data structures in memory so it can back answers even faster than that.
+> 
+> Syntax for indexes:
+> > CREATE INDEX name ON table (column, ...);
+
+```sqlite
+sqlite> CREATE INDEX title_index ON shows (title);
+Run Time: real 0.305 user 0.203332 sys 0.012702
+sqlite> 
+```
+
+We just builded an indexes for titles and we need to do it only once. Now let's try our `SELECT` command again:
+
+```sqlite
+sqlite> SELECT * FROM shows WHERE title = 'The Office';
++----------+------------+------+----------+
+|    id    |   title    | year | episodes |
++----------+------------+------+----------+
+| 112108   | The Office | 1995 | 6        |
+| 290978   | The Office | 2001 | 14       |
+| 386676   | The Office | 2005 | 188      |
+| 1791001  | The Office | 2010 | 30       |
+| 2186395  | The Office | 2012 | 8        |
+| 8305218  | The Office | 2019 | 28       |
+| 20877972 | The Office | 2022 | 20       |
++----------+------------+------+----------+
+Run Time: real 0.001 user 0.000164 sys 0.000073
+sqlite> 
+```
+
+> ### Huge difference in time with `indexes`
+> `0.001 seconds` instead of `0.029 seconds` from the last time without indexes.
+>
+> What we did essentially: **we created a `B-tree`**.
+
+### --- B-trees
+
+> It is not a binary tree.
+
+It is a short "fat" tree. Every node might have 2 or 3 or 30 children.
+The shorter the tree, the faster you can search data.
+
+<img src="img/08.png" alt="shows, stars and people relation">
+
+Let's create more complicated queries:
+
+```sqlite
+sqlite> SELECT title FROM shows, stars, people
+   ...> WHERE shows.id = stars.show_id
+   ...> AND people.id = stars.person_id
+   ...> AND name = 'Steve Carell';
++------------------------------------+
+|               title                |
++------------------------------------+
+| The Dana Carvey Show               |
+| Over the Top                       |
+| Watching Ellie                     |
+| Come to Papa                       |
+| The Office                         |
+| Entertainers with Byron Allen      |
+| The Naked Trucker and T-Bones Show |
+| Some Good News                     |
+| ES.TV HD                           |
+| Inside Comedy                      |
+| Rove LA                            |
+| Metacafe Unfiltered                |
+| Fabrice Fabrice Interviews         |
+| The Office: Superfan Episodes      |
+| Riot                               |
+| Séries express                     |
+| Hollywood Sessions                 |
+| First Impressions with Dana Carvey |
+| LA Times: The Envelope             |
+| Space Force                        |
++------------------------------------+
+Run Time: real 2.157 user 1.484534 sys 0.654514
+sqlite> 
+```
+
+This query took `2.157` seconds and that's slow. 
+
+> `PRIMARY KEY`'s are indexes by default, you can search for PRIMARY KEY in log or even in constant time:
+> - shows.id
+> - people.id
+> 
+> `FOREIGN KEY`'s are not indexed by default:
+> - stars.show_id
+> - stars.person_id
+>
+> So we are searching in 3 separate columns, 2 foreign keys, one name field, that have no structured tree built
+> for them.
+
+Let's create a B-tree:
+
+```sqlite
+sqlite>  CREATE INDEX person_index ON stars (person_id);
+Run Time: real 1.468 user 1.241693 sys 0.067610
+sqlite> CREATE INDEX show_index ON stars (show_id);
+Run Time: real 1.125 user 0.901030 sys 0.079921
+sqlite> CREATE INDEX name_index ON people (name);
+Run Time: real 1.127 user 0.718227 sys 0.088279
+sqlite> 
+```
+
+We just have built up three trees in memory   for `person_id`, `show_id` and `name` and it took some time,
+but we need to make them only once. Let's try out last command again:
+ 
+```sqlite
+sqlite> SELECT title FROM shows, stars, people
+   ...> WHERE shows.id = stars.show_id
+   ...> AND people.id = stars.person_id
+   ...> AND name = 'Steve Carell';
++------------------------------------+
+|               title                |
++------------------------------------+
+| The Dana Carvey Show               |
+| Over the Top                       |
+| Watching Ellie                     |
+| Come to Papa                       |
+| The Office                         |
+| Entertainers with Byron Allen      |
+| The Naked Trucker and T-Bones Show |
+| Some Good News                     |
+| ES.TV HD                           |
+| Inside Comedy                      |
+| Rove LA                            |
+| Metacafe Unfiltered                |
+| Fabrice Fabrice Interviews         |
+| The Office: Superfan Episodes      |
+| Riot                               |
+| Séries express                     |
+| Hollywood Sessions                 |
+| First Impressions with Dana Carvey |
+| LA Times: The Envelope             |
+| Space Force                        |
++------------------------------------+
+Run Time: real 0.001 user 0.000481 sys 0.000000
+sqlite> 
+```
+
+It took only `0.001` seconds when it was `2.157` seconds!
+
+> #### But we can't make trees for every column, because it will consume a lot of memory.
+
+---
+
+## Python and SQL
