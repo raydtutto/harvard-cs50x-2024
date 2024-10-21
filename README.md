@@ -218,9 +218,9 @@ No problem set or practical tasks were provided.
 <details open>
   <summary>Problem set 6</summary>
 
-| *Problem set 6*                                                                                                  | *Description*                                                                                                     | *Test*      | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:------------|:--------|
-| [songs](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_6_python/problem_set_7/songs)         | Write **SQL** queries to answer questions about a database of the 100 most-streamed songs on **Spotify** in 2018. | **11** / 11 | —       |
+| *Problem set 6*                                                                                       | *Description*                                                                                                     | *Test*      | *Style* |
+|:------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:------------|:--------|
+| [songs](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_7_sql/problem_set_7/songs) | Write **SQL** queries to answer questions about a database of the 100 most-streamed songs on **Spotify** in 2018. | **11** / 11 | —       |
 
 </details>
 
