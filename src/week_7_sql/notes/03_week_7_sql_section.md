@@ -324,10 +324,10 @@ WHERE artists.name = 'Drake';
 ## Find words
 
 `LIKE` keyword can be used to match strings with certain phrases.
-- `'%feat.%'` searches in the whole string;
-- `'%feat.'` searches at the end of string;
-- `'feat.%'` searches at the beginning of string.
+- `'%feat%'` searches in the whole string;
+- `'%feat'` searches at the end of string;
+- `'feat%'` searches at the beginning of string.
 
 ```sqlite
-SELECT name FROM songs WHERE name LIKE '%feat.%';
+SELECT name FROM songs WHERE name LIKE '%feat%';
 ```
