@@ -51,7 +51,7 @@ We could write code this way, more similar to C way:
 import csv
 
 file = open("favorites.csv", "r")
-# Do comething
+# Do something
 close(file)
 ```
 
