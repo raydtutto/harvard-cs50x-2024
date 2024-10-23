@@ -1,0 +1,3 @@
+The THIEF is: Bruce, ID 686048
+The city the thief ESCAPED TO: New York City
+The ACCOMPLICE is: Robin, ID 864400
