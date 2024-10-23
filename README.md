@@ -232,6 +232,7 @@ No problem set or practical tasks were provided.
 | *Week 7: Additional practice*                                                                                               | *Description*                                                                 | *Test* | *Style* |
 |:----------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:-------|:--------|
 | [favorites.sql](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_7_sql/additional_practice/favorites.sql) | Clean up the given database. _Practice using `SELECT` and `UPDATE` keywords_. | —      | —       |
+| [prophecy](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_7_sql/additional_practice/prophecy)           | Create a new database. _Practice refactoring a database, using `CREATE`_.     | —      | —       |
 
 </details>
 ---
