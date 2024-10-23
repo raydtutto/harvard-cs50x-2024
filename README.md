@@ -216,7 +216,7 @@ No problem set or practical tasks were provided.
 ### ✍️ Week 7: SQL
 
 <details open>
-  <summary>Problem set 6</summary>
+  <summary>Problem set 7</summary>
 
 | *Problem set 7*                                                                                                 | *Description*                                                                                                     | *Test*      | *Style* |
 |:----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:------------|:--------|
