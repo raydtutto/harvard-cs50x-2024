@@ -213,9 +213,9 @@ No problem set or practical tasks were provided.
 
 ---
 
-### ✍️ Week 7: SQL
+### ✅ Week 7: SQL
 
-<details open>
+<details onclose>
   <summary>Problem set 7</summary>
 
 | *Problem set 7*                                                                                                 | *Description*                                                                                                     | *Test*      | *Style* |
@@ -226,7 +226,7 @@ No problem set or practical tasks were provided.
 
 </details>
 
-<details open>
+<details onclose>
   <summary>Additional practice</summary>
 
 | *Week 7: Additional practice*                                                                                               | *Description*                                                                 | *Test* | *Style* |
@@ -235,11 +235,20 @@ No problem set or practical tasks were provided.
 | [prophecy](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_7_sql/additional_practice/prophecy)           | Create a new database. _Practice refactoring a database, using `CREATE`_.     | —      | —       |
 
 </details>
+
 ---
 
-#### Week 8: HTML, CSS, JavaScript
+### ✍️ Week 8: HTML, CSS, JavaScript
+
+---
+
 #### Week 9: Flask
+
+---
+
 #### Week 10: Cybersecurity
+
+---
 
 > #### [Academic honesty](https://cs50.harvard.edu/x/2024/honesty/)
 > Please do not copy these solutions if you are also taking the CS50x course, try to solve the problem sets yourself.
