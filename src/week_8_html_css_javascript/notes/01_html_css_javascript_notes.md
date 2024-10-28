@@ -851,7 +851,9 @@ But let's make a separate CSS file for readability:
 mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography,
 forms, buttons, navigation, and other interface components. [Wiki](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 
-Here is the phonebook without Bootstrap styling:
+### phonebook.html
+
+Here is the `phonebook.html` without Bootstrap styling:
 
 ```html
 <!DOCTYPE html>
@@ -986,5 +988,282 @@ Our previous search.html with Bootstrap:
 
 ---
 
-## Javascript
+## JavaScript
+
+JavaScript is different from Python and C, but more close to Python.
+
+### hello1.html
+
+- `onsubmit` - you can place JavaScript code within this attribute;
+- `greet();` - calls greet function;
+- `return false;` - keep user on the page;
+- `<script>` you can place a script tag inside your header.
+- `querySelector('#name')` - selects an element with id "name";
+
+```html
+<!DOCTYPE html>
+
+<!-- Demonstrates onsubmit -->
+
+<html lang="en">
+    <head>
+        <script>
+
+            function greet()
+            {
+                alert('hello, ' + document.querySelector('#name').value);
+            }
+
+        </script>
+        <title>hello</title>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;">
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+```
+
+### hello2.html
+
+The same page but with different design:
+- `<script>` is at the bottom of the body now;
+- `querySelector` + `addEventListener` - listens to submissions of the form;
+- `function(event)` - unnamed function that will be called when listener is triggered;
+- `event.preventDefault();` - didn't submit anything to the server, user's stays on the page.
+
+```html
+<!DOCTYPE html>
+
+<!-- Demonstrates DOMContentLoaded -->
+
+<html lang="en">
+<head>
+  <title>hello</title>
+</head>
+<body>
+<form>
+  <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+  <input type="submit">
+</form>
+<script>
+  
+  document.querySelector('form').addEventListener('submit', function(event) {
+    alert('hello, ' + document.querySelector('#name').value);
+    event.preventDefault();
+  });
+
+</script>
+</body>
+</html>
+```
+
+But more common technique nowadays is this:
+- `DOMContentLoaded` - means that _ONLY WHEN_ **the whole page is loaded** do something;
+
+```html
+<!DOCTYPE html>
+
+<!-- Demonstrates DOMContentLoaded -->
+
+<html lang="en">
+    <head>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('form').addEventListener('submit', function(e) {
+                    alert('hello, ' + document.querySelector('#name').value);
+                    e.preventDefault();
+                });
+            });
+
+        </script>
+        <title>hello</title>
+    </head>
+    <body>
+        <form>
+            <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
+    </body>
+</html>
+```
+
+### background.html
+
+> When in **CSS** we have `background-color` method, in **JavaScript** exist the same but `backgroundColor` method.
+> You can't use `-` hyphens within names in **JavaScript**, because they may be mistaken for a subtraction operator. 
+> 
+> Use `CamelCase` for methods in **JavaScript**.
+
+You can modify CSS using JavaScript:
+- create different id's for `red`, `green` and `blue`;
+- create a variable with `let` = "let me create this variable";
+- when `click` happens we take our `body` variable and changing it.
+
+```html
+<!DOCTYPE html>
+
+<!-- Demonstrates programmatic changes to style -->
+
+<html lang="en">
+    <head>
+        <title>background</title>
+    </head>
+    <body>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+        <script>
+
+            let body = document.querySelector('body');
+            document.querySelector('#red').addEventListener('click', function() {
+                body.style.backgroundColor = 'red';
+            });
+            document.querySelector('#green').addEventListener('click', function() {
+                body.style.backgroundColor = 'green';
+            });
+            document.querySelector('#blue').addEventListener('click', function() {
+                body.style.backgroundColor = 'blue';
+            });
+
+        </script>
+    </body>
+</html>
+```
+
+## blink.html
+
+- `setInterval()` - JavaScript function, associates with window, calls a function any numbers of milliseconds.
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script>
+
+            // Toggles visibility of greeting
+            function blink()
+            {
+                let body = document.querySelector('body');
+                if (body.style.visibility == 'hidden')
+                {
+                    body.style.visibility = 'visible';
+                }
+                else
+                {
+                    body.style.visibility = 'hidden';
+                }
+            }
+
+            // Blink every 500ms
+            window.setInterval(blink, 500);
+
+        </script>
+        <title>blink</title>
+    </head>
+    <body>
+        hello, world
+    </body>
+</html>
+```
+
+### Arrays in JavaScript
+
+Let's use `large.js` for `autocomplete.html`
+
+```javascript
+// large.js
+
+let WORDS = [
+  "a",
+  "aaa",
+  "aaas",
+  "aachen",
+  // ...
+  "zymurgy"
+];
+```
+
+```html
+// autocomplete.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>autocomplete</title>
+</head>
+<body>
+
+<input autocomplete="off" autofocus placeholder="Query" type="text">
+
+// Unordered empty list
+<ul></ul>
+
+<script src="large.js"></script>
+<script>
+
+  let input = document.querySelector('input');
+  input.addEventListener('keyup', function(event) {
+    let html = '';
+    if (input.value) {
+      for (word of WORDS) {
+        if (word.startsWith(input.value)) {
+          html += `<li>${word}</li>`;
+        }
+      }
+    }
+    document.querySelector('ul').innerHTML = html;
+  });
+
+</script>
+</body>
+</html>
+```
+
+- `keyup` listens for finger going up and down;
+- `blur`
+- `change`
+- `click`
+- `drag`
+- `focus`
+- `keyup`
+- `load`
+- `mousedown`
+- `mouseover`
+- `mouseup`
+- `submit`
+- `touchmove`
+- `unload`
+- ...
+
+## geolocation.html
+
+- `navigator` - global variable that comes with browser;
+- `geolocation` object associated with navigator;
+- `getCurrentPosition()` - function;
+- `document.write()` writes on the screen the latitude and longitude.
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>geolocation</title>
+    </head>
+    <body>
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.write(position.coords.latitude + ", " + position.coords.longitude);
+            });
+            
+        </script>
+    </body>
+</html>
+```
 
