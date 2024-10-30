@@ -68,12 +68,68 @@ are more human-comprehensible.
 
 In this way, _**DNS**_ is somewhat like the yellow pages of the web.
 
-| Host                   | IPv4 Address      |
-|------------------------|-------------------|
-| `info.host1.net`       | `0.0.0.0`         |
-| `info.host2.net`       | `0.0.0.1`         |
-|                        |                   |
-| `io-in-f138.1e100.net` | `74.125.202.138`  |
-|                        |                   |
-| `info.hostn-1.net`     | `255.255.255.254` |
-| `info.hostn.net`       | `255.255.255.255` |
+**_IPv4_**:
+
+| Host                                   | IPv4 Address      |
+|----------------------------------------|-------------------|
+| `info.host1.net`                       | `0.0.0.0`         |
+| `info.host2.net`                       | `0.0.0.1`         |
+|                                        |                   |
+| `io-in-f138.1e100.net` or `google.com` | `74.125.202.138`  |
+|                                        |                   |
+| `info.hostn-1.net`                     | `255.255.255.254` |
+| `info.hostn.net`                       | `255.255.255.255` |
+
+**Google** has a lot of different servers and can't call all of them "google.com", so they have their internal system
+for translating what server is connected to the IP address.
+
+**_IPv6_**:
+
+| Host                                 | IPv4 Address                              |
+|--------------------------------------|-------------------------------------------|
+| `info.host1.net`                     | `0:0:0:0:0:0:0:0`                         |
+| `info.host2.net`                     | `0:0:0:0:0:0:0:1`                         |
+|                                      |                                           |
+| `lk-in-x93.1e100.net` or `google.ie` | `2a00:1450:4010:c09:0:0:0:93`             |
+|                                      |                                           |
+| `info.hostn-1.net`                   | `ffff:ffff:ffff:ffff:ffff:ffff:ffff:fffe` |
+| `info.hostn.net`                     | `ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff` |
+
+Much like there is no yellow pages of the world, there is really no DNS record of the entire internet.
+
+Rather, large DNS server systems (like Google’s own) are more like aggregators, collecting smaller
+sets of DNS information and pooling them together, updating frequently.
+
+In that way, large DNS servers are like libraries that stock many different sets of local yellow page books.
+In order to have the most up-to-date phone numbers for businesses, libraries must update the books
+they have on hand.
+
+DNS record sets are thus fairly _decentralized_.
+
+`[User]` --> `[DHCP server]` `[DNS Server]` --> `[Internet]`
+
+---
+
+## Access Points
+
+One of the ways we’ve dealt with the IPv4 addressing problem is to start assigning multiple people to the same IP address.
+
+The IP address is assigned to a router, whose job it is to act as a traffic cop that allows data requests
+from all the devices on your local network (your home or business, e.g.) to be processed through a single IP address.
+
+Modern home networks consist of access points that combine a router, a modem, a switch, and other technologies
+together into a single device.
+
+Modern business networks or large-scale wide-area networks (WANs) still frequently have these as separate devices
+to allow the size of their network to scale more easily.
+
+`[User]` --> `[DHCP server]` `[DNS Server]` `[Access Point]` --> `[Internet]`
+
+> This isn’t a course on networking, so this is far from the whole
+story, but it’s enough to get us started.
+
+At home or at work we have local, small networks, and these networks are woven together to create a large,
+interconnected network—an Internet.
+- If you think about each of these small networks being isolated communities with only a single road in or out,
+the picture becomes a bit clearer.
+
