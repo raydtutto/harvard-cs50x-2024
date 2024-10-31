@@ -1,0 +1,21 @@
+table
+{
+    border: 5px solid darkgrey;
+}
+
+tr
+{
+    height: 50px;
+}
+
+td
+{
+    /* Lots being applied here */
+
+    background-color: royalblue;
+    color: white;
+    font-size: 22pt;
+    font-family: georgia;
+    text-align: center;
+    width: 50px;
+}
