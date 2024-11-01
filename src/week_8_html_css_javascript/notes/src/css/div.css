@@ -1,0 +1,9 @@
+#colorDiv
+{
+    text-align: center;
+    font-size: 40pt;
+    font-weight: bold;
+    background-color: color;
+    margin: 4%;
+    padding: 4%;
+}
