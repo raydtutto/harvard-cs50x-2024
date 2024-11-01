@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>test</title>
+
+  <!-- Four different ways of changing colors -->
+
+  <!-- (a) Five separate color-changing functions -->
+  <script src="js/five.js" type="text/javascript"></script>
+
+  <!-- (b) One general color-changing function -->
+  <script src="js/general.js" type="text/javascript"></script>
+
+  <!-- (c) An event handler method -->
+  <script src="js/event.js" type="text/javascript"></script>
+
+  <!-- (d) Using jQuery only -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script src="js/jquerycolor.js" type="text/javascript"></script>
+
+  <!-- CSS to format div -->
+  <link href="css/div.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id="colorDiv">Change my color!</div>
+
+<h3>Individual functions for background color</h3>
+<div>
+  <button onclick="turnPurple();">Purple</button>
+  <button onclick="turnGreen();">Green</button>
+  <button onclick="turnOrange();">Orange</button>
+  <button onclick="turnRed();">Red</button>
+  <button onclick="turnBlue();">Blue</button>
+</div>
+
+<h3>One single function for background color</h3>
+<div>
+  <button onclick="changeColor('purple')">Purple</button>
+  <button onclick="changeColor('green');">Green</button>
+  <button onclick="changeColor('orange');">Orange</button>
+  <button onclick="changeColor('red');">Red</button>
+  <button onclick="changeColor('blue');">Blue</button>
+</div>
+
+<h3>Event handler for background color</h3>
+<div>
+  <button onclick="changeColorEvent(event)">Purple</button>
+  <button onclick="changeColorEvent(event)">Green</button>
+  <button onclick="changeColorEvent(event)">Orange</button>
+  <button onclick="changeColorEvent(event)">Red</button>
+  <button onclick="changeColorEvent(event)">Blue</button>
+</div>
+
+<h3>jQuery for background color</h3>
+<div>
+  <button class="jQButton">Purple</button>
+  <button class="jQButton">Green</button>
+  <button class="jQButton">Orange</button>
+  <button class="jQButton">Red</button>
+  <button class="jQButton">Blue</button>
+</div>
+</body>
+</html>
