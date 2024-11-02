@@ -240,6 +240,15 @@ No problem set or practical tasks were provided.
 
 ### ✍️ Week 8: HTML, CSS, JavaScript
 
+<details open>
+  <summary>Problem set 8</summary>
+
+| *Problem set 8*                                                                                                                    | *Description*                                                                                                    | *Test* | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|:-------|:--------|
+| [trivia](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/trivia/index.html) | Write a webpage that lets users answer trivia questions.                                                         | —      | —       |
+
+</details>
+
 ---
 
 #### Week 9: Flask
@@ -252,8 +261,6 @@ No problem set or practical tasks were provided.
 
 > #### [Academic honesty](https://cs50.harvard.edu/x/2024/honesty/)
 > Please do not copy these solutions if you are also taking the CS50x course, try to solve the problem sets yourself.
->
-> I am learning, so these solutions do not claim to be the best possible.
 
 ---
 
