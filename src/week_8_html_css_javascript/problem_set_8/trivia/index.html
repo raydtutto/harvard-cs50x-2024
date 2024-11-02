@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+      // TODO: Add code to check answers to questions
+
+      // Method #1: Using event
+
+      // Run function when the page is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+
+        // Iterate through each question separately
+        let questions = document.querySelectorAll('.question');
+        for (let i = 0; i < questions.length; i++) {
+
+          // Create variable for the current question
+          let question = questions[i];
+
+          // Colour the correct answers green
+          let corrects = question.querySelectorAll('.correct');
+          for (let j = 0; j < corrects.length; j++) {
+            corrects[j].addEventListener('click', function() {
+
+              // Set default color for unselected answers
+              let buttons = question.querySelectorAll('button');
+              buttons.forEach(p => {
+                p.style.backgroundColor = '#d9edff';
+              });
+
+              // Set selected answer's color to green
+              corrects[j].style.backgroundColor = 'green';
+
+              // Give a feedback
+              question.querySelector('.feedback').innerHTML = 'Correct answer!';
+
+              // Clear style before applying new style to feedback
+              question.querySelector('.feedback').classList.remove('feedback_correct');
+              question.querySelector('.feedback').classList.remove('feedback_incorrect');
+
+              // Add new style to feedback
+              question.querySelector('.feedback').classList.add('feedback_correct');
+            });
+          }
+
+          // Colour the incorrect answers red
+          let incorrects = question.querySelectorAll('.incorrect');
+          for (let j = 0; j < incorrects.length; j++) {
+            incorrects[j].addEventListener('click', function() {
+
+              // Set default color for unselected answers
+              let buttons = question.querySelectorAll('button');
+              buttons.forEach(p => {
+                p.style.backgroundColor = '#d9edff';
+              });
+
+              // Set selected answer's color to red
+              incorrects[j].style.backgroundColor = 'red';
+
+              // Give a feedback
+              question.querySelector('.feedback').innerHTML = 'Incorrect!';
+
+              // Clear style before applying new style to feedback
+              question.querySelector('.feedback').classList.remove('feedback_correct');
+              question.querySelector('.feedback').classList.remove('feedback_incorrect');
+
+              // Add new style to feedback
+              question.querySelector('.feedback').classList.add('feedback_incorrect');
+            });
+          }
+        }
+
+        // Method #2: Using unique id's
+
+
+        // Check input for Part 2, Question 1:
+        document.querySelector('#check-p2-q1').addEventListener('click', function() {
+          let input = document.querySelector('#answer-p2-q1');
+          if (input.value.toLowerCase() == 'captain ahab' || input.value.toLowerCase() == 'ahab') {
+            input.style.backgroundColor = 'green';
+
+            // Give a feedback
+            document.querySelector('#result-p2-q1').innerHTML = 'Correct answer!';
+
+            // Clear style before applying new style to feedback
+            document.querySelector('#result-p2-q1').classList.remove('feedback_correct');
+            document.querySelector('#result-p2-q1').classList.remove('feedback_incorrect');
+
+            // Add new style to feedback
+            document.querySelector('#result-p2-q1').classList.add('feedback_correct');
+          } else {
+            input.style.backgroundColor = 'red';
+
+            // Give a feedback
+            document.querySelector('#result-p2-q1').innerHTML = 'Incorrect!';
+
+            // Clear style before applying new style to feedback
+            document.querySelector('#result-p2-q1').classList.remove('feedback_correct');
+            document.querySelector('#result-p2-q1').classList.remove('feedback_incorrect');
+
+            // Add new style to feedback
+            document.querySelector('#result-p2-q1').classList.add('feedback_incorrect');
+          }
+        });
+
+        // Click on Enter for Part 2 Question 1
+        document.querySelector('#answer-p2-q1').addEventListener('keydown', function(e) {
+          if (e.key == 'Enter') {
+            document.querySelector('#check-p2-q1').click();
+          }
+        });
+
+        // Check input for Part 2, Question 2:
+        document.querySelector('#check-p2-q2').addEventListener('click', function() {
+          let input = document.querySelector('#answer-p2-q2');
+          if (input.value.toLowerCase() == 'yukon territory' || input.value.toLowerCase() == 'yukon') {
+            input.style.backgroundColor = 'green';
+
+            // Give a feedback
+            document.querySelector('#result-p2-q2').innerHTML = 'Correct!';
+
+            // Clear style before applying new style to feedback
+            document.querySelector('#result-p2-q2').classList.remove('feedback_correct');
+            document.querySelector('#result-p2-q2').classList.remove('feedback_incorrect');
+
+            // Add new style to feedback
+            document.querySelector('#result-p2-q2').classList.add('feedback_correct');
+          } else {
+            input.style.backgroundColor = 'red';
+
+            // Give a feedback
+            document.querySelector('#result-p2-q2').innerHTML = 'Incorrect!';
+
+            // Clear style before applying new style to feedback
+            document.querySelector('#result-p2-q2').classList.remove('feedback_correct');
+            document.querySelector('#result-p2-q2').classList.remove('feedback_incorrect');
+
+            // Add new style to feedback
+            document.querySelector('#result-p2-q2').classList.add('feedback_incorrect');
+          }
+        });
+
+        // Click on Enter for Part 2 Question 2
+        document.querySelector('#answer-p2-q2').addEventListener('keydown', function(e) {
+          if (e.key == 'Enter') {
+            document.querySelector('#check-p2-q2').click();
+          }
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice </h2>
+        <hr>
+        <!-- TODO: Add multiple choice question here -->
+
+        <div class="question">
+          <h3>Who is the author of "Oliver Twist"?</h3>
+
+          <button class="correct"> Charles Dickens </button>
+          <button class="incorrect"> John Ronald Reuel Tolkien </button>
+          <button class="incorrect"> Mark Twain </button>
+
+          <p class="feedback"></p>
+        </div>
+
+        <div class="question">
+          <h3>Who is the odd one out?</h3>
+
+          <button class="correct"> Barabbas </button>
+          <button class="incorrect"> Porthos </button>
+          <button class="incorrect"> Athos </button>
+          <button class="incorrect"> Aramis </button>
+
+          <p class="feedback"></p>
+        </div>
+
+        <div class="question">
+          <h3>In what book would we read about a character called Captain Nemo?</h3>
+
+          <button class="incorrect"> Moby Dick </button>
+          <button class="incorrect"> Catch-22 </button>
+          <button class="incorrect"> Utopia </button>
+          <button class="correct"> 20,000 Leagues Under the Sea </button>
+
+          <p class="feedback"></p>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr>
+        <!-- TODO: Add free response question here -->
+
+        <h3>Who chased Moby Dick?</h3>
+        <!-- Captain Ahab -->
+
+        <input id="answer-p2-q1" type="text"></input>
+        <button id="check-p2-q1">Submit</button>
+
+        <p id="result-p2-q1"></p>
+
+        <h3>Where did the story "White Fang" take place?</h3>
+        <!-- Yukon Territory -->
+
+        <input id="answer-p2-q2" type="text"></input>
+        <button id="check-p2-q2">Submit</button>
+
+        <p id="result-p2-q2"></p>
+
+      </div>
+    </div>
+  </body>
+</html>
