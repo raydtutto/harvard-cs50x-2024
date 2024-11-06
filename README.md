@@ -238,20 +238,21 @@ No problem set or practical tasks were provided.
 
 ---
 
-### ✍️ Week 8: HTML, CSS, JavaScript
+### ✅ Week 8: HTML, CSS, JavaScript
 
-<details open>
+<details onclose>
   <summary>Problem set 8</summary>
 
-| *Problem set 8*                                                                                                                    | *Description*                                                                                                    | *Test* | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|:-------|:--------|
-| [trivia](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/trivia/index.html) | Write a webpage that lets users answer trivia questions.                                                         | —      | —       |
+| *Problem set 8*                                                                                                                       | *Description*                                            | *Test* | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------|:-------|:--------|
+| [trivia](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/trivia/index.html)    | Write a webpage that lets users answer trivia questions. | —      | —       |
+| [homepage](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/readme.md) | Build a simple homepage using HTML, CSS, and JavaScript. | —      | —       |
 
 </details>
 
 ---
 
-#### Week 9: Flask
+### ✍️ Week 9: Flask
 
 ---
 
