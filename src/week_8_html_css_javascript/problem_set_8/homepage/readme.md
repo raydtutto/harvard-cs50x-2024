@@ -14,19 +14,40 @@ The webpage includes:
 
 <img src="img/screenshots/1-index_1.png" alt="Main page">
 
+Bootstrap template used:
+- [Cover](https://getbootstrap.com/docs/5.3/examples/cover/)
+- Collapsing header from [Carousel](https://getbootstrap.com/docs/5.3/examples/carousel/)
+- [Buttons](https://getbootstrap.com/docs/5.3/examples/buttons/)
+
+---
+
 ### [myths.html](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/myths.html)
 
 <img src="img/screenshots/2-myths.png" alt="Famous myths">
+
+Bootstrap template used:
+- Cards from [Pricing](https://getbootstrap.com/docs/5.3/examples/pricing/)
+
+---
 
 ### [book.html](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/book.html)
 
 <img src="img/screenshots/3-book.png" alt="About the book">
 
+---
+
 ### [author.html](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/author.html)
 
 <img src="img/screenshots/4-author.png" alt="About author">
+
+---
 
 ### Modal windows
 
 <img src="img/screenshots/1-index_2_preorder-modal.png" alt="Preorder modal">
 <img src="img/screenshots/1-index_3_confirm_modal.png" alt="Confirm modal">
+
+Bootstrap template used:
+- [Modals](https://getbootstrap.com/docs/5.3/examples/modals/)
+
+---
