@@ -1,0 +1,101 @@
+Total: 23 tags (except <html>, <head>, <body>, and <title>):
+
+    Text Content
+    - <h1>
+    - <h2>
+    - <h3>
+    - <p>
+
+    Links, Navigation and list elements
+    - <a>
+    - <nav>
+    - <ul>
+    - <li>
+
+    Buttons and Form Controls
+    - <button>
+    - <form>
+    - <input>
+    - <label>
+
+    Metadata and External Resources
+    - <link>
+    - <meta>
+    - <script>
+
+    Structure and Layout
+    - <div>
+    - <footer>
+    - <header>
+    - <section>
+
+    Inline Elements
+    - <span>
+    - <img>
+
+    SVG and Graphics
+    - <svg>
+    - <path>
+
+Total: 31 CSS properties:
+
+    Background
+    - background-color
+    - background-size
+
+    Border
+    - border-bottom
+    - border-bottom-color
+    - border-color
+    - border-radius
+
+    Color
+    - color
+
+    Display
+    - display
+    - overflow
+    - z-index
+
+    Font
+    - font-family
+    - font-size
+    - font-style
+    - font-weight
+    - white-space
+
+    Margin
+    - margin-bottom
+
+    Outline
+    - outline
+    - outline-offset
+
+    Padding
+    - padding
+    - padding-bottom
+    - padding-left
+    - padding-right
+    - padding-top
+
+    Position
+    - position
+    - top
+    - left
+
+    Size (Width/Height)
+    - height
+    - width
+    - max-width
+    - min-width
+    - min-height
+
+    Text Decoration
+    - text-decoration
+
+    Transition
+    - transition
+
+Using JavaScript with jQuery and Bootstrap libraries, I have created a pre-order modal that validates the form,
+displays error messages when necessary, and shows a confirmation modal upon successful validation, also I added
+the scroll event listener to the header.
