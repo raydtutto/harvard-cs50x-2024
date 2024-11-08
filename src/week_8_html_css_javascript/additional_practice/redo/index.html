@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous">
+    </script>
+
+    <style>
+
+        .text-shadow {
+            text-shadow: 0 .05rem .2rem rgba(0, 0, 0, .5);
+        }
+
+        .text-no-wrap {
+            white-space: nowrap;
+        }
+
+        .button-info {
+            position: relative;
+        }
+
+        /* Popover styling */
+        .popover {
+            position: absolute;
+            /* top: -40%;
+            left: -200%; */
+            transform: translateX(-100%);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Show the popover when button is hovered */
+        .button-info:hover .popover {
+            opacity: 1;
+        }
+
+        /*
+        * Extra utilities
+        */
+
+        .flex-equal > * {
+            flex: 1;
+        }
+
+        /* Rounded corners on mobile */
+        .round-right {
+            border-top-right-radius: 0rem;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+
+        .round-left {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .flex-md-equal > * {
+                flex: 1;
+            }
+
+            .round-right {
+                border-top-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-left-radius: 0rem;
+            }
+
+            .round-left {
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+                border-top-right-radius: 0rem;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="bg-light position-fixed w-100" style="z-index:1;">
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg bg-light fw-bold">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/radioshack-logo.png" alt="Radioshack" height="32">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-no-wrap px-3" href="#">Store locator</a>
+                        <a class="nav-link text-no-wrap px-3" href="#">Steve's workbench</a>
+                        <a class="nav-link text-no-wrap px-3" href="#">Services</a>
+                        <a class="nav-link text-no-wrap px-3" href="#">Electronic repair</a>
+                        <a class="nav-link text-no-wrap px-3" href="#">Support</a>
+                        <a class="nav-link text-no-wrap px-3" href="#">About us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Main -->
+
+<main style="padding-top: 3.5rem;">
+    <div class="container py-4">
+
+        <!-- Jumbotron -->
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3 bg-dark text-white"
+             style="position: relative; background-image: url('https://images.pexels.com/photos/9956757/pexels-photo-9956757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size:cover; background-position: center;">
+
+            <!-- Transparent overlay -->
+            <div class="overlay position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                 style="background-color: rgba(0, 0, 0, 0.3);"></div>
+
+            <!-- Info -->
+            <div class="position-absolute" style="top: 1rem; right: 1rem;">
+                <button type="button" class="btn btn-secondary button-info btn-sm"
+                        style="background-color: rgba(0,0,0,0); border: 0px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                         class="bi bi-info-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"></path>
+                    </svg>
+                    <div class="popover" id="popover">
+                        <div class="popover-body text-wrap rounded-3">
+                            <span>Selection will vary greatly by store.</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Hero -->
+            <div class="container-fluid py-5 position-relative">
+                <h1 class="display-5 fw-bold text-shadow">Summer Sidewalk Sale</h1>
+                <p class="col-md-8 fs-4 text-shadow">Save up to 75% on the electronic equipment and accessories you’ve
+                    always wanted! Shop now for gift-giving throughout the year.</p>
+                <button class="btn btn-primary btn-lg shadow" type="button">Discover</button>
+            </div>
+
+        </div>
+
+        <!-- Hotsopt -->
+        <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 pb-4">
+
+            <!-- First card -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-3"
+                     style="background-image: url('#'); border: 0px; background-size:cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 pt-4 px-2 pt-md-4 px-md-2 text-center">
+                        <div class="w-80">
+                            <h4 class="mb-4 lh-1 fw-bold">Cellular phones</h4>
+                        </div>
+                        <div class="shadow-sm mx-auto"
+                             style="background-color: #e5e5e5; width: 40%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second card -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-3"
+                     style="background-image: url('#'); background-size:cover; background-position: center; border: 0px;">
+                    <div class="d-flex flex-column h-100 pt-4 px-2 pt-md-4 px-md-2 text-center">
+                        <div class="w-80">
+                            <h4 class="mb-4 lh-1 fw-bold">No ordinary computer</h4>
+                        </div>
+                        <div class="shadow-sm mx-auto"
+                             style="background-color: #e5e5e5; width: 80%; height: 100px; border-radius: 8px 8px 0 0;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third card -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-3"
+                     style="background-image: url('#'); background-size:cover; background-position: center; border: 0px;">
+                    <div class="d-flex flex-column h-100 pt-4 px-2 pt-md-4 px-md-2 text-center">
+                        <div class="w-80">
+                            <h4 class="mb-4 lh-1 fw-bold">Family radio service</h4>
+                        </div>
+                        <div class="shadow-sm mx-auto"
+                             style="background-color: #e5e5e5; width: 50%; height: 100px; border-radius: 16px 16px 0 0;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fourth card -->
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-light rounded-3"
+                     style="background-image: url('#'); background-size:cover; background-position: center; border: 0px;">
+                    <div class="d-flex flex-column h-100 pt-4 px-2 pt-md-4 px-md-2 text-center">
+                        <div class="w-80">
+                            <h4 class="mb-4 lh-1 fw-bold">DTH Satellite</h4>
+                        </div>
+                        <div class="shadow-sm mx-auto"
+                             style="background-color: #e5e5e5; width: 70%; height: 100px; border-radius: 200px 200px 0 0;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ads -->
+        <div class="row align-items-md-stretch">
+
+            <div class="col-md-6">
+                <div class="h-100 p-5 text-bg-dark rounded-3"
+                     style="background-image: url('https://images.pexels.com/photos/12575722/pexels-photo-12575722.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size:cover; background-position: center; border: 0px;">
+                    <h2 class="fw-bold text-shadow">Sizzling Values</h2>
+                    <p class="col-md-8 text-shadow">
+                        In addition to Sidewalk Sale items, you’ll find more savings
+                        <a href="http://www.radioshack.com/Flyer_553/html/sizzling_values_1.html"
+                           class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">here!</a>
+                        Plus, all RadioShack-Brand Phones and Answerers are on sale!
+                    </p>
+                    <button class="btn btn-outline-light" type="button">Discover</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-body-tertiary rounded-3 border">
+                    <h2 class="fw-bold">Franchise opportunities</h2>
+                    <p class="col-md-8">
+                        RadioShack offers a trusted electronics retail franchise,
+                        providing brand support to help franchisees thrive in the tech market.
+                    </p>
+                    <button class="btn btn-outline-secondary" type="button">Know more</button>
+                </div>
+            </div>
+
+            <!-- Submenu -->
+            <div class="container px-3 py-3" id="icon-grid">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+
+                    <div class="col d-flex align-items-start">
+                        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                        <div>
+                            <div class="pb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+                                     class="bi bi-music-note-beamed" viewBox="0 0 16 16">
+                                    <path d="M6 13c0 1.105-1.12 2-2.5 2S1 14.105 1 13s1.12-2 2.5-2 2.5.896 2.5 2m9-2c0 1.105-1.12 2-2.5 2s-2.5-.895-2.5-2 1.12-2 2.5-2 2.5.895 2.5 2"></path>
+                                    <path fill-rule="evenodd" d="M14 11V2h1v9zM6 3v10H5V3z"></path>
+                                    <path d="M5 2.905a1 1 0 0 1 .9-.995l8-.8a1 1 0 0 1 1.1.995V3L5 4z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                                Rock and Roll OnTour
+                            </h3>
+                            <p>Rock and Roll Hall of Fame and Museum OnTour Exhibit</p>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-start">
+                        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                            <use xlink:href="#cpu-fill"></use>
+                        </svg>
+                        <div>
+                            <div class="pb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+                                     class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"></path>
+                                    <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"></path>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">United Against Crime</h3>
+                            <p>Free materials focusing on Crime Prevention.</p>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-start">
+                        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                            <use xlink:href="#calendar3"></use>
+                        </svg>
+                        <div>
+                            <div class="pb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+                                     class="bi bi-house-lock" viewBox="0 0 16 16">
+                                    <path d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207l-5 5V13.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 2 13.5V8.207l-.646.647a.5.5 0 1 1-.708-.708z"></path>
+                                    <path d="M10 13a1 1 0 0 1 1-1v-1a2 2 0 0 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1"></path>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Home Security</h3>
+                            <p>Protect your family and property from intruders.</p>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex align-items-start">
+                        <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        <div>
+                            <div class="pb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor"
+                                     class="bi bi-fast-forward-btn" viewBox="0 0 16 16">
+                                    <path d="M8.79 5.093A.5.5 0 0 0 8 5.5v1.886L4.79 5.093A.5.5 0 0 0 4 5.5v5a.5.5 0 0 0 .79.407L8 8.614V10.5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"></path>
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">TV/FM Reception</h3>
+                            <p>Direct-to-Home, Outdoor and Indoor Reception.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Jumbotron -->
+        <div class="d-md-flex flex-md-equal w-100">
+            <div class="p-5 bg-body-tertiary text-bg-dark round-left w-100"
+                 style="background-color: #10439F !important;">
+                <h2 class="fw-bold col-md-8">Build your future with Radioshack</h2>
+                <p class="col-md-8">
+                    We offer dynamic career opportunities in electronics retail,
+                    ideal for those passionate about technology and customer service.
+                </p>
+                <button class="btn btn-outline-light" type="button">View open jobs</button>
+            </div>
+            <div class="p-5 bg-body-tertiary overflow-hidden round-right"
+                 style="background-image: url('https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size:cover; background-position: center; border: 0px; min-height: 260px;">
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+
+<footer class="bg-light">
+    <div class="container py-3">
+        <div class="row">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color:black;">Store
+                    locator</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color:black;">Steve's
+                    workbench</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"
+                                        style="color:black;">Services</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color:black;">Electronic
+                    repair</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"
+                                        style="color:black;">Support</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" style="color:black;">About
+                    us</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
