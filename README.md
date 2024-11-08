@@ -250,6 +250,15 @@ No problem set or practical tasks were provided.
 
 </details>
 
+<details onclose>
+  <summary>Additional practice</summary>
+
+| *Week 8: Additional practice*                                                                                                        | *Description*                                                                                                                                       | *Test* | *Style* |
+|:-------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:-------|:--------|
+| [redo](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/additional_practice/redo/index.html) | Re-design **RadioShack**’s [homepage](https://cs50.harvard.edu/x/2024/practice/redo/spinningR.gif) using modern tools. _Practice with `Bootstrap`_. | —      | —       |    |
+
+</details>
+
 ---
 
 ### ✍️ Week 9: Flask
