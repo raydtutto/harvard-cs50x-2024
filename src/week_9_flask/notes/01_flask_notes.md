@@ -397,3 +397,66 @@ Now we get user's input on `index.html` and use it on `greet.html`.
 > 
 > > **Generally, having duplication of anything is a bad design.**
 
+### -- Example `hello-7`
+
+Let's write a layout for our webpage at first:
+
+#### ---- hello-7/templates/'layout.html'
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>hello</title>
+</head>
+<body>
+  <!-- Jinja syntax -->
+  <!-- Now it is a placeholder for a block of code -->
+  {% block body %}{% endblock %}
+</body>
+</html>
+```
+
+Now we can use our template on other pages:
+
+#### ---- hello-7/templates/'index.html'
+
+```html
+<!DOCTYPE html>
+<!-- Get everything from layout.html and hand it to browser -->
+{% extends "layout.html" %}
+
+<!-- Jinja template -->
+{% block body %}
+
+    <form action="/greet" method="get">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+
+<!-- Jinja template -->
+{% endblock %}
+```
+
+#### ---- hello-7/templates/'greet.html'
+
+```html
+<!-- Get everything from layout.html and hand it to browser -->
+{% extends "layout.html" %}
+
+<!-- Jinja template -->
+{% block body %}
+
+    hello, {{ name }}
+
+<!-- Jinja template -->
+{% endblock %}
+```
+
+Finally, we have no duplication and an input form is working too.
+
+---
+
+## Request methods
