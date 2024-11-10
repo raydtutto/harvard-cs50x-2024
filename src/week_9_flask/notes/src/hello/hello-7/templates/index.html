@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- Get everything from layout.html and hand it to browser -->
+{% extends "layout.html" %}
+
+<!-- Jinja template -->
+{% block body %}
+
+  <form action="/greet" method="get">
+    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+    <button type="submit">Greet</button>
+  </form>
+
+<!-- Jinja template -->
+{% endblock %}
