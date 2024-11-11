@@ -460,3 +460,550 @@ Finally, we have no duplication and an input form is working too.
 ---
 
 ## Request methods
+
+You can imagine scenarios where it is not safe to utilize _method_ `get`, as **usernames and passwords would show up** in the URL.
+
+We can utilize the _method_ `post` to help with this problem:
+
+### -- Example hello-post
+
+#### ---- hello-post/`index.html`
+
+```html
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- Change method `get` to `post` -->
+    <form action="/greet" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+
+<!-- Jinja template -->
+{% endblock %}
+```
+
+> If we run Flask, write input to our form and click "submit", we get an error `405 Method Not Allowed`:
+> - The reason is that the method the user is using is not supported.
+> 
+> The default is method `get`, you don't need to type this:
+> ```python
+> @app.route("/greet", methods=["GET"])
+> ```
+> But you need to change it for method `post`:
+> ```python
+> @app.route("/greet", methods=["POST"])
+> ```
+> There is a way to use several methods:
+> ```python
+> @app.route("/greet", methods=["GET", "POST"])
+> ```
+
+We can easily make minor changes to `app.py`:
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# Change 'get' to 'post'
+@app.route("/greet", methods=["POST"])
+def greet():
+    name = request.args.get("name", "world")
+    return render_template("greet.html", name=name)
+```
+
+The site is working now, but there is no name. Why is that?
+- If `world` is a value of the `name` placeholder
+- There must be the case, where there is no `name` key in `request.args`.
+- To avoid this, we can use an `request.args` alternative - `request.form`.
+
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# Change 'get' to 'post'
+@app.route("/greet", methods=["POST"])
+def greet():
+    # Change 'request.args' to 'request.form'
+    name = request.form.get("name", "world")
+    return render_template("greet.html", name=name)
+```
+
+> - If you are using method `GET`, you can use `request.args`
+> - If you are using method `POST`, you need to use `request.form`
+
+Now, we get the greeting with a user input and there is no duplication of input in URL.
+
+### Multiple methods
+
+If we want to use multiple methods, we can do this:
+
+#### ---- hello-methods/`app.py`
+
+```python
+from flask import Flask, render_template, request
+
+# Pass the file name to Flask, without specifying it
+app = Flask(__name__)
+
+# "/" - default folder
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        name = request.form.get("name", "world")
+        return render_template("greet.html", name=name)
+    return render_template("index.html")
+```
+
+#### ---- hello-methods/`index.html`
+
+```html
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- We don't need to specify 'greet' anymore -->
+    <!-- <form method="post"> will work too-->
+    <form action="/" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Greet</button>
+    </form>
+
+{% endblock %}
+```
+
+> Even though, everything is working well now, we have a "bug":
+> - We have a default word "world" for an empty form, but even if the form is empty and doesn't contain anything, 
+> the browser still going to submit a name parameter with a blank value, so-called `empty-string`.
+> 
+> So, with an empty form we will see on our page only hello without a name:
+> ```
+> hello, 
+> ```
+
+#### ---- hello-methods/`greet.html`
+
+```html
+<!-- Get everything from layout.html and hand it to browser -->
+{% extends "layout.html" %}
+
+<!-- Jinja template -->
+{% block body %}
+
+    hello, {% if name %}{{ name }}{% else %}world{% endif %}
+
+<!-- Jinja template -->
+{% endblock %}
+```
+
+---
+
+## Frosh IMs
+
+**Frosh IMs** or "froshims" is a web application that allows students to register for intramural sports.
+
+### -- Frosh IMs #1
+
+#### ---- froshims-1/templates/`index.html`
+- <input ... `required`> means that we need this input be filled to submit the form;
+  - `required` **not the secure way** to do smth like this! Because it may be easily exclude through browser's
+  developer kit.
+- `<option disabled selected value="">Sport</option>` - default empty value to avoid random select;
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" required type="text">
+        <select name="sport">
+            <option disabled selected value="">Sport</option>
+            <option>Basketball</option>
+            <option>Soccer</option>
+            <option>Ultimate Frisbee</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}
+```
+
+It is better to remove `required` from the input and make some changes in `app.py`:
+
+#### ---- froshims-1/`app.py`
+- it's conventional to name the function after the route.
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/register", methods=["POST"])
+def register():
+    if not request.form.get("name") or not request.form.get("sport"):
+        return render_template("failure.html")
+    return render_template("success.html")
+```
+
+Let's create `success` and `failure` pages:
+
+#### ---- froshims-1/templates/`success.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    Register success!
+
+{% endblock %}
+```
+
+#### ---- froshims-1/templates/`failure.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    Register error.
+
+{% endblock %}
+```
+
+It's working now, we get success only if there is a name input and selected sport. But we can do better.
+
+### -- Frosh IMs #2
+
+> Our web application is not secure:
+> - User can change freely all the options we provided within sports selector;
+> - Our validation checker is working with **any** input now.
+> 
+> We can extract selector from the page for better design.
+
+- We can create a global variable `SPORTS`;
+- Make it a list of sports;
+- Passed into `index.html`;
+- Use Jinja syntax in `index.html` instead of previous selector.
+
+> #### Naming
+> UPPERCASE and lowercase is not necessary to use, but for better readability we can separate actual variables from
+> placeholders with a name in uppercase for them:
+> - _placeholder_ `sports` `=` _actual variable_ `SPORTS`
+
+#### ---- froshims-2/templates/`index.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Register</h1>
+<form action="/register" method="post">
+  <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+  <select name="sport">
+    <option disabled selected value="">Sport</option>
+    <!-- Jinja loop -->
+    {% for sport in sports %}
+        <option value="{{ sport }}">{{ sport }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Register</button>
+</form>
+
+{% endblock %}
+```
+
+#### ---- froshims-2/`app.py`
+Now we need to validate those sports:
+- `if not request.form.get("name") or request.form.get("sport") not in SPORTS:`
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"]
+
+@app.route("/")
+def index():
+  return render_template("index.html", sports=SPORTS)
+
+@app.route("/register", methods=["POST"])
+def register():
+  if not request.form.get("name") or request.form.get("sport") not in SPORTS:
+    return render_template("failure.html")
+  return render_template("success.html")
+```
+
+Now we have a correct validation of the selector.
+
+### -- Frosh IMs #3
+
+Let's try a different approach. Let's change `GUI` (Graphical User Interface).
+
+We can use radio buttons that are mutually exclusive.
+
+#### ---- froshims-3/templates/`index.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        {% for sport in sports %}
+            <input name="sport" type="radio" value="{{ sport }}"> {{ sport }}
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}
+```
+
+Now we have radio buttons on our page.
+
+### -- Frosh IMs #4
+
+What if we need to register on several sport types? Let's try to use checkboxes.
+
+#### ---- froshims-4/templates/`index.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        {% for sport in sports %}
+            <input name="sport" type="checkbox" value="{{ sport }}"> {{ sport }}
+        {% endfor %}
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}
+```
+
+Indeed, there are checkboxes on our page, but the problem is that we're only expecting one value.
+
+#### ---- froshims-4/`app.py`
+
+To get all the sports we need to change validation in `app.py`:
+- `getlist()` gets all instead of one element.
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+SPORTS = ["Basketball", "Soccer", "Ultimate Frisbee"]
+
+@app.route("/")
+def index():
+  return render_template("index.html", sports=SPORTS)
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+  if not request.form.get("name"):
+    return render_template("failure.html")
+  for sport in request.form.getlist("sport"):
+    if sport not in SPORTS:
+      return render_template("failure.html")
+  return render_template("success.html")
+```
+
+### -- Frosh IMs #5
+
+Now we can add another feature and make some changes:
+- Create custom error messages;
+- Show image on the error page;
+- Let's remember registrant and their choice;
+  - Register registrants with a dictionary `REGISTRANTS` and list `SPORTS`;
+    - `name` as a **key**, `sport` as a **value**;
+  - Put person's name into dictionary and associate a value with a key `REGISTRANTS[name] = sport`;
+- Add new route `/registrants` (successful `/register` will redirect us to `/registrants`);
+  - For that action we need to import Flask function `redirect`.
+
+
+#### ---- froshims-5/`app.py`
+
+```python
+# Implements a registration form, storing registrants in a dictionary, with error messages
+
+from flask import Flask, redirect, render_template, request
+
+app = Flask(__name__)
+
+REGISTRANTS = {}
+
+SPORTS = [
+    "Basketball",
+    "Soccer",
+    "Ultimate Frisbee"
+]
+
+
+@app.route("/")
+def index():
+    return render_template("index.html", sports=SPORTS)
+
+
+@app.route("/register", methods=["POST"])
+def register():
+
+    # Validate name
+    name = request.form.get("name")
+    if not name:
+        return render_template("error.html", message="Missing name")
+
+    # Validate sport
+    sport = request.form.get("sport")
+    if not sport:
+        return render_template("error.html", message="Missing sport")
+    if sport not in SPORTS:
+        return render_template("error.html", message="Invalid sport")
+
+    # Remember registrant
+    REGISTRANTS[name] = sport
+
+    # Confirm registration
+    return redirect("/registrants")
+
+
+@app.route("/registrants")
+def registrants():
+    return render_template("registrants.html", registrants=REGISTRANTS)
+```
+
+### -- Frosh IMs #6 with SQL
+
+Let's use SQL this time, because using global dictionaries is not a good design, we will lose those data instantly. So,
+we can try to save our data into `.db` file.
+
+1. Import `SQL` from `CS50` lib
+2. Open file `froshims.db`
+3. User can now deregister from the sport
+4. We are inserting nodes into table registrants from `froshims.db`
+5. Within `/registrants`:
+   - we select all registrants and getting back a list of dictionaries;
+   - then we're passing that list into Jinja template.
+
+> We just implemented the `MVC` paradigm, "Model View Controller":
+> - `view` is everything that the user sees (templates, HTML, CSS, JavaScript);
+> - `controller` is everything from app.py, the logic of our app;
+> - `model` is all scored data (a database or even a global dictionary)
+
+#### ---- froshims-6/`app.py`
+
+```python
+# Implements a registration form, storing registrants in a SQLite database, with support for deregistration
+
+from cs50 import SQL
+from flask import Flask, redirect, render_template, request
+
+app = Flask(__name__)
+
+db = SQL("sqlite:///froshims.db")
+
+SPORTS = [
+    "Basketball",
+    "Soccer",
+    "Ultimate Frisbee"
+]
+
+
+@app.route("/")
+def index():
+    return render_template("index.html", sports=SPORTS)
+
+
+@app.route("/deregister", methods=["POST"])
+def deregister():
+
+    # Forget registrant
+    id = request.form.get("id")
+    if id:
+        db.execute("DELETE FROM registrants WHERE id = ?", id)
+    return redirect("/registrants")
+
+
+@app.route("/register", methods=["POST"])
+def register():
+
+    # Validate submission
+    name = request.form.get("name")
+    sport = request.form.get("sport")
+    if not name or sport not in SPORTS:
+        return render_template("failure.html")
+
+    # Remember registrant
+    db.execute("INSERT INTO registrants (name, sport) VALUES(?, ?)", name, sport)
+
+    # Confirm registration
+    return redirect("/registrants")
+
+
+@app.route("/registrants")
+def registrants():
+    registrants = db.execute("SELECT * FROM registrants")
+    return render_template("registrants.html", registrants=registrants)
+```
+
+#### ---- froshims-6/templates/`registrants.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Registrants</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sport</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registrant in registrants %}
+                <tr>
+                    <td>{{ registrant.name }}</td>
+                    <td>{{ registrant.sport }}</td>
+                    <td>
+                        <form action="/deregister" method="post">
+                            <input name="id" type="hidden" value="{{ registrant.id }}">
+                            <button type="submit">Deregister</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+```
+
+---
