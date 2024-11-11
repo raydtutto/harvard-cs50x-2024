@@ -1,0 +1,10 @@
+<!-- Get everything from layout.html and hand it to browser -->
+{% extends "layout.html" %}
+
+<!-- Jinja template -->
+{% block body %}
+
+hello, {% if name %}{{ name }}{% else %}world{% endif %}
+
+<!-- Jinja template -->
+{% endblock %}

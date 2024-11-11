@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block body %}
+
+<!-- We don't need to specify 'greet' anymore -->
+<!-- <form method="post"> will work too-->
+<form action="/" method="post">
+  <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+  <button type="submit">Greet</button>
+</form>
+
+{% endblock %}
