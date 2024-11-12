@@ -1007,3 +1007,561 @@ def registrants():
 ```
 
 ---
+
+## Cookies and sessions
+
+While the above code is useful from an administrative standpoint, where a back-office administrator could add
+and remove individuals from the database, one can imagine how this code is not safe to implement on a public server.
+
+- For one, bad actors could make decisions on behalf of other users by hitting the deregister button – 
+effectively deleting their recorded answer from the server.
+
+> Web services like Google use login credentials to ensure users only have access to the right data.
+
+We can actually implement this itself using cookies. Cookies are small files that are stored on your computer,
+such that your computer can communicate with the server and effectively say, “I’m an authorized user that has 
+already logged in.” This authorization through this cookie is called a session.
+
+When you first logged-in on the website, the web server creates a `cookie`, some kind of unique identifier that
+confirms you were on this website:
+- `session=value` is a `key=value` pair.
+
+```
+HTTP/2 200
+Content-Type: text/html
+Set-Cookie: session=value
+...
+```
+
+Next time you visit the same server, the browser reminds that server what cookie was set:
+
+```
+GET / HTTP/2
+Host: accounts.google.com
+Cookie: session=value
+...
+```
+
+In the simplest form, we can implement this by creating a folder called login and then adding the following files.
+
+First, create a file called `requirements.txt` that reads as follows:
+
+```
+Flask
+Flask-Session
+```
+
+#### --- `app.py`
+
+```python
+# Add session
+from flask import Flask, redirect, render_template, request, session
+# Import session library
+from flask_session import Session
+
+app=Flask(__name__)
+
+# Session config
+app.config["SESSION_PERMANENT"] = False # cookie deletes when browser is closed
+app.config["SESSION_TYPE"] = "filesystem" # privacy: insures that content of your shopping cart are stored in the server's files, not in a cookie itself
+Session(app) # activates session
+
+@app.route("/")
+def index():
+    # Pass name to the homepage
+    return render_template("index.html", name=session.get("name"))
+
+# Create route login
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # Use session variable, an empty dictionary `session = {}`
+        # It is like a global variable, but session guarantees unique items inside
+        session["name"] = request.form.get("name")
+        # Redirect user to the homepage
+        return redirect("/")
+    return render_template("login.html")
+
+# there are no login.html page, only route
+@app.route("/logout")
+def logout():
+    # Clears all contents of the session
+    session.clear()
+    # Redirects to the homepage
+    return redirect("/")
+```
+
+#### ---- `index.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- If the user is logged in with a name -->
+    {% if name %}
+
+        You are logged in as {{ name }}. <a href="/logout">Log out</a>.
+
+    {% else %}
+
+        You are not logged in. <a href="/login">Log in</a>.
+        
+    {% endif %}
+
+{% endblock %}
+```
+
+#### ---- `layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>login</title>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
+```
+
+#### ---- "login.html"
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <form action="/login" method="post">
+        <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <button type="submit">Log In</button>
+    </form>
+
+{% endblock %}
+```
+
+> Notice the modified _imports_ at the top of the file, including `session`, which will allow for you to support
+> sessions. Most important, notice how `session["name"]` is used in the `login` and `logout` routes.
+> - The `login` route will assign the login name provided and assign it to `session["name"]`.
+> - In the `logout` route, the logging out is implemented by clearing the value of `session`.
+> > More about `sessions` in [Flask Documentation](https://flask.palletsprojects.com/en/2.2.x/api/?highlight=session#flask.session).
+
+---
+
+## Shopping cart
+
+Let's create a simple shopping cart.
+
+#### ---- `app.py`
+
+```python
+from cs50 import SQL
+from flask import Flask, redirect, render_template, request, session
+from flask_session import Session
+
+# Configure app
+app = Flask(__name__)
+
+# Connect to database
+db = SQL("sqlite:///store.db")
+
+# Configure session
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
+
+
+@app.route("/")
+def index():
+    # Returns "books", the list of dictionaries, from database
+    books = db.execute("SELECT * FROM books")
+    return render_template("books.html", books=books)
+
+
+@app.route("/cart", methods=["GET", "POST"])
+def cart():
+
+    # Ensure cart exists, even if its empty
+    if "cart" not in session:
+        session["cart"] = []
+
+    # If smth was submitted into cart, do POST
+    if request.method == "POST":
+        # Grabs the book's id
+        book_id = request.form.get("id")
+        # Checks valid id
+        if book_id:
+            # Go into list "cart" and add the book with that id
+            session["cart"].append(book_id)
+        return redirect("/cart")
+
+    # GET
+    # Grab books that were bought, search the list "books" for their id's
+    # Within CS50 lib you can use `(?)` as a placeholder, it will generate commas between id's for you
+    books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
+    # Opens cart.html
+    return render_template("cart.html", books=books)
+```
+
+#### ---- `books.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Books</h1>
+    {% for book in books %}
+        <h2>{{ book["title"] }}</h2>
+        <form action="/cart" method="post">
+            <!-- Creates unique id for each book -->
+            <input name="id" type="hidden" value="{{ book['id'] }}">
+            <button type="submit">Add to Cart</button>
+        </form>
+    {% endfor %}
+
+{% endblock %}
+```
+
+#### ---- `cart.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Cart</h1>
+<ol>
+    {% for book in books %}
+    <li>{{ book["title"] }}</li>
+    {% endfor %}
+</ol>
+
+{% endblock %}
+```
+
+#### ---- `layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>store</title>
+</head>
+<body>
+    {% block body %}{% endblock %}
+</body>
+</html>
+```
+> Notice that `cart` is implemented using a _list_. Items can be added to this list using the `Add to Cart` buttons
+> in `books.html`. When clicking such a button, the `post` method is invoked, where the `id` of the item is appended
+> to the `cart`. When viewing the cart, invoking the `get` method, **SQL** is executed to display a list of
+> the books in the cart.
+
+---
+
+## Shows
+
+Let's create a search application.
+
+---
+
+### -- Shows #0
+
+Our original version searches for movies/serials, but it is case-sensitive, that is not good for search apps.
+
+#### ---- shows-0/`app.py`
+
+```python
+# Searches for shows
+
+from cs50 import SQL
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+db = SQL("sqlite:///shows.db")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/search")
+def search():
+    shows = db.execute("SELECT * FROM shows WHERE title = ?", request.args.get("q"))
+    return render_template("search.html", shows=shows)
+```
+
+#### ---- shows-0/`index.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <form action="/search" method="get">
+        <input autocomplete="off" autofocus name="q" placeholder="Query" type="search">
+        <button type="submit">Search</button>
+    </form>
+
+{% endblock %}
+```
+
+#### ---- shows-0/`search.html`
+
+```html
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <ul>
+        {% for show in shows %}
+            <li>{{ show["title"] }} - {{ show["year"] }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+```
+
+#### ---- shows-0/`layout.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>shows</title>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
+```
+
+---
+
+### -- Shows #1
+
+We can make our search less strict and look for the word case-insensitively in entire string.
+
+#### ---- shows-1/`app.py`
+
+Instead of using `=` within `/search` route definition, we can use another SQL command `LIKE`.
+
+But we need to use it carefully and prevent user from the dangerous input:
+- You should not use an `f-string` for this thing;
+- We can slightly change the argument `request.args.get("q")`;
+- `"%" + q + "%"` gets plugged in into the placeholder and therefore escaped.
+
+```python
+# Searches for shows using LIKE
+
+from cs50 import SQL
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+db = SQL("sqlite:///shows.db")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/search")
+def search():
+    q = request.args.get("q")
+    shows = db.execute("SELECT * FROM shows WHERE title LIKE ?", "%" + q + "%")
+    return render_template("search.html", shows=shows)
+```
+
+Now our application searches for the entered word in entire title.
+
+> Thia approach of generating new HTML every time a user submits input or visits a new URL is increasingly
+> dated whereby every URL is unique, as opposed to apps being much more interactive.
+
+---
+
+### -- Shows #2
+
+`AJAX` (**Asynchronous JavaScript And XML**) -  a set of web development techniques that uses various web technologies
+on the client-side to create asynchronous web applications. _For example, even though the page is reloading, the browser
+doesn't flash._
+
+In `Shows #2` we have an _autocomplete_ for input:
+- It is impossible to have an autocomplete when you are constantly reloading the whole page;
+- In out example you can type the first letter, get autocomplete, then the other, autocomplete changes, but there are
+now reloading at all and the URL stays the same.
+
+How it works? You can go to `Network` tab within developer's tool and notice:
+- When you type any `input`, an HTTP request `search?q=input` sent from your browser to the URL;
+- Response of that request is `200` and what it have inside is a list of shows `<li>show-title</li>`.
+
+#### ---- shows-2/templates/`index.html`
+
+```html
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>shows</title>
+    </head>
+    <body>
+        <!-- Input of type "search" -->
+        <input autocomplete="off" autofocus placeholder="Query" type="search">
+
+        <!-- An empty list -->
+        <ul></ul>
+
+        <!-- JavaScript code -->
+        <script>
+            // Set the variable "input" to the DOM element <input>
+            let input = document.querySelector('input');
+            // Listen to that "input"
+            // Run an asynchronous function, that going to get back eventually
+            // (if the server is slow, it might take a moment)
+            input.addEventListener('input', async function() {
+                // Fetch url + input
+                let response = await fetch('/search?q=' + input.value);
+                // Wait for response, text() is the list of shows
+                let shows = await response.text();
+                // Select <ul> element, go into its inner HTML, set it to the list of shows
+                document.querySelector('ul').innerHTML = shows;
+            });
+
+        </script>
+
+    </body>
+</html>
+```
+
+#### ---- shows-2/`app.py`
+
+```python
+# Searches for shows using Ajax
+
+from cs50 import SQL
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+db = SQL("sqlite:///shows.db")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/search")
+def search():
+    q = request.args.get("q")
+    if q:
+        shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
+    # Shows empty list without input
+    else:
+        shows = []
+    return render_template("search.html", shows=shows)
+```
+
+#### ---- shows-2/templates/`search.html`
+
+```html
+{% for show in shows %}
+    <li>{{ show["title"] }}</li>
+{% endfor %}
+```
+
+When we input some text on our page, e.g. "the office", we get data like this:
+- As you can see, this data is not very useful and comfortable.
+
+```
+<li>Nice Day at the Office</li>
+
+<li>The Office</li>
+
+<li>The Office</li>
+
+<li>A Nice Day at the Office</li>
+
+<li>The Office</li>
+
+...
+```
+
+> ❌ Nowadays, it's not common to use **HTML** (like a list of `<li>` in our case) nor **XML** to send back your data.
+> 
+> ✅ It's more common to get `JSON` (**JavaScript Object Notation**). It looks very similar to a dictionary.
+> - You have to use double quotes `"` around your strings in **JSON**.
+> ```json
+> [
+>   {"id": 1, "title": "The Hitchhiker's Guide to the Galaxy"},
+>   {"id": 2, "title": "The Restaurant at the End of the Universe"},
+>   {"id": 3, "title": "Life, the Universe and Everything"},
+>   {"id": 4, "title": "So Long, and Thanks for All the Fish"},
+>   {"id": 5, "title": "Mostly Harmless"},
+>   ...
+> ]
+> ```
+
+### -- Shows #3
+
+> An **application program interface** or `API` is a series of specifications that allow you to interface with
+> another service. For example, we could utilize **IMDB**’s **API** to interface with their database.
+> We might even integrate **API**s for handling specific types of data downloadable from a server.
+
+Let's use `JSON` in our search app. The result will look the same as it was in `Shows #2`, but look here:
+
+#### ---- shows-3/`app.py`
+
+````python
+# Searches for shows using Ajax with JSON
+
+from cs50 import SQL
+# Import jsonify function (turn smth to JSON)
+from flask import Flask, jsonify, render_template, request
+
+app = Flask(__name__)
+
+db = SQL("sqlite:///shows.db")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# The same code as it was in "shows-2"
+@app.route("/search")
+def search():
+    q = request.args.get("q")
+    if q:
+        shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
+    else:
+        shows = []
+    # BUT
+    # Instead of passing any template, we turn that text to JSON
+    return jsonify(shows)
+````
+
+When we input some text, e.g. "the office", we get much more **standardized data**:
+
+```json
+[
+  {"episodes":6,"id":108878,"title":"Nice Day at the Office","year":1994},
+  {"episodes":6,"id":112108,"title":"The Office","year":1995},
+  {"episodes":14,"id":290978,"title":"The Office","year":2001},
+  {"episodes":7,"id":377234,"title":"A Nice Day at the Office","year":1972},
+  {"episodes":188,"id":386676,"title":"The Office","year":2005},
+  ...
+]
+```
