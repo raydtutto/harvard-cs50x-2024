@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>shows</title>
+    </head>
+    <body>
+        <!-- Input of type "search" -->
+        <input autocomplete="off" autofocus placeholder="Query" type="search">
+
+        <!-- An empty list -->
+        <ul></ul>
+
+        <!-- JavaScript code -->
+        <script>
+            // Set the variable "input" to the DOM element <input>
+            let input = document.querySelector('input');
+            // Listen to that "input"
+            // Run an asynchronous function, that going to get back eventually
+            // (if the server is slow, it might take a moment)
+            input.addEventListener('input', async function() {
+                // Fetch url + input
+                let response = await fetch('/search?q=' + input.value);
+                // Wait for response, text() is the list of shows
+                let shows = await response.text();
+                // Select <ul> element, go into its inner HTML, set it to the list of shows
+                document.querySelector('ul').innerHTML = shows;
+            });
+
+        </script>
+
+    </body>
+</html>
