@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+    <title>Birthdays</title>
+</head>
+<body>
+<div class="header">
+    <h1>Birthdays</h1>
+</div>
+<div class="container">
+
+    <!-- Default form -->
+    <div class="section">
+        <h2>Add a Birthday</h2>
+        <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+        <form action="/" method="post">
+            <input autocomplete="off" name="name" placeholder="Name" type="text">
+            <input autocomplete="off" name="month" placeholder="Month" type="number" min="1" max="12">
+            <input autocomplete="off" name="day" placeholder="Day" type="number" min="1" max="31">
+            <button type="submit">Add birthday</button>
+        </form>
+    </div>
+
+    <div class="section">
+
+        <h2>All Birthdays</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for birthday in birthdays %}
+
+                <tr>
+                    <td>{{ birthday.name }}</td>
+                    <td>{{ birthday.month }}/{{ birthday.day }}</td>
+                    <td style="display: inline-flex;">
+                        <!-- Add id's data, then edit -->
+                        <button class="editButton"
+                                data-id="{{ birthday.id }}"
+                                data-name="{{ birthday.name }}"
+                                data-month="{{ birthday.month }}"
+                                data-day="{{ birthday.day }}">
+                            Edit
+                        </button>
+                        <form action="/delete?id={{birthday.id}}" method="POST">
+                            <input name="id" type="hidden" value="{{ birthday.id }}">
+                            <button type="submit" class="delete">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Update modal window -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+
+        <!-- Close icon -->
+        <span class="close">&times;</span>
+
+        <!-- Form -->
+        <h2>Edit a Birthday</h2>
+        <form action="/update" method="post">
+            <input type="hidden" name="id" id="id">
+            <input autocomplete="off" name="name" placeholder="Name" type="text">
+            <input autocomplete="off" name="month" placeholder="Month" type="number" min="1" max="12">
+            <input autocomplete="off" name="day" placeholder="Day" type="number" min="1" max="31">
+            <button id="save" type="submit">Save</button>
+            <button id="cancel" type="submit">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Javascript -->
+<script>
+
+    document.querySelectorAll(".editButton").forEach(button => {
+        button.onclick = function () {
+            const id = this.getAttribute("data-id");
+            const name = this.getAttribute("data-name");
+            const month = this.getAttribute("data-month");
+            const day = this.getAttribute("data-day");
+
+            document.querySelector("#myModal input[name='id']").value = id;
+            document.querySelector("#myModal input[name='name']").value = name;
+            document.querySelector("#myModal input[name='month']").value = month;
+            document.querySelector("#myModal input[name='day']").value = day;
+
+            document.getElementById("myModal").style.display = "block";
+        };
+    });
+
+    document.getElementsByClassName("close")[0].onclick = function () {
+        document.getElementById("myModal").style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("myModal")) {
+            document.getElementById("myModal").style.display = "none";
+        }
+    };
+
+    document.getElementById("cancel").onclick = function () {
+        document.getElementById("myModal").style.display = "none";
+    };
+
+</script>
+
+</body>
+</html>
