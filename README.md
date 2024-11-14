@@ -264,9 +264,9 @@ No problem set or practical tasks were provided.
 ### ✍️ Week 9: Flask
 
 <details open>
-  <summary>Problem set 8</summary>
+  <summary>Problem set 9</summary>
 
-| *Problem set 8*                                                                                                  | *Description*                                          | *Test*    | *Style* |
+| *Problem set 9*                                                                                                  | *Description*                                          | *Test*    | *Style* |
 |:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------|:----------|:--------|
 | [birthdays](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_set_9/birthdays/) | A web application to keep track of friends’ birthdays. | **1** / 1 | 1.00    |
 
