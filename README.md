@@ -243,10 +243,10 @@ No problem set or practical tasks were provided.
 <details onclose>
   <summary>Problem set 8</summary>
 
-| *Problem set 8*                                                                                                                       | *Description*                                            | *Test* | *Style* |
-|:--------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------|:-------|:--------|
-| [trivia](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/trivia/index.html)    | Write a webpage that lets users answer trivia questions. | —      | —       |
-| [homepage](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/readme.md) | Build a simple homepage using HTML, CSS, and JavaScript. | —      | —       |
+| *Problem set 8*                                                                                                                       | *Description*                                            | *Test*    | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------|:----------|:--------|
+| [trivia](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/trivia/index.html)    | Write a webpage that lets users answer trivia questions. | **1** / 1 | —       |
+| [homepage](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_8_html_css_javascript/problem_set_8/homepage/readme.md) | Build a simple homepage using HTML, CSS, and JavaScript. | **1** / 1 | —       |
 
 </details>
 
@@ -262,6 +262,15 @@ No problem set or practical tasks were provided.
 ---
 
 ### ✍️ Week 9: Flask
+
+<details open>
+  <summary>Problem set 8</summary>
+
+| *Problem set 8*                                                                                                  | *Description*                                          | *Test*    | *Style* |
+|:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------|:----------|:--------|
+| [birthdays](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_set_9/birthdays/) | A web application to keep track of friends’ birthdays. | **1** / 1 | 1.00    |
+
+</details>
 
 ---
 
