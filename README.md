@@ -273,6 +273,15 @@ No problem set or practical tasks were provided.
 
 </details>
 
+<details onclose>
+  <summary>Additional practice</summary>
+
+| *Week 9: Flask*                                                                                                                       | *Description*                                                                                                                           | *Test* | *Style* |
+|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:-------|:--------|
+| [helloflask](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_sеt_9/additional_practice/helloflask) | A Flask app with simple color selection, ensure that received colors are valid. _Practice writing a `Flask` application from scratch._. | —      | —       |    |
+
+</details>
+
 ---
 
 #### ✍️ Week 10: Cybersecurity
