@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form action="/" method="post">
+  What is your favorite color?
+  <select name="color">
+    {% for color in colors %}
+    <option value="{{ color.color_name }}">{{ color.color_name }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
