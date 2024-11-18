@@ -4,7 +4,7 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
-![](https://geps.dev/progress/83)
+![](https://geps.dev/progress/90)
 
 # What You'll Find Here
 
@@ -261,20 +261,21 @@ No problem set or practical tasks were provided.
 
 ---
 
-### ✍️ Week 9: Flask
+### ✅ Week 9: Flask
 
-<details open>
+<details onclose>
   <summary>Problem set 9</summary>
 
-| *Problem set 9*                                                                                                  | *Description*                                          | *Test*    | *Style* |
-|:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------|:----------|:--------|
-| [birthdays](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_set_9/birthdays/) | A web application to keep track of friends’ birthdays. | **1** / 1 | 1.00    |
+| *Problem set 9*                                                                                                 | *Description*                                                    | *Test*      | *Style* |
+|:----------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|:------------|:--------|
+| [birthdays](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_sеt_9/birthdays) | Create a web application to keep track of friends’ birthdays.    | **1** / 1   | 1.00    |
+| [finance](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/problem_sеt_9/finance)     | Implement a website via which users can “buy” and “sell” stocks. | **21** / 21 | 1.00    |
 
 </details>
 
 ---
 
-#### Week 10: Cybersecurity
+#### ✍️ Week 10: Cybersecurity
 
 ---
 
