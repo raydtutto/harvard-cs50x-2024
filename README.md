@@ -28,7 +28,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 0: Scratch
 
-<details onclose>
+<details open>
   <summary>Problem set 0</summary>
 
 | *Problem set 0*                                                                                                         | *Description*                                              | *Test*     |
@@ -41,7 +41,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 1: C
 
-<details onclose>
+<details open>
   <summary>Problem set 1</summary>
 
 | *Problem set 1*                                                                                                         | *Description*                                                             | *Test*       | *Style* |
@@ -55,7 +55,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 1: Additional practice*                                                                                       | *Description*                                                                                                         | *Test*    | *Style* |
@@ -70,7 +70,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 2: Arrays
 
-<details onclose>
+<details open>
   <summary>Problem set 2</summary>
 
 | *Problem set 2*                                                                                                            | *Description*                                                         | *Test*       | *Style* |
@@ -82,7 +82,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 2: Additional practice*                                                                                              | *Description*                                                                                                                                                                                                                                               | *Test*     | *Style* |
@@ -97,7 +97,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 3: Algorithms
 
-<details onclose>
+<details open>
   <summary>Problem set 3</summary>
 
 | *Problem set 3*                                                                                                          | *Description*                                                              | *Test*      | *Style* |
@@ -109,7 +109,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 3: Additional practice*                                                                                        | *Description*                                                                                                                                 | *Test*    | *Style* |
@@ -127,7 +127,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 4: Memory
 
-<details onclose>
+<details open>
   <summary>Problem set 4</summary>
 
 | *Problem set 4*                                                                                                                | *Description*                                                                                               | *Test*      | *Style* |
@@ -139,7 +139,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 4: Additional practice*                                                                                                     | *Description*                                                                                                    | *Test*    | *Style* |
@@ -153,7 +153,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 5: Data Structures
 
-<details onclose>
+<details open>
   <summary>Problem set 5</summary>
 
 | *Problem set 5*                                                                                                                    | *Description*                                                      | *Test*    | *Style* |
@@ -163,7 +163,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 5: Additional practice*                                                                                             | *Description*                                                                                      | *Test* | *Style* |
@@ -176,7 +176,7 @@ of topics, including programming in C, Python, web development, and more.
 
 ### ✅ Week 6: Python
 
-<details onclose>
+<details open>
   <summary>Problem set 6</summary>
 
 | *Problem set 6*                                                                                                                                    | *Description*                                                                | *Test*      | *Style* |
@@ -192,7 +192,7 @@ of topics, including programming in C, Python, web development, and more.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 6: Additional practice*                                                                                                                | *Description*                                                                                                                                                         | *Test*    | *Style* |
@@ -215,7 +215,7 @@ No problem set or practical tasks were provided.
 
 ### ✅ Week 7: SQL
 
-<details onclose>
+<details open>
   <summary>Problem set 7</summary>
 
 | *Problem set 7*                                                                                                 | *Description*                                                                                                     | *Test*      | *Style* |
@@ -226,7 +226,7 @@ No problem set or practical tasks were provided.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 7: Additional practice*                                                                                               | *Description*                                                                 | *Test* | *Style* |
@@ -240,7 +240,7 @@ No problem set or practical tasks were provided.
 
 ### ✅ Week 8: HTML, CSS, JavaScript
 
-<details onclose>
+<details open>
   <summary>Problem set 8</summary>
 
 | *Problem set 8*                                                                                                                       | *Description*                                            | *Test*    | *Style* |
@@ -250,7 +250,7 @@ No problem set or practical tasks were provided.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
 | *Week 8: Additional practice*                                                                                                        | *Description*                                                                                                                                       | *Test* | *Style* |
@@ -263,7 +263,7 @@ No problem set or practical tasks were provided.
 
 ### ✅ Week 9: Flask
 
-<details onclose>
+<details open>
   <summary>Problem set 9</summary>
 
 | *Problem set 9*                                                                                                 | *Description*                                                    | *Test*      | *Style* |
@@ -273,10 +273,10 @@ No problem set or practical tasks were provided.
 
 </details>
 
-<details onclose>
+<details open>
   <summary>Additional practice</summary>
 
-| *Week 9: Flask*                                                                                                         | *Description*                                                                                                                           | *Test* | *Style* |
+| *Week 9: Additional practice*                                                                                           | *Description*                                                                                                                           | *Test* | *Style* |
 |:------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:-------|:--------|
 | [helloflask](https://github.com/raydtutto/harvard-cs50x-2024/blob/main/src/week_9_flask/additional_practice/helloflask) | A Flask app with simple color selection, ensure that received colors are valid. _Practice writing a `Flask` application from scratch._. | —      | —       |    |
 
@@ -284,7 +284,13 @@ No problem set or practical tasks were provided.
 
 ---
 
-#### ✍️ Week 10: Cybersecurity
+### ✅ Week 10: Cybersecurity
+No problem set or practical tasks were provided.
+
+---
+
+### ✍️ Final project
+The repository for the final project is [here](https://github.com/raydtutto/cs50x-2024-final-project).
 
 ---
 
