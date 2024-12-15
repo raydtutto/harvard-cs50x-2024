@@ -4,8 +4,6 @@ CS50x projects repository</h1>
 
 This repository is dedicated to storing my projects, notes and files related to **Harvard University's CS50x** course.
 
-![](https://geps.dev/progress/90)
-
 # What You'll Find Here
 
 - **Lecture Notes**: I keep detailed notes of lectures and supplementary materials.
