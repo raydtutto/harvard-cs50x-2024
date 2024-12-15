@@ -290,7 +290,13 @@ No problem set or practical tasks were provided.
 ---
 
 ### ✍️ Final project
+
+![cs50-fp-match3.gif](cs50-fp-match3.gif)
+
+For a final project I made a simple Match3 puzzle game developed with the Godot Engine 4.3 and written in GDScript.
 The repository for the final project is [here](https://github.com/raydtutto/cs50x-2024-final-project).
+
+![CS50x.png](CS50x.png)
 
 ---
 
