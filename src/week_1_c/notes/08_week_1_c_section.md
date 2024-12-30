@@ -1,6 +1,6 @@
 # Week 1: C / Section
 
-Preceptor: **Carter Zenke**
+Instructor: [**Carter Zenke**](https://github.com/carterzenke)
 
 ---
 

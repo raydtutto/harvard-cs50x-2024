@@ -1,6 +1,6 @@
 # Week 8: HTML, CSS, JavaScript / Section
 
-Preceptor: **Julia**
+Instructor: **Yuliia Zhukovets**
 
 ---
 

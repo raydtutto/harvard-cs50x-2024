@@ -1,6 +1,6 @@
 # Week 5: Data structures / Section
 
-Preceptor: **Julia**  
+Instructor: **Yuliia Zhukovets**  
 Head teaching assistant for CS50 at Yale: **Charlie**
 
 ---

@@ -306,6 +306,7 @@ The repository for the final project is [here](https://github.com/raydtutto/cs50
 ## Instructors
 
 - [David J. Malan](https://github.com/dmalan)
-- [Doug LLoyd](https://github.com/dlloyd09)
+- [Doug Lloyd](https://github.com/dlloyd09)
 - [Brian Yu](https://github.com/brianyu28)
 - [Carter Zenke](https://github.com/carterzenke)
+- Yuliia Zhukovets
